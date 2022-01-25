@@ -32,6 +32,7 @@ ul{
     height: 85%;
     background-color: #3c3c3c;
     margin: auto;
+    margin-top: 1.5em;
     border-radius: 10px;
 }
 .barTerminal{
@@ -159,4 +160,40 @@ ul{
     margin-right: 1em;
     margin-top: 0.5em;
     border-left: 1px solid black;
+}
+.contentFileManager > ul> li > a > img{
+    width: 4em;
+    display: block;
+    margin: 2.5em;
+    margin-top: 2em;
+}
+.contentFileManager > ul> li > a {
+    text-decoration: none;
+    color: white;
+}
+.contentFileManager > ul> li {
+    display: inline-block;
+    text-align: center;
+}
+.proyects{
+    color: white;
+    background-color: #222;
+    height: 50em;
+}
+.browser{
+    width: 80%;
+    height: 80%;
+    background-color: #191924;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 4em;
+    border-radius: 0.5em;
+}
+.barBrowser{
+    text-align: center;
+}
+.contact{
+    color: black;
+    background-color: white;
+    height: 50em;
 }
