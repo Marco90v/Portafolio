@@ -1,19 +1,17 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
-}
+    border: 0;
+} */
 body{
     background-color: white;
-}
-nav{
-    background-color: black;
-}
-ul > li{
-    list-style: none;
 }
 ul{
     margin-bottom: 0;
     padding-left: 1rem;
+}
+.myNav{
+    background-color: black !important;
 }
 .navbar-fixed-top{
     position: fixed;
@@ -21,29 +19,50 @@ ul{
     left: 0;
     z-index: 1030;
 }
-.about{
-    height: 40em;
+.about, .proyects {
     background-color: #222;
-    color: white;
-    padding-top: 4em;
+    height: 50em;
 }
-.terminal{
-    width: 80%;
-    height: 85%;
-    background-color: #3c3c3c;
+.skills, .contact{
+    background-color: white;
+    height: 50em;
+}
+.about{
+    margin-top: 3.5em;
+}
+.terminal, .fileManager, .browser, .VSC{
+    color: white;
+    /* width: 94em;
+    height: 40em; */
     margin: auto;
-    margin-top: 1.5em;
-    border-radius: 10px;
+    margin-top: 4em;
+    border-radius: 0.5em;
+}
 
+.terminal, .browser{
+    background-color: #191924;
     box-shadow: 0px 0px 9px 3px rgba(255,255,255,0.53);
     -webkit-box-shadow: 0px 0px 9px 3px rgba(255,255,255,0.53);
     -moz-box-shadow: 0px 0px 9px 3px rgba(255,255,255,0.53);
 }
+.fileManager, .VSC{
+    background-color: #191924;
+    box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
+}
+
 .barTerminal{
     height: 2em;
-    background-color: black;
+    background-color: #191924;
     border-radius: 10px 10px 0 0;
     text-align: center;
+}
+.barTerminal > img {
+    width: 1.5em;
+    height: 1.5em;
+    float: left;
+    margin: 0.3em 0 0 0.5em;
 }
 .botonTerminal{
     float: right;
@@ -71,7 +90,7 @@ ul{
 .comandoTerminal{
     margin-bottom: 1em;
 }
-.comandoTerminal > span{
+.comandoTerminal > span, .info{
     color: white;
 }
 .avatar{
@@ -79,7 +98,7 @@ ul{
     width: 30%;
 }
 .avatar > img {
-    width: 100%;
+    height: 20em;
 }
 .perfil{
     display: inline-block;
@@ -90,29 +109,6 @@ ul{
     border-bottom: 2px dotted white;
     display: inline-block;
 }
-.info{
-    color: white;
-}
-.skills{
-    color: white;
-    background-color: white;
-    height: 50em;
-}
-.fileManager{
-    width: 80%;
-    height: 80%;
-    background-color: #191924;
-    margin: auto;
-    margin-top: 4em;
-    border-radius: 0.5em;
-
-    box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
-    -moz-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
-}
-.barFileManager{
-    text-align: center;
-}
 .menuFileManager > ul, .menuVSC > ul{
     list-style: none;
 }
@@ -121,7 +117,7 @@ ul{
     margin: 0 0.5em;
 }
 .exploradorFileManager{
-    height: 85%;
+    height: 34em;
 }
 .ICONexploradorFileManager{
     display: inline-block;
@@ -136,7 +132,8 @@ ul{
     border: 1px solid black;
     border-radius: 0.2em;
     background-color: #2b2b2b;
-    width: 82.6%;
+    /* width: 82em; */
+    /* width: 85%; */
     padding: 0em 0.5em;
     vertical-align: middle;
 }
@@ -160,7 +157,6 @@ ul{
     padding-top: 0.1em;
 }
 .contentFileManager{
-    /* display: inline-block; */
     background-color: #2b2b2b;
     height: 100%;
     width: 77%;
@@ -175,39 +171,8 @@ ul{
     margin: 2.5em;
     margin-top: 2em;
 }
-.contentFileManager > ul> li > a {
-    text-decoration: none;
-    color: white;
-}
 .contentFileManager > ul> li {
     display: inline-block;
-    text-align: center;
-}
-.proyects{
-    color: white;
-    background-color: #222;
-    height: 50em;
-}
-.browser{
-    width: 80%;
-    height: 80%;
-    background-color: #191924;
-    margin: auto;
-    margin-top: auto;
-    margin-top: 4em;
-    border-radius: 0.5em;
-
-    box-shadow: 0px 0px 9px 3px rgba(255,255,255,0.53);
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(255,255,255,0.53);
-    -moz-box-shadow: 0px 0px 9px 3px rgba(255,255,255,0.53);
-}
-.barBrowser{
-    text-align: center;
-}
-.contact{
-    color: black;
-    background-color: white;
-    height: 50em;
 }
 .pestañaBrowser > ul > li{
     display: inline-block;
@@ -241,9 +206,7 @@ ul{
     padding: 0 1em 0 1em;
 }
 .enlaceBrowser > a{
-    text-decoration: none;
     list-style: none;
-    color: white;
     display: block;
 }
 .favoritosBrowser > ul {
@@ -253,10 +216,9 @@ ul{
     display: inline-block;
     margin-right: 0.5em;
 }
-.favoritosBrowser > ul > li > a{
+.favoritosBrowser > ul > li > a,
+ul > li{
     list-style: none;
-    text-decoration: none;
-    color: white;
 }
 .bodyBrowser{
     background-color: white;
@@ -267,25 +229,10 @@ ul{
     width: 100%;
     height: 100%;
 }
-
-.VSC{
-    width: 80%;
-    height: 80%;
-    background-color: #191924;
-    margin: auto;
-    margin-top: auto;
-    margin-top: 4em;
-    border-radius: 0.5em;
-
-    box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
-    -moz-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.53);
-}
-.VSC{
-    color: white;
-}
-.barVSC{
-    /* color: white; */
+.barVSC,
+.barFileManager,
+.barBrowser,
+.contentFileManager > ul> li{
     text-align: center;
 }
 .barVSC > img{
@@ -299,12 +246,353 @@ ul{
     padding-top: 4.5em;
     font-size: 2em;
 }
-.cuerpoVSC > p > a {
-    text-decoration: none;
+.cuerpoVSC > p > a,
+.contentFileManager > ul> li > a,
+.enlaceBrowser > a,
+.favoritosBrowser > ul > li > a {
     color: white;
+    text-decoration: none;
 }
 .cuerpoVSC > p > a > svg{
     font-size: 2em;
     width: 0.5em;
     height: 0.5em;
+}
+.contact1{
+    display: inline;
+}
+.contact2{
+    display: none;
+}
+
+@media (min-width: 1599.98px) {
+    .terminal, .fileManager, .browser, .VSC{
+        width: 94em;
+        height: 40em;
+    }
+    .BARexploradorFileManager{
+        width: 87.2%;
+    }
+}
+
+@media (min-width: 1399.98px) and (max-width: 1599.98px) {
+    .terminal, .fileManager, .browser, .VSC{
+        width: 80em;
+        height: 40em;
+    }
+    .BARexploradorFileManager{
+        width: 85%;
+    }
+}
+
+@media (min-width: 1199.98px) and (max-width: 1399.98px) {
+    .terminal, .fileManager, .browser, .VSC{
+        width: 70em;
+        height: 41.5em;
+    }
+    .BARexploradorFileManager{
+        width: 97.3%;
+    }
+}
+
+@media (min-width: 991.98px) and (max-width: 1199.98px) {
+    .terminal, .fileManager, .browser, .VSC{
+        width: 60em;
+        height: 40.2em;
+    }
+    .comandoTerminal {
+        margin-bottom: 5em;
+    }
+    .avatar{
+        width: 40%;
+        margin-bottom: 2em;
+    }
+    .avatar > img{
+        height: 20em;
+    }
+    .perfil{
+        width: 60%;
+        font-size: 1.6em;
+        float: right;
+    }
+    .BARexploradorFileManager{
+        width: 80%;
+    }
+    .contentFileManager{
+        width: 76%;
+    }
+    .contentFileManager > ul> li > a > img{
+        width: 3em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .terminal, .fileManager, .browser, .VSC{
+        width: 46em;
+        height: 41.5em;
+    }
+    .avatar{
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    .avatar > img{
+        height: 15em;
+    }
+    .perfil{
+        width: 100%;
+        font-size: 1.6em;
+    }
+    .BARexploradorFileManager{
+        width: 74%;
+    }
+    .contentFileManager{
+        width: 75%;
+    }
+    .contentFileManager > ul> li > a > img{
+        width: 2em;
+    }
+    .cuerpoVSC{
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+    .terminal, .fileManager, .browser, .VSC{
+        width: 37em;
+        height: 40em;
+    }
+    .avatar{
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    .avatar > img{
+        height: 10em;
+    }
+    .perfil{
+        width: 100%;
+        font-size: 1.6em;
+    }
+    .navBarFileManager{
+        width: 23%;
+        font-size: 0.7em;
+    }
+    .BARexploradorFileManager{
+        width: 70%;
+        margin-left: 0;
+    }
+    .contentFileManager{
+        width: 70%;
+    }
+    .contentFileManager > ul> li > a > img{
+        width: 3em;
+        margin: 1.5em;
+    }
+    .cuerpoVSC{
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 576px) {
+    .avatar{
+        width: 100%;
+        text-align: center;
+    }
+    .avatar > img {
+        height: 13em;
+    }
+    .perfil{
+        width: 100%;
+        font-size: 1.2em
+    }
+    .terminal {
+        width: 22em;
+        height: 40em;
+    }
+    .fileManager{
+        width: 22em;
+        height: 42em;
+    }
+    .browser, .VSC{
+        width: 22em;
+        height: 18em;
+    }
+    .navBarFileManager{
+        display: none;
+        /* width: 23%;
+        font-size: 0.7em;
+        padding-left: 0.5em; */
+    }
+    .BARexploradorFileManager{
+        width: 64%;
+        margin-left: 0;
+    }
+    .contentFileManager{
+        /* width: 70%; */
+        width: 90%;
+        height: auto;
+        margin-left: 1em;
+        float: none;
+    }
+    .contentFileManager > ul> li > a > img{
+        width: 2em;
+        margin: 1.5em;
+    }
+    .ICONexploradorFileManager > svg{
+        margin: 0em 0.1em;
+    }
+    .BARexploradorFileManager > svg{
+        display: none;
+    }
+    .cuerpoVSC{
+        font-size: 1em;
+        padding-top: 1.5em;
+    }
+    .contact1{
+        display: none;
+    }
+    .contact2{
+        display: inline;
+        text-align: left;
+        margin-left: 1em;
+    }
+    .enlaceBrowser{
+        width: 65%;
+    }
+    .bodyBrowser{
+        height: auto;
+    }
+    .bodyBrowser > img{
+        height: auto;
+    }
+}
+@media (min-width: 375px) and (max-width: 424px) {
+    .avatar{
+        width: 100%;
+        text-align: center;
+    }
+    .avatar > img {
+        height: 13em;
+    }
+    .perfil{
+        width: 100%;
+        font-size: 1.2em
+    }
+    .terminal {
+        width: 22em;
+        height: 40em;
+    }
+    .fileManager{
+        width: 22em;
+        height: 31em;
+    }
+    .browser, .VSC{
+        width: 22em;
+        height: 18em;
+    }
+    .navBarFileManager{
+        display: none;
+        /* width: 27%;
+        font-size: 0.7em;
+        padding-left: 0.5em; */
+    }
+    .navBarFileManager > ul {
+        padding-left: 0;
+    }
+    .BARexploradorFileManager{
+        width: 64%;
+        margin-left: 0;
+        font-size: 0.88em;
+    }
+    .contentFileManager{
+        width: 90%;
+        height: auto;
+        margin-left: 1em;
+        float: none;
+    }
+    .contentFileManager > ul> li > a > img{
+        width: 1.5em;
+        margin: 1.5em 1em;
+    }
+    .ICONexploradorFileManager > svg{
+        margin: 0em 0.1em;
+    }
+    .cuerpoVSC{
+        font-size: 1em;
+        padding-top: 1.5em;
+    }
+    .menuFileManager > ul >li{
+        margin: 0 0.4em;
+    }
+    .BARexploradorFileManager > svg{
+        display: none;
+    }
+    .contact1{
+        display: none;
+    }
+    .contact2{
+        display: inline-block;
+        /* float: left; */
+        text-align: left;
+        margin-left: 1em;
+    }
+    .enlaceBrowser{
+        width: 60%;
+    }
+    .bodyBrowser{
+        height: auto;
+    }
+    .bodyBrowser > img{
+        height: auto;
+    }
+}
+
+@media (max-width: 374px) {
+    .terminal, .fileManager, .browser, .VSC{
+        width: 21em;
+        height: 40em;
+    }
+    .navBarFileManager{
+        width: 27%;
+        font-size: 0.7em;
+        padding-left: 0.5em;
+    }
+    .navBarFileManager > ul {
+        padding-left: 0;
+    }
+    .BARexploradorFileManager{
+        width: 64%;
+        margin-left: 0;
+        font-size: 0.88em;
+    }
+    .contentFileManager{
+        width: 65%;
+    }
+    .contentFileManager > ul> li > a > img{
+        width: 1.5em;
+        margin: 1.3em;
+    }
+    .contentFileManager > ul> li > a > span{
+        display: none;
+    }
+    .ICONexploradorFileManager > svg{
+        margin: 0em 0.1em;
+    }
+    .cuerpoVSC{
+        font-size: 1em;
+    }
+    .menuFileManager > ul >li{
+        margin: 0 0.4em;
+    }
+    .contact1{
+        display: none;
+    }
+    .contact2{
+        display: inline;
+        /* float: left; */
+        text-align: left;
+        margin-left: 1em;
+    }
+    .enlaceBrowser{
+        width: 60%;
+    }
 }
