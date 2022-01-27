@@ -1,8 +1,28 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    border: 0;
-} */
+.comando{
+    position: relative;
+}
+#typed::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    /* left: 0; */
+    height: 100%;
+    background-color: #191924;
+    border-left: 2px solid rgb(255, 255, 255);
+    animation: escribir 1s backwards steps(8), titilar 1s steps(1) infinite;
+    animation-delay: 1s;
+}
+@keyframes escribir {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+@keyframes titilar {
+    50%{border-color: transparent;}
+}
 body{
     background-color: white;
 }
@@ -88,23 +108,47 @@ ul{
     color: #00e7ff;
 }
 .comandoTerminal{
-    margin-bottom: 1em;
+    margin-bottom: 4em;
 }
 .comandoTerminal > span, .info{
     color: white;
 }
 .avatar{
-    display: inline-block;
     width: 30%;
+    float: left;
 }
 .avatar > img {
     height: 20em;
 }
 .perfil{
-    display: inline-block;
+    height: 0em;
     width: 69%;
-    font-size: 1.3em;
+    font-size: 2.5em;
+    float: right;
 }
+.bodyTerminal{
+    position: relative;
+    height: 30em;
+}
+.bodyTerminalCover::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: block;
+    background-color: #191924;
+    animation: ver 0.5s backwards steps(50);
+    animation-delay: 2s;
+}
+@keyframes ver {
+    from{
+        height: 31em;
+    }
+    to{
+        height: 0;
+    }
+}
+
 .name{
     border-bottom: 2px dotted white;
     display: inline-block;
@@ -188,7 +232,7 @@ ul{
 .navegadorBrowser, .favoritosBrowser{
     background-color: #646464;
     margin: 0 1em 0 1em;
-    height: 2em;
+    height: 2.2em;
     padding-top: 0.2em;
 }
 .botonesBrowser > svg {
@@ -205,7 +249,7 @@ ul{
     border-radius: 0.3em;
     padding: 0 1em 0 1em;
 }
-.enlaceBrowser > a{
+.enlaceBrowser > a {
     list-style: none;
     display: block;
 }
@@ -222,7 +266,7 @@ ul > li{
 }
 .bodyBrowser{
     background-color: white;
-    height: 32em;
+    height: 34em;
     margin: 0 1em;
 }
 .bodyBrowser > img {
@@ -263,6 +307,9 @@ ul > li{
 }
 .contact2{
     display: none;
+}
+.carousel-dark .carousel-caption{
+    background-color: #ffffff70;
 }
 
 @media (min-width: 1599.98px) {
@@ -327,9 +374,15 @@ ul > li{
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+    .bodyTerminal{
+        height: 35em;
+    }
     .terminal, .fileManager, .browser, .VSC{
         width: 46em;
         height: 41.5em;
+    }
+    .comandoTerminal{
+        margin-bottom: 2em;
     }
     .avatar{
         width: 100%;
@@ -351,18 +404,36 @@ ul > li{
     .contentFileManager > ul> li > a > img{
         width: 2em;
     }
+    .bodyBrowser {
+        height: 35.5em;
+    }
     .cuerpoVSC{
         font-size: 2em;
     }
 }
 
 @media (min-width: 577px) and (max-width: 767px) {
+    .bodyTerminal{
+        height: 32em;
+    }
+    @keyframes ver {
+        from{
+            height: 32em;
+        }
+        to{
+            height: 0;
+        }
+    }
+
     .terminal, .fileManager, .browser, .VSC{
         width: 37em;
         height: 40em;
     }
     .avatar{
         width: 100%;
+        margin-bottom: 2em;
+    }
+    .comandoTerminal{
         margin-bottom: 2em;
     }
     .avatar > img{
@@ -393,6 +464,17 @@ ul > li{
 }
 
 @media (min-width: 425px) and (max-width: 576px) {
+    .bodyTerminal{
+        height: 32em;
+    }
+    @keyframes ver {
+        from{
+            height: 32em;
+        }
+        to{
+            height: 0;
+        }
+    }
     .avatar{
         width: 100%;
         text-align: center;
@@ -403,6 +485,9 @@ ul > li{
     .perfil{
         width: 100%;
         font-size: 1.2em
+    }
+    .comandoTerminal{
+        margin-bottom: 2em;
     }
     .terminal {
         width: 22em;
@@ -418,16 +503,12 @@ ul > li{
     }
     .navBarFileManager{
         display: none;
-        /* width: 23%;
-        font-size: 0.7em;
-        padding-left: 0.5em; */
     }
     .BARexploradorFileManager{
         width: 64%;
         margin-left: 0;
     }
     .contentFileManager{
-        /* width: 70%; */
         width: 90%;
         height: auto;
         margin-left: 1em;
@@ -459,19 +540,33 @@ ul > li{
         width: 65%;
     }
     .bodyBrowser{
-        height: auto;
+        height: 11.5em;
     }
     .bodyBrowser > img{
         height: auto;
     }
 }
 @media (min-width: 375px) and (max-width: 424px) {
+    .bodyTerminal{
+        height: 32em;
+    }
+    @keyframes ver {
+        from{
+            height: 32em;
+        }
+        to{
+            height: 0;
+        }
+    }
     .avatar{
         width: 100%;
         text-align: center;
     }
     .avatar > img {
         height: 13em;
+    }
+    .comandoTerminal{
+        margin-bottom: 2em;
     }
     .perfil{
         width: 100%;
@@ -491,9 +586,6 @@ ul > li{
     }
     .navBarFileManager{
         display: none;
-        /* width: 27%;
-        font-size: 0.7em;
-        padding-left: 0.5em; */
     }
     .navBarFileManager > ul {
         padding-left: 0;
@@ -531,7 +623,6 @@ ul > li{
     }
     .contact2{
         display: inline-block;
-        /* float: left; */
         text-align: left;
         margin-left: 1em;
     }
@@ -542,10 +633,10 @@ ul > li{
         height: auto;
     }
     .bodyBrowser > img{
-        height: auto;
+        height: 11.5em;
     }
 }
-
+/* esto esta pendiente por modificar */
 @media (max-width: 374px) {
     .terminal, .fileManager, .browser, .VSC{
         width: 21em;

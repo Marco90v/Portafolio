@@ -8,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Portafolio | Marco Velasquez Figarella</title>
     <link href="style.css" rel="stylesheet">
-    <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> -->
 </head>
 <body>
     <div class="container-fluid">
@@ -50,12 +48,20 @@
                         </div>
                     </div>
                     <div class="cuerpoTerminal">
-                        <div class="comandoTerminal">Marco90v@Developer:~$ <span>neofetch</span></div>
-                        <div class="avatar"><img src="assets/11544352.png" alt="avatar"></div>
-                        <div class="perfil">
-                            <h1 class="name">Marco Velasquez Figarella</h1>
-                            <p class="info">Soy un profesional en el area de la tecnologia enfocado mayormente en el area web, con todas las ganas de seguir creciendo como desarrollador.</p>
-                            <p class="info">Lo que mas me gusta de programar es dar soluciones a los problemas que parecen dificiles.</p>
+                        <div class="comandoTerminal">Marco90v@Developer:~$ <span class="comando">neofetch &nbsp;<span id="typed"></span></span></div>
+                        <div class="bodyTerminal">
+                            <div class="avatar"><img src="assets/11544352.png" alt="avatar">
+                                <!-- <span class="bodyTerminalCover"></span> -->
+                            </div>
+                            <div class="perfil">
+                        
+                            <h1 class="name">Marco Velasquez Figarella
+                                <!-- <div class="bodyTerminalCover"></div> -->
+                            </h1>
+                                <p class="info">Soy un profesional en el area de la tecnologia enfocado mayormente en el area web, con todas las ganas de seguir creciendo como desarrollador.</p>
+                                <p class="info">Lo que mas me gusta de programar es dar soluciones a los problemas que parecen dificiles.</p>
+                            </div>
+                            <div class="bodyTerminalCover"></div>
                         </div>
                     </div>
                 </div>
@@ -83,15 +89,12 @@
                     </div>
                     <div class="exploradorFileManager">
                         <div class="ICONexploradorFileManager">
-                            <!-- <img src="assets/arrow-left.svg" alt="arrow-left"> -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                             </svg>
-                            <!-- <img src="assets/arrow-right.svg" alt="arrow-right"> -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                             </svg>
-                            <!-- <img src="assets/arrow-up.svg" alt="arrow-up"> -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
                             </svg>
@@ -135,86 +138,7 @@
                             </ul>
                         </div>
                         <div class="contentFileManager">
-                            <ul>
-                                <li>
-                                    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
-                                        <img src="assets/javascript-1.svg" alt="JavaScript" >
-                                        <span>JavaScript</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://es.reactjs.org/" target="_blank">
-                                        <img src="assets/react-2.svg" alt="React">
-                                        <span>React</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://angular.io/" target="_blank">
-                                        <img src="assets/angular-icon-1.svg" alt="Angular">
-                                        <span>Angular</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://nodejs.org/es/" target="_blank">
-                                        <img src="assets/nodejs-icon.svg" alt="NodeJS">
-                                        <span>NodeJS</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.php.net/manual/es/intro-whatis.php" target="_blank">
-                                        <img src="assets/php-1.svg" alt="PHP">
-                                        <span>PHP</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">
-                                        <img src="assets/css-3.svg" alt="CSS">
-                                        <span>CSS</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://getbootstrap.com/" target="_blank">
-                                        <img src="assets/bootstrap-5-1.svg" alt="BootStrap">
-                                        <span>BootStrap</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.python.org/" target="_blank">
-                                        <img src="assets/python-5.svg" alt="Python">
-                                        <span>Python</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.electronjs.org/" target="_blank">
-                                        <img src="assets/electron-1.svg" alt="ElectronJS">
-                                        <span>Electron</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#https://www.mysql.com/" target="_blank">
-                                        <img src="assets/mysql-2.svg" alt="MySQL">
-                                        <span>MySQL</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://firebase.google.com/?hl=es-419" target="_blank">
-                                        <img src="assets/firebase-1.svg" alt="Firebase">
-                                        <span>Firebase</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.microsoft.com/es-es/windows" target="_blank">
-                                        <img src="assets/microsoft-windows-22.svg" alt="Windows">
-                                        <span>Windows</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linux.org/" target="_blank">
-                                        <img src="assets/linux-tux-2.svg" alt="Linux">
-                                        <span>Linux</span>
-                                    </a>
-                                </li>
-                            </ul>
+                            <ul id="listSkills"></ul>
                         </div>
                     </div>
                 </div>
@@ -230,127 +154,22 @@
                             <div></div>
                         </div>
                     </div>
-                    <!-- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="..." class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>First slide label</h5>
-                              <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item" data-bs-interval="10000">
-                            <img src="..." class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Second slide label</h5>
-                              <p>Some representative placeholder content for the second slide.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item" data-bs-interval="10000">
-                            <img src="..." class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Third slide label</h5>
-                              <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                          </div>
-                        </div>
+
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div id="carouselIndicators" class="carousel-indicators"></div>
+
+                        <div id="carouselProyectos" class="carousel-inner"></div>
+
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
                         </button>
-                    </div> -->
-                    <div class="pestañaBrowser">
-                        <ul>
-                            <li>
-                                Orbit360
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <!-- <li>
-                                PassWallet
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <li>
-                                ControlPass
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <li>
-                                Scraping_CNE en Python
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <li>
-                                Chat con NodeJs y AngularJs
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <li>
-                                Snake
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <li>
-                                BankList
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <li>
-                                Control de Pagos
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li>
-                            <li>
-                                App de Encuestas
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                </svg>
-                            </li> -->
-                        </ul>
                     </div>
-                    <div class="navegadorBrowser">
-                        <div class="botonesBrowser">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-                                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-                            </svg>
-                        </div>
-                        <div class="enlaceBrowser">
-                            <a href="http://orbit360.pe">http://orbit360.pe</a>
-                        </div>
-                    </div>
-                    <div class="favoritosBrowser">
-                        <ul>
-                            <li><a href="https://www.codewars.com/users/mvf90" target="_blank">CodeWars</a></li>
-                            <li><a href="https://github.com/Marco90v?tab=repositories" target="_blank">Github</a></li>
-                        </ul>
-                    </div>
-                    <div class="bodyBrowser">
-                        <img src="assets/orbit360_3.png" alt="orbit360.pe">
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -427,5 +246,6 @@
     </script> -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="funciones.js"></script>
 </body>
 </html>
