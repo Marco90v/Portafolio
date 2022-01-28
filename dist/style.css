@@ -12,6 +12,7 @@
     color: #01fe0a;
 }
 .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+    /* color: #fff; */
     color: #01fe0a;
 }
 .comando{
@@ -368,6 +369,7 @@ ul > li,
     }
     .perfil{
         width: 60%;
+        /* font-size: 1.6em; */
     }
     .BARexploradorFileManager{
         width: 80%;
