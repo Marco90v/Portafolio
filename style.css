@@ -24,7 +24,7 @@
     height: 100%;
     background-color: #191924;
     border-left: 2px solid rgb(255, 255, 255);
-    animation: escribir 1s 1s backwards steps(8), titilar 1s 0s steps(1) infinite;
+    animation: escribir 1.2s 1s backwards steps(8), titilar 1s 0s steps(1) infinite;
 }
 @keyframes escribir {
     from{
@@ -59,6 +59,7 @@ ul{
 .about, .skills, .proyects, .contact{
     height: 100vh;
     padding-top: 5%;
+    overflow: hidden;
 }
 .about, .proyects {
     background-color: #222;
@@ -75,6 +76,59 @@ ul{
     margin-top: 4em;
     border-radius: 0.5em;
     overflow: hidden;
+}
+.aniTerminal{
+    animation: subir backwards 1s;
+}
+@keyframes subir {
+    from{
+        margin-top: 300%;
+    }
+    to{
+        margin-top: 4em;
+    }
+}
+.baseFileManager{
+    margin-left: 300%;
+}
+.aniFileManager{
+    animation: rightToLeft 0.5s backwards;
+}
+@keyframes rightToLeft {
+    from{
+        margin-left: 300%;
+    }
+    to{
+        margin-left: 10%;
+    }
+}
+.baseBrowser{
+    margin-left: -200%;
+}
+.aniBrowser{
+    animation: leftToRight 0.5s backwards;
+}
+@keyframes leftToRight {
+    from{
+        margin-left: -200%;
+    }
+    to{
+        margin-left: 10%;
+    }
+}
+.baseVSC{
+    opacity: 0;
+}
+.aniVSC{
+    animation: expandir 0.5s backwards;
+}
+@keyframes expandir {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
 }
 .terminal, .browser{
     box-shadow: 0px 0px 9px 3px rgba(255,255,255,0.53);
@@ -154,7 +208,7 @@ ul{
     display: block;
     background-color: #191924;
     animation: ver 0.5s backwards steps(50);
-    animation-delay: 2s;
+    animation-delay: 2.2s;
 }
 @keyframes ver {
     from{
@@ -414,6 +468,14 @@ ul > li,
     .browser{
         height: 70%;
         margin-top: 10em;
+    }
+    @keyframes ver {
+        from{
+            height: 35em;
+        }
+        to{
+            height: 0;
+        }
     }
 }
 @media (max-width: 767px) {
