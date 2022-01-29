@@ -2,13 +2,14 @@ const change = (e)=>{
     const li = document.querySelectorAll('ul.navbar-nav > li');
     li.forEach(e=> e.querySelector("a").classList.remove('active') );
     e.classList.add('active');
-}
-const li = document.querySelectorAll('ul.navbar-nav > li');
-li.forEach(e=> {
-    const ele = e.querySelector("a");
-    ele.hash === location.hash ? ele.classList.add('active') : ele.classList.remove('active');
-} );
-    
+};
+if(location.hash !== ""){
+    const li = document.querySelectorAll('ul.navbar-nav > li');
+    li.forEach(e=> {
+        const ele = e.querySelector("a");
+        ele.hash === location.hash ? ele.classList.add('active') : ele.classList.remove('active');
+    } );
+};    
 window.onload = () => {
         
     const scrollElements = document.querySelectorAll("section > div > div");    
@@ -21,23 +22,23 @@ window.onload = () => {
             callback();
             throttleTimer = false;
 	    }, time);
-    }
+    };
 
     const elementInView = (el, dividend = 1) => {
-    const elementTop = el.getBoundingClientRect().top;
+        const elementTop = el.getBoundingClientRect().top;
 
-    return (
-        elementTop <=
-        (window.innerHeight || document.documentElement.clientHeight) / dividend
-    );
+        return (
+            elementTop <=
+            (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
     };
 
     const elementOutofView = (el) => {
-    const elementTop = el.getBoundingClientRect().top;
+        const elementTop = el.getBoundingClientRect().top;
 
-    return (
-        elementTop > (window.innerHeight || document.documentElement.clientHeight)
-    );
+        return (
+            elementTop > (window.innerHeight || document.documentElement.clientHeight)
+        );
     };
 
     const displayScrollElement = (element) => {
@@ -88,7 +89,7 @@ window.onload = () => {
                 ;hideScrollElement(el)
             }
         });
-    }
+    };
 
     window.addEventListener('scroll', () => {
         throttle(handleScrollAnimation, 250);
@@ -116,12 +117,12 @@ window.onload = () => {
     const lSkills = document.querySelector("#listSkills");
     skills.forEach((e,i)=>{
         const elemento = `<li width="10%">
-        <a href="${e.url}" target="_blank" rel="noopener">
-            <img src="${e.img}" alt="${e.name}" width="100%" height="100%" >
-            <span>${e.name}</span>
-        </a>
-    </li>`;
-    lSkills.insertAdjacentHTML("beforeend",elemento);
+            <a href="${e.url}" target="_blank" rel="noopener">
+                <img src="${e.img}" alt="${e.name}" width="100%" height="100%" >
+                <span>${e.name}</span>
+            </a>
+         </li>`;
+        lSkills.insertAdjacentHTML("beforeend",elemento);
     });
 
     const badge = (lista) => lista.map(e=>`<span class='badge bg-success'>${e}</span>`);
