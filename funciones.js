@@ -81,18 +81,18 @@ window.onload = () => {
     };
 
     const handleScrollAnimation = () => {
-    scrollElements.forEach((el) => {
-        if (elementInView(el, 1)) {
-        displayScrollElement(el);
-        } else if (elementOutofView(el)) {
-        hideScrollElement(el)
-        }
-    })
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1)) {
+            displayScrollElement(el);
+            } else if (elementOutofView(el)) {
+                ;hideScrollElement(el)
+            }
+        });
     }
 
     window.addEventListener('scroll', () => {
         throttle(handleScrollAnimation, 250);
-    })
+    });
     handleScrollAnimation();
 
 
@@ -139,7 +139,7 @@ window.onload = () => {
     const cIndicadores = document.querySelector("#carouselIndicators");
     const cProyectos = document.querySelector("#carouselProyectos");
     datosProyectos.forEach( (e,i) => {                
-        const indicador = `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="${i}" ${ i=== 0 && "class='active' aria-current='true'"} aria-label="Slide ${i+1}"></button>`
+        const indicador = `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="${i}" ${ i=== 0 && "class='active' aria-current='true'"} aria-label="Slide ${i+1}"></button>`;
         const elemento = `<div class="carousel-item ${i === 0 ? 'active' : ''}" data-bs-interval="10000">
                             <div class="d-block w-100">
                                 <div class="pestañaBrowser">
@@ -176,7 +176,7 @@ window.onload = () => {
                                 <h5>${e.titulo}</h5>
                                 <p>${e.detalle}</p>
                             </div>
-                        </div>`
+                        </div>`;
         cIndicadores.insertAdjacentHTML("beforeend",indicador);
         cProyectos.insertAdjacentHTML("beforeend",elemento);
     });
