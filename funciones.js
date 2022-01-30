@@ -136,6 +136,7 @@ window.onload = () => {
     const badge = (lista) => lista.map(e=>`<span class='badge bg-success'>${e}</span>`);
 
     const datosProyectos = [
+        {titulo: "Portafolio", url: "https://marco90v.github.io/Portafolio", img: "Portafolio.png", detalle: "Mi Primer portafolio profesional. Tome un diseño de ventanas de ordenador ya es fácil de ver, no esta sobre cargado y representa el área donde me desenvuelvo. <br>"+badge(["HTML","JavaScript","CSS","fullpage.js","Bootstrap"]) },
         {titulo: "Orbit360", url: "http://orbit360.pe", img: "orbit360_3.webp", detalle: "Web de servicios y soluciones de fotografía y video en 360° para empresas y eventos. <br>"+badge(["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"]) },
         {titulo: "PassWallet", url: "https://github.com/Marco90v/passwallet", img: "passWallet_new_data.webp", detalle: "App web para gestión de contraseñas y datos de registros online con encriptado AES. <br>"+badge(["React","React-Bootstrap","Crypto-JS","Animate.css","Firebase","React-Icon"])},
         {titulo: "ControlPass", url: "https://github.com/Marco90v/ControlPass", img: "controlPass_lista.webp", detalle: "App de <strong>Escritorio</strong> para gestion de contraseñas y datos de registros online con encriptado <u>CESAR</u>. <br>"+badge(["React","Electron","Bootstrap","Animate.css","SQLite","CSS"])},
