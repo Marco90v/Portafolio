@@ -11,18 +11,18 @@ if(location.hash !== ""){
     } );
 };    
 window.onload = () => {
-        
-    const scrollElements = document.querySelectorAll("section > div > div");    
+    // const scrollElements = document.querySelectorAll("section > div > div");   
+    const scrollElements = document.querySelectorAll("#ventana");    
     let throttleTimer = false;
 
-    const throttle = (callback, time) => {
-        if (throttleTimer) return;
-        throttleTimer = true;
-        setTimeout(() => {
-            callback();
-            throttleTimer = false;
-	    }, time);
-    };
+    // const throttle = (callback, time) => {
+    //     if (throttleTimer) return;
+    //     throttleTimer = true;
+    //     setTimeout(() => {
+    //         callback();
+    //         throttleTimer = false;
+	//     }, time);
+    // };
 
     const elementInView = (el, dividend = 1) => {
         const elementTop = el.getBoundingClientRect().top;
@@ -91,11 +91,19 @@ window.onload = () => {
         });
     };
 
-    window.addEventListener('scroll', () => {
-        throttle(handleScrollAnimation, 250);
+    // window.addEventListener('scroll', () => {
+    //     throttle(handleScrollAnimation, 250);
+    // });
+    // handleScrollAnimation();
+    new fullpage('#fullpage', {
+        autoScrolling:true,
+        // scrollBar: true,
+        anchors: ['about','skills','proyects','contact'],
+        menu: "#menu",
+        afterLoad: (origin, destination, direction)=>{
+            handleScrollAnimation();
+        }
     });
-    handleScrollAnimation();
-
 
 
     const skills = [
@@ -128,15 +136,16 @@ window.onload = () => {
     const badge = (lista) => lista.map(e=>`<span class='badge bg-success'>${e}</span>`);
 
     const datosProyectos = [
-        {titulo: "Orbit360", url: "http://orbit360.pe", img: "orbit360_3.webp", detalle: "Web de servicios de fotografia y video en 360° <br>"+badge(["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"]) },
-        {titulo: "PassWallet", url: "https://github.com/Marco90v/passwallet", img: "passWallet_new_data.webp", detalle: "App para gestion de contraseñas con encriptado AES <br>"+badge(["React","React-Bootstrap","Crypto-JS","Animate.css","Firebase","React-Icon"])},
-        {titulo: "ControlPass", url: "https://github.com/Marco90v/ControlPass", img: "controlPass_lista.webp", detalle: "App de <strong>Escritorio</strong> para gestion de contraseña <br>"+badge(["React","Electron","Bootstrap","Animate.css","SQLite","CSS"])},
-        {titulo: "AppEncuesta", url: "https://marco90v.github.io/appEncuestas/", img: "appEncuesta_Dashboard.webp", detalle: "App para realizar encuesta y ver grafica de resultados <br>"+badge(["Angular","Bootstrap","Chart.js","Angular Material"])},
-        {titulo: "Chat Web", url: "https://github.com/Marco90v/chat_Nodejs_Angularjs", img: "chatNodejs-cap-2.webp", detalle: "Chat web como ejercicio de programación <br>"+badge(["NodeJs","AngularJS","Socket.io","CSS"])},
-        {titulo: "Snake", url: "https://marco90v.github.io/culebra/", img: "Snake.webp", detalle: "Juego Snake como ejercicio de programación <br>"+badge(["JavaScript","HTML","CSS"])},
-        {titulo: "Sistema de Pago", url: "https://github.com/Marco90v/Cuotas_controlDePago", img: "sistPago-cap-2.webp", detalle: "App de control de pago por emdio de cuotas fijas <br>"+badge(["AngularJS","BootStrap","CSS","PHP"])},
-        {titulo: "Scraping en Python", url: "https://github.com/Marco90v/Scraping_CNE/blob/main/Scraping_de_cne.ipynb", img: "ScrapingPython.webp", detalle: "App de practica. Extracción en limpio datos CNE <br>"+badge(["Python"])}
+        {titulo: "Orbit360", url: "http://orbit360.pe", img: "orbit360_3.webp", detalle: "Web de servicios y soluciones de fotografía y video en 360° para empresas y eventos. <br>"+badge(["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"]) },
+        {titulo: "PassWallet", url: "https://github.com/Marco90v/passwallet", img: "passWallet_new_data.webp", detalle: "App web para gestión de contraseñas y datos de registros online con encriptado AES. <br>"+badge(["React","React-Bootstrap","Crypto-JS","Animate.css","Firebase","React-Icon"])},
+        {titulo: "ControlPass", url: "https://github.com/Marco90v/ControlPass", img: "controlPass_lista.webp", detalle: "App de <strong>Escritorio</strong> para gestion de contraseñas y datos de registros online con encriptado <u>CESAR</u>. <br>"+badge(["React","Electron","Bootstrap","Animate.css","SQLite","CSS"])},
+        {titulo: "AppEncuesta", url: "https://marco90v.github.io/appEncuestas/", img: "appEncuesta_Dashboard.webp", detalle: "App web de práctica donde se pueden realizar encuestas con distintos tipos de respuestas y visualizar gráficos de los resultados. <br>"+badge(["Angular","Bootstrap","Chart.js","Angular Material"])},
+        {titulo: "Chat Web", url: "https://github.com/Marco90v/chat_Nodejs_Angularjs", img: "chatNodejs-cap-2.webp", detalle: "Chat web de ejercicio de programación usando sockets y entorno simple. <br>"+badge(["NodeJs","AngularJS","Socket.io","CSS"])},
+        {titulo: "Snake", url: "https://marco90v.github.io/culebra/", img: "Snake.webp", detalle: "Juego Snake de ejercicio de programación usando canvas de HTML y JavaScript, para jugar se usan las teclas de fecha del teclado. <br>"+badge(["JavaScript","HTML","CSS"])},
+        {titulo: "Sistema de Pago", url: "https://github.com/Marco90v/Cuotas_controlDePago", img: "sistPago-cap-2.webp", detalle: "App web de práctica de control de pagos por medio de cuotas fijas, contiene registro de usuario y acumulación de cuotas, los datos se almacenan en MySQL. <br>"+badge(["AngularJS","BootStrap","CSS","PHP"])},
+        {titulo: "Scraping en Python", url: "https://github.com/Marco90v/Scraping_CNE/blob/main/Scraping_de_cne.ipynb", img: "ScrapingPython.webp", detalle: "App de práctica de scraping web para extracción en limpio datos del. CNE <br>"+badge(["Python"])}
     ];
+
     const cIndicadores = document.querySelector("#carouselIndicators");
     const cProyectos = document.querySelector("#carouselProyectos");
     datosProyectos.forEach( (e,i) => {                
