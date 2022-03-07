@@ -397,6 +397,9 @@ ul > li,
 .carousel-dark .carousel-caption{
     background-color: #ffffff70;
 }
+.imgNavegador{
+    object-fit: scale-down;
+}
 @media (max-width: 1599.98px) {
     .terminal, .fileManager, .browser, .VSC{
         width: 80em;

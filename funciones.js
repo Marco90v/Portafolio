@@ -137,7 +137,9 @@ window.onload = () => {
 
     const datosProyectos = [
         {titulo: "Portafolio", url: "https://marco90v.github.io/Portafolio", img: "Portafolio.png", detalle: "Mi Primer portafolio profesional. Tome un diseño de ventanas de ordenador ya es fácil de ver, no esta sobre cargado y representa el área donde me desenvuelvo. <br>"+badge(["HTML","JavaScript","CSS","fullpage.js","Bootstrap"]) },
-        {titulo: "Orbit360", url: "http://orbit360.pe", img: "orbit360_3.webp", detalle: "Web de servicios y soluciones de fotografía y video en 360° para empresas y eventos. <br>"+badge(["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"]) },
+        {titulo: "Orbit360", url: "http://www.orbit360.pe/", img: "orbit360_3.webp", detalle: "Web de servicios y soluciones de fotografía y video en 360° para empresas y eventos. <br>"+badge(["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"]) },
+        {titulo: "Book", url: "https://marco90v.github.io/books/", img: "app_libros.webp", detalle: "Ejercicio de programación, Lista títulos de libros y al hacer clic en él, muestra el autor y descripción del contenido. <br>"+badge(["Angular", "javascript", "CSS"]) },
+        {titulo: "PassWalletMovil", url: "https://github.com/Marco90v/passWalletMovil", img: "PassWalletMovil_Loging.webp", detalle: "App Móvil estilo password manager, para almacenar contraseñas personales usando protocolos de encriptación y almacenamiento en la nube para acceso remoto. <br>"+badge(["Expo","React Native","JavaScript","Firebase","Native Base","Re-Animated","Crypto-Js"]) },
         {titulo: "PassWallet", url: "https://github.com/Marco90v/passwallet", img: "passWallet_new_data.webp", detalle: "App web para gestión de contraseñas y datos de registros online con encriptado AES. <br>"+badge(["React","React-Bootstrap","Crypto-JS","Animate.css","Firebase","React-Icon"])},
         {titulo: "ControlPass", url: "https://github.com/Marco90v/ControlPass", img: "controlPass_lista.webp", detalle: "App de <strong>Escritorio</strong> para gestion de contraseñas y datos de registros online con encriptado <u>CESAR</u>. <br>"+badge(["React","Electron","Bootstrap","Animate.css","SQLite","CSS"])},
         {titulo: "AppEncuesta", url: "https://marco90v.github.io/appEncuestas/", img: "appEncuesta_Dashboard.webp", detalle: "App web de práctica donde se pueden realizar encuestas con distintos tipos de respuestas y visualizar gráficos de los resultados. <br>"+badge(["Angular","Bootstrap","Chart.js","Angular Material"])},
@@ -180,7 +182,7 @@ window.onload = () => {
                                     </div>
                                 </div>
                                 <div class="bodyBrowser">
-                                    <a href="${e.url}" target="_blank" rel="noopener"><img src="assets/${e.img}" loading="lazy" alt="${e.img}" width="100%" height="100%" ></a>
+                                    <a href="${e.url}" target="_blank" rel="noopener"><img class="imgNavegador" src="assets/${e.img}" loading="lazy" alt="${e.img}" width="100%" height="100%" ></a>
                                 </div>
                             </div>
                             <div class="carousel-caption d-none d-md-block">
