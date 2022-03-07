@@ -35,7 +35,8 @@ body{
 }
 .foto{
     display: block;
-    width: 100%;
+    width: 75%;
+    margin: auto;
     border-radius: 50%;
     background-color: white;
 }
