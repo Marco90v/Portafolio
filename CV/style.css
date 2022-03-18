@@ -10,8 +10,10 @@ body{
 }
 .hoja{
     background-color: white;
-    width: 21.59cm;
-    height: 27.94cm;
+    /* width: 22cm;
+    height: 28cm; */
+    width: 8.5in;
+    height: 11in;
     margin: auto;
 }
 .left{

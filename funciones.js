@@ -86,7 +86,7 @@ window.onload = () => {
             if (elementInView(el, 1)) {
             displayScrollElement(el);
             } else if (elementOutofView(el)) {
-                ;hideScrollElement(el)
+                hideScrollElement(el);
             }
         });
     };
@@ -119,7 +119,7 @@ window.onload = () => {
         {url:"https://www.mysql.com/", img:"assets/mysql-2.svg", name:"MySQL"},
         {url:"https://firebase.google.com/?hl=es-419", img:"assets/firebase-1.svg", name:"Firebase"},
         {url:"https://www.microsoft.com/es-es/windows", img:"assets/microsoft-windows-22.svg", name:"Windows"},
-        {url:"https://www.linux.org/", img:"assets/linux-tux-2.svg", name:"Linux"},
+        {url:"https://www.linux.org/", img:"assets/linux-tux-2.svg", name:"Linux"}
     ];
 
     const lSkills = document.querySelector("#listSkills");
