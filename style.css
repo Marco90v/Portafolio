@@ -62,6 +62,7 @@ main > div.ventanas {
     grid-template-columns: 50% 50%;
     align-items: center;
     padding: 1rem;
+    border-bottom: 0.2rem solid rgb(0 3 56);
 }
 .acercade > .barra > p {
     font-size: 1.5rem;
@@ -74,11 +75,18 @@ main > div.ventanas {
     height: 266px;
 }
 .acercade > .avatar > picture > img {
-    margin: auto;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     top: 2rem;
+    transform: translateX(-50%);
+    background-color: rgb(128 128 128 / 50%);
+    border-radius: 0.5rem;
+}
+.acercade > .nameData {
+    margin: 0 1rem;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    background-color: rgb(128 128 128 / 50%);
 }
 .acercade > .nameData > h1 {
     text-align: center;
@@ -290,4 +298,16 @@ main > div.ventanas {
 }
 .menu.active {
     background-color: black;
+}
+main > div.title {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+main > div.title > h1 {
+    font-size: 2rem;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
