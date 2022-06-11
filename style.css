@@ -163,6 +163,7 @@ main > div.ventanas {
     grid-template-columns: auto;
     text-align: center;
     justify-items: center;
+    grid-row-gap: 0.5rem;
 }
 .proyectos {
     overflow: hidden;
@@ -218,7 +219,8 @@ main > div.ventanas {
 .contentProyects {
     height: calc(100% - 4rem);
 }
-.contentProyects > picture > img {
+.contentProyects > picture > img,
+.contentRetos > picture > img {
     width: 100%;
 }
 .retos {
