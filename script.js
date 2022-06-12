@@ -1,4 +1,5 @@
 // variables
+let size = null;
 const screen = {
     imgMovil : window.matchMedia( '(max-width: 425px)' ),
     imgTablet: window.matchMedia( '(max-width: 768px) and (min-width: 425px)' ),
@@ -8,25 +9,19 @@ const screen = {
 const dataSkills = [];
 const dataProyects = [];
 const dataRetos = [];
-let size = null;
-
+const menu = document.querySelector("div.menu > ul");
+const menuHabilidades = document.querySelector("#menuHabilidades");
 const skills = document.querySelector(".habilidades > ul#skills");
-
 const URLproyects = document.querySelector(".barNavigation > h1");
 const contentProyects = document.querySelector(".contentProyects");
 const leftProyects = document.querySelector(".proyectos > div#left");
 const rightProyects = document.querySelector(".proyectos > div#right");
-
 const URLretos = document.querySelector(".barGallery > h1");
 const contentRetos = document.querySelector(".contentRetos");
 const leftRetos = document.querySelector(".retos > div#left");
 const rightRetos = document.querySelector(".retos > div#right");
 
-
-
 // Muestra datos de perfil
-const menu = document.querySelector("div.menu > ul");
-
 function handlerClickMenu({target}) {
     const ventanas = document.querySelectorAll("main > div.ventanas > div");
     menu.parentElement.classList.remove("active");
@@ -35,18 +30,12 @@ function handlerClickMenu({target}) {
         vetana.classList.contains("ventanaOpen") && menu.parentElement.classList.add("active");
     });
 }
-menu.addEventListener("click",handlerClickMenu)
-
 
 // Realiza cambio vista de habilidades
-const menuHabilidades = document.querySelector("#menuHabilidades");
-
 function changeViewSkills(){
     const listGrid = document.querySelector(".habilidades > ul#skills");
     listGrid.classList.toggle("grid");
 }
-menuHabilidades.addEventListener("click", changeViewSkills);
-
 
 // list Skills
 function cargaSkill (){
@@ -80,15 +69,13 @@ function cargaItems (content,data,URL){
                     </div>
                 </div>
             `;
-    
             content.insertAdjacentHTML("beforeend",item);
         });
         URL.innerHTML = `<a href="${data[0].demo}" target="_blank">${data[0].demo}</a>`;
     }
 }
 
-
-
+// slide previo en Proyectos
 function prevProyects() {
     const a = document.querySelector(".contentProyects > div");
     totalProyects = dataProyects.length-1;
@@ -104,6 +91,7 @@ function prevProyects() {
 
 }
 
+// slide siguiente en Proyectos
 function nextProyects() {
     const a = document.querySelector(".contentProyects > div");
     totalProyects = dataProyects.length-1;
@@ -119,12 +107,8 @@ function nextProyects() {
     if (dataProyects.length > 0) URLproyects.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
 }
 
-leftProyects.addEventListener("click",prevProyects);
-rightProyects.addEventListener("click",nextProyects);
 
-
-
-
+// slide previo en Retos
 function prevRetos() {
     const a = document.querySelector(".contentRetos > div");
     totalRetos = dataRetos.length-1;
@@ -140,6 +124,7 @@ function prevRetos() {
 
 }
 
+// slide siguiente en Retos
 function nextRetos() {
     const a = document.querySelector(".contentRetos > div");
     totalRetos = dataRetos.length-1;
@@ -155,13 +140,29 @@ function nextRetos() {
     if (dataRetos.length > 0) URLretos.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
 }
 
-leftRetos.addEventListener("click",prevRetos);
-rightRetos.addEventListener("click",nextRetos);
+// recupera los skills
+async function listSkills(){
+    const rest = await fetch("./dataSkills.json",{cache:"no-cache"}).then(e=>e.json());
+    dataSkills.push(...rest);
+    cargaSkill();
+}
 
+// recupera los proyectos
+async function listProyects(){
+    const rest = await fetch("./dataProyects.json",{cache:"no-cache"}).then(e=>e.json());
+    dataProyects.push(...rest);
+    cargaItems(contentProyects,dataProyects,URLproyects);
+}
 
+// recupera los retos
+async function listRetos(){
+    const rest = await fetch("./dataRetos.json",{cache:"no-cache"}).then(e=>e.json());
+    dataRetos.push(...rest);
+    cargaItems(contentRetos,dataRetos,URLretos);
+}
 
+// handler Media Querys
 function mqHandler() {
-    // let size = null;
     for (let [scr, mq] of Object.entries(screen)) {
       if (!mq || mq.matches) size = scr;
     }
@@ -173,27 +174,16 @@ for (let [scr, mq] of Object.entries(screen)) {
     if (mq) mq.addEventListener('change', mqHandler);
 }
 
-async function listSkills(){
-    const rest = await fetch("./dataSkills.json",{cache:"no-cache"}).then(e=>e.json());
-    dataSkills.push(...rest)
-    // cargaItems(contentRetos,dataRetos,URLretos);
-    cargaSkill();
-}
+menu.addEventListener("click",handlerClickMenu);
+menuHabilidades.addEventListener("click", changeViewSkills);
 
-async function listProyects(){
-    const rest = await fetch("./dataProyects.json",{cache:"no-cache"}).then(e=>e.json());
-    dataProyects.push(...rest);
-    cargaItems(contentProyects,dataProyects,URLproyects);
-}
+leftProyects.addEventListener("click",prevProyects);
+rightProyects.addEventListener("click",nextProyects);
 
-async function listRetos(){
-    const rest = await fetch("./dataRetos.json",{cache:"no-cache"}).then(e=>e.json());
-    dataRetos.push(...rest)
-    cargaItems(contentRetos,dataRetos,URLretos);
-}
+leftRetos.addEventListener("click",prevRetos);
+rightRetos.addEventListener("click",nextRetos);
 
 mqHandler();
-
 listSkills();
 listProyects();
 listRetos();
