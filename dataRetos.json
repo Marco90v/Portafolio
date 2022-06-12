@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Expenses Chart Component Main",
+        "badge": ["HTML","CSS","JavaScript","Fetch"],
+        "imgMovil": "./assets/proyects/prueba_imgMovil.png",
+        "imgTablet": "./assets/proyects/prueba_imgTablet.png",
+        "imgLaptop": "./assets/proyects/prueba_imgLaptop.png",
+        "demo": "1https://marco90v.github.io/expenses-chart-component-main/",
+        "repo": "https://github.com/Marco90v/expenses-chart-component-main"
+    },
+    {
+        "title": "Expenses Chart Component Main",
+        "badge": ["HTML","CSS","JavaScript","Fetch"],
+        "imgMovil": "./assets/proyects/prueba_imgMovil.png",
+        "imgTablet": "./assets/proyects/prueba_imgTablet.png",
+        "imgLaptop": "./assets/proyects/prueba_imgLaptop.png",
+        "demo": "2https://marco90v.github.io/expenses-chart-component-main/",
+        "repo": "https://github.com/Marco90v/expenses-chart-component-main"
+    },
+    {
+        "title": "Expenses Chart Component Main",
+        "badge": ["HTML","CSS","JavaScript","Fetch"],
+        "imgMovil": "./assets/proyects/prueba_imgMovil.png",
+        "imgTablet": "./assets/proyects/prueba_imgTablet.png",
+        "imgLaptop": "./assets/proyects/prueba_imgLaptop.png",
+        "demo": "3https://marco90v.github.io/expenses-chart-component-main/",
+        "repo": "https://github.com/Marco90v/expenses-chart-component-main"
+    },
+    {
+        "title": "Expenses Chart Component Main",
+        "badge": ["HTML","CSS","JavaScript","Fetch"],
+        "imgMovil": "./assets/proyects/prueba_imgMovil.png",
+        "imgTablet": "./assets/proyects/prueba_imgTablet.png",
+        "imgLaptop": "./assets/proyects/prueba_imgLaptop.png",
+        "demo": "4https://marco90v.github.io/expenses-chart-component-main/",
+        "repo": "https://github.com/Marco90v/expenses-chart-component-main"
+    }
+]

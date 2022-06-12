@@ -1,0 +1,15 @@
+[
+    { "url":"https://developer.mozilla.org/es/docs/Web/JavaScript", "icon":"javascript_32px.png", "name":"JavaScript" },
+    { "url":"https://es.reactjs.org/", "icon":"react_32px.png", "name":"React" },
+    { "url":"https://angular.io/", "icon":"angular_32px.png", "name":"Angular" },
+    { "url":"https://nodejs.org/es/", "icon":"nodejs_32px.png", "name":"NodeJs" },
+    { "url":"https://developer.mozilla.org/es/docs/Web/CSS", "icon":"css_32px.png", "name":"CSS" },
+    { "url":"https://getbootstrap.com/", "icon":"bootstrap_32px.png", "name":"Bootstrap" },
+    { "url":"https://www.php.net/manual/es/intro-whatis.php", "icon":"php_32px.png", "name":"PHP" },
+    { "url":"https://www.python.org/", "icon":"python_32px.png", "name":"Python" },
+    { "url":"https://www.electronjs.org/", "icon":"electronjs_32px.png", "name":"Electron JS" },
+    { "url":"https://www.mysql.com/", "icon":"mysql_32px.png", "name":"MySQL" },
+    { "url":"https://firebase.google.com/?hl=es-419", "icon":"firebase_32px.png", "name":"Firebase" },
+    { "url":"https://www.microsoft.com/es-es/windows", "icon":"Windows_32px.png", "name":"Windows" },
+    { "url":"https://www.linux.org/", "icon":"OS_Linux_32px.png", "name":"Linux" }
+]
