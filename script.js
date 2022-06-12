@@ -165,7 +165,8 @@ function mqHandler() {
     for (let [scr, mq] of Object.entries(screen)) {
       if (!mq || mq.matches) size = scr;
     }
-    cargaItems(contentProyects,dataProyects);
+    cargaItems(contentProyects,dataProyects,URLproyects);
+    cargaItems(contentRetos,dataRetos,URLretos);
 }
 
 for (let [scr, mq] of Object.entries(screen)) {
