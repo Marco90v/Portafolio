@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="left">
-            <span>9:00</span>
+            <span>0:00</span>
         </div>
         <div class="right">
             <picture>
@@ -34,8 +34,14 @@
                 <div class="barra">
                     <p>Marco90v@Developer:~$</p>
                     <picture>
-                        <img src="./assets/icons-movil/avatar.png" alt="avatar">
+                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/close_32px.png">
+                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/avatar.png">
+                        <img src="./assets/icons-movil/avatar.png" alt="avatar|close">
                     </picture>
+                </div>
+                <div class="comando">
+                    <p>Marco90v@Developer:~$</p>
+                    <span>neofetch &nbsp;<span id="typed"></span></span>
                 </div>
                 <div class="avatar">
                     <picture>
@@ -54,6 +60,9 @@
                     <picture>
                         <img id="menuHabilidades" src="./assets/icons-movil/menu_archive.png" alt="menuArchive">
                     </picture>
+                    <picture>
+                        <img id="menuHabilidades" src="./assets/icons-desktop/close_32px.png" alt="close">
+                    </picture>
                 </div>
                 <div class="almacenamientoInterno">
                     <picture>
@@ -67,45 +76,94 @@
                 <ul id="skills" class="list"></ul>
             </div>
             <div class="proyectos">
+                <div class="barra">
+                    <p>Proyectos</p>
+                    <picture>
+                        <img id="menuHabilidades" src="./assets/icons-desktop/close_32px.png" alt="close">
+                    </picture>
+                </div>
                 <div class="barNavigation">
                     <h1></h1>
                 </div>
-                <div class="contentProyects"></div>
-                <div id="left">
-                    <picture>
-                        <img src="./assets/icons-movil/arrow-left_32px.png" alt="Arrow Left" >
-                    </picture>
-                </div>
-                <div id="right">
-                    <picture>
-                        <img src="./assets/icons-movil/arrow-right_32px.png" alt="Arrow Right" >
-                    </picture>
+                <div class="contentProyects">
+                    <div class="content"></div>
+                    <div id="left">
+                        <picture>
+                            <img src="./assets/icons-movil/arrow-left_32px.png" alt="Arrow Left" >
+                        </picture>
+                    </div>
+                    <div id="right">
+                        <picture>
+                            <img src="./assets/icons-movil/arrow-right_32px.png" alt="Arrow Right" >
+                        </picture>
+                    </div>
                 </div>
             </div>
             <div class="retos">
                 <div class="barGallery">
-                    <h1>URL</h1>
-                </div>
-                <div class="contentRetos"></div>
-                <div id="left">
+                    <p>Retos</p>
+                    <h1></h1>
                     <picture>
-                        <img src="./assets/icons-movil/arrow-left_32px.png" alt="Arrow Left" >
+                        <img id="menuHabilidades" src="./assets/icons-desktop/close_32px.png" alt="close">
                     </picture>
                 </div>
-                <div id="right">
-                    <picture>
-                        <img src="./assets/icons-movil/arrow-right_32px.png" alt="Arrow Right" >
-                    </picture>
+                <div class="panel">
+                    <img id="menuHabilidades" src="./assets/icons-desktop/explorer_32px.png" alt="Explorador">
+                    <img id="menuHabilidades" src="./assets/icons-desktop/search_32px.png" alt="Search">
+                    <img id="menuHabilidades" src="./assets/icons-desktop/git_32px.png" alt="Git">
+                </div>
+                <div class="contentRetos">
+                    <div class="content"></div>
+                    <div id="left">
+                        <picture>
+                            <img src="./assets/icons-movil/arrow-left_32px.png" alt="Arrow Left" >
+                        </picture>
+                    </div>
+                    <div id="right">
+                        <picture>
+                            <img src="./assets/icons-movil/arrow-right_32px.png" alt="Arrow Right" >
+                        </picture>
+                    </div>
                 </div>
             </div>
             <div class="contacto">
                 <div class="barTelegram">
                     <h1>Contacto</h1>
+                    <picture>
+                        <img id="menuHabilidades" src="./assets/icons-desktop/close_32px.png" alt="close">
+                    </picture>
                 </div>
                 <ul>
-                    <li><a href="https://github.com/Marco90v" target="_blank"><img src="./assets/icons-movil/github_32px.png" alt="Github"><h2>Github</h2></a></li>
-                    <li><a href="https://www.linkedin.com/in/marco90v/" target="_blank"><img src="./assets/icons-movil/linkedin_32px.png" alt="Linkedin"><h2>Linkedin</h2></a></li>
-                    <li><a href="https://marco90v.github.io/Portafolio/CV/" target="_blank"><img src="./assets/icons-movil/cv_32px.png" alt="Curriculum"><h2>Curriculum</h2></a></li>
+                    <li>
+                        <a href="https://github.com/Marco90v" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/github_128px.png">
+                                <source media="(max-width: 1023px)" srcset="./assets/icons-movil/github_32px.png">
+                                <img src="./assets/icons-movil/github_32px.png" alt="Github">
+                            </picture>
+                            <h2>Github</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/marco90v/" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/linkedin_128px.png">
+                                <source media="(max-width: 1023px)" srcset="./assets/icons-movil/linkedin_32px.png">
+                                <img src="./assets/icons-movil/linkedin_32px.png" alt="Linkedin">
+                            </picture>
+                            <h2>Linkedin</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://marco90v.github.io/Portafolio/CV/" target="_blank">
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/cv_128px.png">
+                                <source media="(max-width: 1023px)" srcset="./assets/icons-movil/cv_32px.png">
+                                <img src="./assets/icons-movil/cv_32px.png" alt="Curriculum">
+                            </picture>
+                            <h2>Curriculum</h2>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -114,6 +172,7 @@
             <ul>
                 <li class="menuAcercade" >
                     <picture>
+                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/terminal_32px.png">
                         <source media="(max-width: 1023px)" srcset="./assets/icons-movil/tool.png">
                         <img id="acercade" src="./assets/icons-movil/tool.png" alt="configuracion" >
                     </picture>
@@ -132,12 +191,14 @@
                 </li> <!-- Navegador - Proyecto -->
                 <li class="menuRetos">
                     <picture>
+                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/vsc_32px.png">
                         <source media="(max-width: 1023px)" srcset="./assets/icons-movil/gallery.png">
                         <img id="retos" src="./assets/icons-movil/gallery.png" alt="galeria" >
                     </picture>
                 </li> <!-- Galeria|VSC - Retos -->
                 <li class="menuContacto">
                     <picture>
+                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/thunderbird_32px.png">
                         <source media="(max-width: 1023px)" srcset="./assets/icons-movil/telegram.png">
                         <img id="contacto" src="./assets/icons-movil/telegram.png" alt="telegram" >
                     </picture>
