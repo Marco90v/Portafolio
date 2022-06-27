@@ -17,17 +17,11 @@ const menuHabilidades = document.querySelector("#menuHabilidades");
 const skills = document.querySelector(".habilidades > ul#skills");
 
 const URLproyects = document.querySelector(".barNavigation > h1");
-// const contentProyects = document.querySelector(".contentProyects");
 const contentProyects = document.querySelector(".contentProyects > .content");
-// const leftProyects = document.querySelector(".proyectos > div#left");
-// const rightProyects = document.querySelector(".proyectos > div#right");
 const leftProyects = document.querySelector(".proyectos > .contentProyects > div#left");
 const rightProyects = document.querySelector(".proyectos > .contentProyects > div#right");
 
 const URLretos = document.querySelector(".barGallery > h1");
-// const contentRetos = document.querySelector(".contentRetos");
-// const leftRetos = document.querySelector(".retos > div#left");
-// const rightRetos = document.querySelector(".retos > div#right");
 const contentRetos = document.querySelector(".contentRetos > .content");
 const leftRetos = document.querySelector(".retos > .contentRetos > div#left");
 const rightRetos = document.querySelector(".retos > .contentRetos > div#right");
@@ -36,23 +30,17 @@ const closeAcercade = document.querySelector(".ventanas > .acercade > .barra > p
 const closeHabilidades = document.querySelector(".ventanas > .habilidades > .barra > picture:last-child > img");
 const closeProyectos = document.querySelector(".ventanas > .proyectos > .barra > picture > img");
 const closeRetos = document.querySelector(".ventanas > .retos > .barGallery > picture > img");
-// const closeAcercade = document.querySelector(".ventanas > .acercade > .barra > picture > img");
 
 // Muestra datos de perfil
 function handlerClickMenu({target}) {
-    // console.log(menu.children[0]);
     
     if (target.id === "acercade" || target.id === "habilidades" || target.id === "proyectos" || target.id === "retos" || target.id === "contacto"){
         const listImg = menu.querySelectorAll("img");
-        // console.log(listImg["img#acercade"])
-        // console.log(listImg)
         const ventanas = document.querySelectorAll("main > div.ventanas > div");
         menu.parentElement.classList.remove("active");
         ventanas.forEach(vetana=>{
             vetana.className === target.id ? vetana.classList.toggle("ventanaOpen") : vetana.classList.remove("ventanaOpen");
             vetana.classList.contains("ventanaOpen") && menu.parentElement.classList.add("active");
-            // vetana.className === target.id ? menu : vetana.classList.remove("ventanaOpen");
-            // listImg
         });
         listImg.forEach(img=>{
             img.id === target.id ? img.classList.toggle("active") : img.classList.remove("active");
@@ -105,7 +93,6 @@ function cargaItems (content,data,URL){
 
 // slide previo en Proyectos
 function prevProyects() {
-    // const a = document.querySelector(".contentProyects > div");
     const a = document.querySelector(".contentProyects > .content > div");
     totalProyects = dataProyects.length-1;
     let ml = a.style.marginLeft || 0;
@@ -122,7 +109,6 @@ function prevProyects() {
 
 // slide siguiente en Proyectos
 function nextProyects() {
-    // const a = document.querySelector(".contentProyects > div");
     const a = document.querySelector(".contentProyects > .content > div");
     totalProyects = dataProyects.length-1;
     let ml = a.style.marginLeft || 0;
@@ -186,7 +172,6 @@ async function listSkills(){
 
 // recupera los proyectos
 async function listProyects(){
-    // console.log(contentProyects)
     const rest = await fetch("./dataProyects.json",{cache:"no-cache"}).then(e=>e.json());
     dataProyects.push(...rest);
     cargaItems(contentProyects,dataProyects,URLproyects);

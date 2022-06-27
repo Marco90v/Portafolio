@@ -35,7 +35,6 @@ main > div.ventanas {
     height: calc(100vh - 1.5rem);
     background-image: url("./assets/fondos/wallpapersden.com_alien-minimalism_1920x1080.jpg");
     background-position: center;
-    /* background-size: 110rem; */
     background-size: cover;
     transition: background-image 0.5s ease-in-out;
 }
@@ -64,7 +63,6 @@ main > div.title > h1 {
     height: 0;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    /* transition: top 0.5s ease-in-out; */
     transform: scale(0);
 }
 .acercade {
@@ -244,7 +242,6 @@ main > div.title > h1 {
 .contentProyects > .content,
 .contentRetos > .content {
     display: flex;
-    /* height: calc(100% - 4rem); */
     height: 100%;
     overflow: hidden;
 }
@@ -394,7 +391,6 @@ main > div.title > h1 {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* transform: translate(0,0); */
     }
     .acercade, .habilidades, .proyectos, .retos, .contacto{
         position: initial;
@@ -448,8 +444,6 @@ main > div.title > h1 {
         display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: 2.5rem 3rem auto;
-        /* background-color: hsl(237deg 100% 4% / 90%); */
-        /* left: 37%; */
     }
     .acercade > .barra {
         background-color: black;
@@ -579,15 +573,7 @@ main > div.title > h1 {
     }
     .habilidades > .barra > picture:last-child{
         display: initial;
-    }
-    /* .habilidades > .barra > picture > img{
-        transition: box-shadow 0.25s ease-in-out;
-        border-radius: 50%;
-    } */
-    /* .habilidades > .barra > picture > img:hover{
-        box-shadow: 0 0 10px 1px rgb(255 255 255 / 50%);
-    } */
-    
+    }    
     .proyectos > .barra {
         display: initial;
         display: grid;
@@ -639,7 +625,6 @@ main > div.title > h1 {
         right: 0;
     }
     .contentRetos{
-        /* height: calc(100% - 3rem); */
         height: 100%;
     }
     .contacto{
@@ -694,20 +679,15 @@ main > div.title > h1 {
     .title:hover::after {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
-        /* width: 21.4rem; */
     }
     .ventanaOpen {
         width: 60rem;
         height: 40rem;
         border-radius: 0.5rem;
-        /* left: 50%; */
-        /* top: 50%; */
-        /* transform: translate(-50%, -50%); */
     }
     .proyectos.ventanaOpen,
     .retos.ventanaOpen{
         width: 940px;
-        /* height: 750px; */
         height: 80%;
     }
 }
@@ -716,7 +696,6 @@ main > div.title > h1 {
     .proyectos.ventanaOpen,
     .retos.ventanaOpen{
         width: 1150px;
-        /* height: 750px; */
         height: 80%;
     }
 }
