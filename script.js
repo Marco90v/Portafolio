@@ -44,7 +44,7 @@ function handlerClickMenu({target}) {
         });
         listImg.forEach(img=>{
             img.id === target.id ? img.classList.toggle("active") : img.classList.remove("active");
-        })
+        });
     }
 }
 
@@ -58,9 +58,10 @@ function changeViewSkills(){
 function cargaSkill (){
     if(dataSkills.length > 0){
         skills.innerHTML='';
+        const px = size === "imgLaptop" || size === "imgDesktop" ? "128px" : "32px";
         dataSkills.forEach((ele,index)=>{
             const item = `
-                <li id="${index}"><a href="${ele.url}" target="_blank"><img src="./assets/icons/${ele.icon}" alt="${ele.name}"><h3>${ele.name}</h3></a></li>
+                <li id="${index}"><a href="${ele.url}" target="_blank"><img src="./assets/icons/${ele.icon}_${px}.png" alt="${ele.name}"><h3>${ele.name}</h3></a></li>
             `;
     
             skills.insertAdjacentHTML("beforeend",item);
@@ -156,11 +157,16 @@ function nextRetos() {
     if (dataRetos.length > 0) URLretos.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
 }
 
+//Boton para cerrar ventana
 function handlerCloseVentana(){
     const ventanas = document.querySelectorAll("main > div.ventanas > div");
+    const listImg = menu.querySelectorAll("img");
     ventanas.forEach(vetana=>{
         vetana.classList.contains("ventanaOpen") && vetana.classList.remove("ventanaOpen");
     });
+    listImg.forEach(img=>{
+        img.classList.contains("active") && img.classList.remove("active");
+    })
 }
 
 // recupera los skills
@@ -191,6 +197,7 @@ function mqHandler() {
     }
     cargaItems(contentProyects,dataProyects,URLproyects);
     cargaItems(contentRetos,dataRetos,URLretos);
+    cargaSkill();
     if (size === "imgLaptop" || size === "imgDesktop"){
         closeAcercade.addEventListener("click",handlerCloseVentana);
         closeHabilidades.addEventListener("click",handlerCloseVentana);
@@ -212,7 +219,14 @@ function setHora(){
     const currentTime = new Date();
     const h = currentTime.getHours();
     const mm = currentTime.getMinutes();
-    hora.innerHTML = h+":"+mm;
+    hora.innerHTML = h + ":" + (mm < 10 ? "0" : "") + mm;
+}
+
+function sistemaCargado(){
+    document.querySelector("div.overlay").style.display = "none";
+    // document.querySelector("div.acercade").classList.add("ventanaOpen");
+    // document.querySelector("div.menu").classList.add("active");
+    // document.querySelector("li.menuAcercade > picture > img").classList.add("active");
 }
 
 menu.addEventListener("click",handlerClickMenu);
@@ -230,3 +244,8 @@ listProyects();
 listRetos();
 setHora();
 setInterval(setHora,10000);
+
+
+window.onload = () => {
+    sistemaCargado();
+}

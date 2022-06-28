@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="overlay">
+        <p>Cargando Sistema</p>
+    </div>
     <header>
         <div class="left">
             <span>0:00</span>
@@ -28,6 +31,48 @@
         </div>
     </header>
     <main>
+
+        <div class="menu">
+            <ul>
+                <li class="menuAcercade" >
+                    <picture>
+                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/terminal_32px.png">
+                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/tool.png">
+                        <img id="acercade" src="./assets/icons-movil/tool.png" alt="configuracion" >
+                    </picture>
+                </li> <!-- Configuracion|Terminal - Sobre Mi -->
+                <li class="menuHabilidades">
+                    <picture>
+                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/folder.png">
+                        <img id="habilidades" src="./assets/icons-movil/folder.png" alt="folder" >
+                    </picture>
+                </li> <!-- Carpeta - Habilidades -->
+                <li class="menuProyectos">
+                    <picture>
+                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/firefox.png">
+                        <img id="proyectos" src="./assets/icons-movil/firefox.png" alt="proyecto" >
+                    </picture>
+                </li> <!-- Navegador - Proyecto -->
+                <li class="menuRetos">
+                    <picture>
+                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/vsc_32px.png">
+                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/gallery.png">
+                        <img id="retos" src="./assets/icons-movil/gallery.png" alt="galeria" >
+                    </picture>
+                </li> <!-- Galeria|VSC - Retos -->
+                <li class="menuContacto">
+                    <picture>
+                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/thunderbird_32px.png">
+                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/telegram.png">
+                        <img id="contacto" src="./assets/icons-movil/telegram.png" alt="telegram" >
+                    </picture>
+                </li> <!-- Telegram|Thunderbird - Contacto -->
+            </ul>
+        </div>
+
+        <div class="title">
+            <h1>Portafolio</h1>
+        </div>
 
         <div class="ventanas">
             <div class="acercade">
@@ -168,48 +213,8 @@
             </div>
         </div>
 
-        <div class="menu">
-            <ul>
-                <li class="menuAcercade" >
-                    <picture>
-                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/terminal_32px.png">
-                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/tool.png">
-                        <img id="acercade" src="./assets/icons-movil/tool.png" alt="configuracion" >
-                    </picture>
-                </li> <!-- Configuracion|Terminal - Sobre Mi -->
-                <li class="menuHabilidades">
-                    <picture>
-                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/folder.png">
-                        <img id="habilidades" src="./assets/icons-movil/folder.png" alt="folder" >
-                    </picture>
-                </li> <!-- Carpeta - Habilidades -->
-                <li class="menuProyectos">
-                    <picture>
-                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/firefox.png">
-                        <img id="proyectos" src="./assets/icons-movil/firefox.png" alt="proyecto" >
-                    </picture>
-                </li> <!-- Navegador - Proyecto -->
-                <li class="menuRetos">
-                    <picture>
-                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/vsc_32px.png">
-                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/gallery.png">
-                        <img id="retos" src="./assets/icons-movil/gallery.png" alt="galeria" >
-                    </picture>
-                </li> <!-- Galeria|VSC - Retos -->
-                <li class="menuContacto">
-                    <picture>
-                        <source media="(min-width: 1024px)" srcset="./assets/icons-desktop/thunderbird_32px.png">
-                        <source media="(max-width: 1023px)" srcset="./assets/icons-movil/telegram.png">
-                        <img id="contacto" src="./assets/icons-movil/telegram.png" alt="telegram" >
-                    </picture>
-                </li> <!-- Telegram|Thunderbird - Contacto -->
-            </ul>
-        </div>
-        <div class="title">
-            <h1>Portafolio</h1>
-        </div>
     </main>
-
+    
     <script src="./script.js"></script>
 </body>
 </html>
