@@ -4,6 +4,7 @@
     border: 0;
     box-sizing: border-box;
     font-size: 14px;
+    font-family: "Hack Nerd Font Mono";
 }
 body {
     background-color: white;
@@ -31,7 +32,6 @@ div.overlay > p {
     border-radius: 0.5rem;
     text-align: center;
     animation: cargando 3s infinite linear;
-
 }
 @keyframes cargando {
     0%{
@@ -52,7 +52,8 @@ header {
     grid-template-columns: 50% 50%;
     align-items: center;
     height: 1.5rem;
-    background-color: rgb(128 128 128 / 50%);;
+    /* background-color: rgb(128 128 128 / 50%); */
+    background-color: black;
     color: white;
 }
 header > div.left > span {
@@ -197,6 +198,7 @@ main > div.title > h1 {
     transform: translateY(-50%);
     text-decoration: none;
     color: white;
+    width: 100%;
 }
 .habilidades > ul.grid {
     display: flex;
@@ -302,7 +304,8 @@ main > div.title > h1 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgb(0 0 0 / 50%);
+    /* background-color: rgb(0 0 0 / 50%); */
+    background-color: rgb(0 0 64 / 50%);
 }
 .contentProyects > .content > div > .info > a,
 .contentRetos > .content > div > .info > a {
@@ -419,9 +422,6 @@ main > div.title > h1 {
 }
 
 @media (min-width:1024px) {
-    header {
-        background-color: black;
-    }
     header > .right > picture:nth-child(2){
         display: none;
     }
@@ -511,7 +511,6 @@ main > div.title > h1 {
         height: auto;
         margin-left: 1rem;
         margin-top: 2rem;
-        /* animation: ver 3.2s linear; */
     }
     .acercade.ventanaOpen > .avatar {
         animation: ver 3.2s linear;
@@ -520,7 +519,6 @@ main > div.title > h1 {
         overflow: hidden;
         padding: 0;
         margin-top: 2rem;
-        /* animation: ver 3.2s linear; */
     }
     .acercade.ventanaOpen > .nameData {
         animation: ver 3.2s linear;
@@ -536,7 +534,7 @@ main > div.title > h1 {
         margin-top: 0.8rem;
         margin-left: 1rem;
         padding: 0.25rem 0.5rem;
-        width: 12rem;
+        width: 13rem;
         height: 1.5rem;
         border-radius: 0.25rem 0 0 0.25rem;
         background-color: green;
@@ -556,7 +554,7 @@ main > div.title > h1 {
     }
     .acercade > .comando > span {
         position: absolute;
-        left: 14rem;
+        left: 15rem;
         transform: translateY(-50%);
     }
     .acercade > .nameData {
@@ -572,7 +570,6 @@ main > div.title > h1 {
         height: 50%;
         background-color: #000112;
         border-left: 2px solid rgb(255, 255, 255);
-        /* animation: escribir 1.2s 1s backwards steps(8), titilar 1s 0s steps(1) infinite; */
         top: 0;
         bottom: 0;
     }
@@ -739,7 +736,7 @@ main > div.title > h1 {
         border-radius: 0.5rem;
         opacity: 0;
         overflow: hidden;
-        width: 21.4rem;
+        width: 30.2rem;
         transition: all 0.5s ease-in-out;
     }
     .title:hover::after {
