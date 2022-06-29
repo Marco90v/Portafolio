@@ -124,7 +124,6 @@ function nextProyects() {
     if (dataProyects.length > 0) URLproyects.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
 }
 
-
 // slide previo en Retos
 function prevRetos() {
     const a = document.querySelector(".contentRetos > .content > div");
@@ -211,10 +210,7 @@ function mqHandler() {
     }
 }
 
-for (let [scr, mq] of Object.entries(screen)) {
-    if (mq) mq.addEventListener('change', mqHandler);
-}
-
+// agregar y actualizar la hora
 function setHora(){
     const currentTime = new Date();
     const h = currentTime.getHours();
@@ -222,11 +218,16 @@ function setHora(){
     hora.innerHTML = h + ":" + (mm < 10 ? "0" : "") + mm;
 }
 
+// elimina overlay
 function sistemaCargado(){
     document.querySelector("div.overlay").style.display = "none";
-    // document.querySelector("div.acercade").classList.add("ventanaOpen");
-    // document.querySelector("div.menu").classList.add("active");
-    // document.querySelector("li.menuAcercade > picture > img").classList.add("active");
+    document.querySelector("div.acercade").classList.add("ventanaOpen");
+    document.querySelector("div.menu").classList.add("active");
+    document.querySelector("li.menuAcercade > picture > img").classList.add("active");
+}
+
+for (let [scr, mq] of Object.entries(screen)) {
+    if (mq) mq.addEventListener('change', mqHandler);
 }
 
 menu.addEventListener("click",handlerClickMenu);
@@ -245,7 +246,7 @@ listRetos();
 setHora();
 setInterval(setHora,10000);
 
-
+// se ejecuta al cargar body
 window.onload = () => {
     sistemaCargado();
 }
