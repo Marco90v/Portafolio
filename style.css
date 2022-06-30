@@ -292,10 +292,14 @@ main > div.title > h1 {
 .contentProyects > .content > div,
 .contentRetos > .content > div {
     min-width: 100%;
-    background-position: center;
+    /* background-position: center; */
+    background-position: initial;
     background-size: cover;
     position: relative;
     transition: all 0.5s ease-in-out;
+}
+.contentRetos > .content > div {
+    background-position: center;
 }
 .contentProyects > .content > div > .info,
 .contentRetos > .content > div > .info {
@@ -345,6 +349,8 @@ main > div.title > h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
 }
 .retos > .barGallery > p,
 .retos > .barGallery > picture,
@@ -641,7 +647,8 @@ main > div.title > h1 {
         display: grid;
         grid-template-columns: 97% auto;
         align-items: center;
-        padding: 1rem;
+        /* padding: 1rem; */
+        padding: 0.5rem 1rem;
         background-color: black;
     }
     .proyectos > .barra > p {
@@ -651,7 +658,8 @@ main > div.title > h1 {
         margin: auto;
     }
     .contentProyects{
-        height: calc(100% - 7.8rem);
+        /* height: calc(100% - 7.8rem); */
+        height: calc(100% - 6.7rem);
     }
     .retos {
         left: 56.5%;
@@ -752,13 +760,13 @@ main > div.title > h1 {
     }
     .ventanaOpen {
         width: 60rem;
-        height: 40rem;
+        height: 35rem;
         border-radius: 0.5rem;
     }
     .proyectos.ventanaOpen,
     .retos.ventanaOpen{
         width: 940px;
-        height: 80%;
+        height: 85%;
     }
 }
 
@@ -766,7 +774,7 @@ main > div.title > h1 {
     .proyectos.ventanaOpen,
     .retos.ventanaOpen{
         width: 1150px;
-        height: 80%;
+        height: 85%;
     }
 }
 
@@ -775,5 +783,9 @@ main > div.title > h1 {
     .retos.ventanaOpen{
         width: 1300px;
         height: 750px;
+    }
+    .contentProyects > .content > div,
+    .contentRetos > .content > div {
+        background-position: center;
     }
 }
