@@ -176,7 +176,8 @@ main > div.title > h1 {
 }
 .habilidades > ul {
     list-style: none;
-    margin: 1rem;
+    /* margin: 1rem; */
+    margin: 1rem 0 1rem 1rem;
 }
 .habilidades > ul > li {
     position: relative;
@@ -427,6 +428,17 @@ main > div.title > h1 {
 }
 
 @media (min-width:1024px) {
+    *::-webkit-scrollbar{
+        width: 0.7rem;
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: green;
+        border-radius: 5px;
+    }
+    *::-webkit-scrollbar-track {
+        background-color: grey;
+        border-radius: 5px;
+    }
     header > .right > picture:nth-child(2){
         display: none;
     }
@@ -438,6 +450,7 @@ main > div.title > h1 {
     }
     .acercade, .habilidades, .proyectos, .retos, .contacto{
         position: initial;
+        box-shadow: 0 0 10px 1px rgb(0 0 0);
     }
     main > div.ventanas {
         background-image: url("./assets/fondos/escritorio.webp");
@@ -483,13 +496,6 @@ main > div.title > h1 {
     .menu > ul > li:hover::before{
         opacity: 1;
         transform: translate(-30% , -120%);
-    }
-    .acercade,
-    .habilidades,
-    .proyectos,
-    .retos,
-    .contacto{
-        box-shadow: 0 0 10px 1px rgb(0 0 0);
     }
     .acercade {
         display: grid;
@@ -611,19 +617,9 @@ main > div.title > h1 {
             height: 200px;
         }
     }
-    .habilidades::-webkit-scrollbar{
-        width: 0.7rem;
-    }
-    .habilidades::-webkit-scrollbar-thumb {
-        background-color: green;
-        border-radius: 5px;
-    }
-    .habilidades::-webkit-scrollbar-track {
-        background-color: grey;
-        border-radius: 5px;
-    }
     .habilidades {
         left: 43%;
+        overflow: hidden;
     }
     .habilidades > .barra{
         grid-template-columns: 90% auto auto;
@@ -631,6 +627,11 @@ main > div.title > h1 {
     }
     .habilidades > .barra > picture:last-child{
         display: initial;
+    }
+    .habilidades > ul#skills{
+        overflow: auto;
+        /* height: 100%; */
+        height: calc(100% - 7.5rem);
     }
     .habilidades > ul > li {
         height: 5rem;
