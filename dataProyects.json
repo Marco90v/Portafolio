@@ -10,14 +10,24 @@
         "repo": "https://github.com/Marco90v/Portafolio"
     },
     {
-        "title": "Orbit360 - Web Empresarial de contenido multimedia inmersivo en 360 grador",
-        "badge": ["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"],
-        "imgMovil": "./assets/proyects/orbit360/orbit360.webp",
-        "imgTablet": "./assets/proyects/orbit360/orbit360.webp",
-        "imgLaptop": "./assets/proyects/orbit360/orbit360.webp",
-        "imgDesktop": "./assets/proyects/orbit360/orbit360.webp",
-        "demo": "http://www.orbit360.pe/",
-        "repo": "http://www.orbit360.pe/"
+        "title": "Fake Store API",
+        "badge": ["React","React Router","Fetch","HTML","CSS","Grid","Flexbox","Movil First","Keyframe"],
+        "imgMovil": "./assets/proyects/fakestoreapi/movil.webp",
+        "imgTablet": "./assets/proyects/fakestoreapi/tablet.webp",
+        "imgLaptop": "./assets/proyects/fakestoreapi/laptop.webp",
+        "imgDesktop": "./assets/proyects/fakestoreapi/desktop.webp",
+        "demo": "https://marco90v.github.io/fakestoreapi/",
+        "repo": "https://github.com/Marco90v/fakestoreapi"
+    },
+    {
+        "title": "Anime API",
+        "badge": ["React","React Router","Fetch","HTML","CSS","Grid","Flexbox"],
+        "imgMovil": "./assets/proyects/animeApiRest/movil.webp",
+        "imgTablet": "./assets/proyects/animeApiRest/tablet.webp",
+        "imgLaptop": "./assets/proyects/animeApiRest/laptop.webp",
+        "imgDesktop": "./assets/proyects/animeApiRest/desktop.webp",
+        "demo": "https://marco90v.github.io/animeApiRest/",
+        "repo": "https://github.com/Marco90v/animeApiRest"
     },
     {
         "title": "Hacker News - Consumo de API de noticias de índole de tecnológico",
@@ -28,6 +38,16 @@
         "imgDesktop": "./assets/proyects/hackerNews/desktop.webp",
         "demo": "https://hacker-news-reign-marco.netlify.app/",
         "repo": "https://github.com/Marco90v/hacker-news"
+    },
+    {
+        "title": "Orbit360 - Web Empresarial de contenido multimedia inmersivo en 360 grador",
+        "badge": ["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"],
+        "imgMovil": "./assets/proyects/orbit360/orbit360.webp",
+        "imgTablet": "./assets/proyects/orbit360/orbit360.webp",
+        "imgLaptop": "./assets/proyects/orbit360/orbit360.webp",
+        "imgDesktop": "./assets/proyects/orbit360/orbit360.webp",
+        "demo": "http://www.orbit360.pe/",
+        "repo": "http://www.orbit360.pe/"
     },
     {
         "title": "PassWallet - Password Manager, Almacenado de contraseñas con encriptado EAS",
