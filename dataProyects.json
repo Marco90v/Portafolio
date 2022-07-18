@@ -1,0 +1,102 @@
+[
+    {
+        "title": "Portafolio",
+        "badge": ["HTML","CSS","JavaScript","Fetch","Grid","Flex"],
+        "imgMovil": "./assets/proyects/portafolio/movil.webp",
+        "imgTablet": "./assets/proyects/portafolio/tablet.webp",
+        "imgLaptop": "./assets/proyects/portafolio/laptop.webp",
+        "imgDesktop": "./assets/proyects/portafolio/desktop.webp",
+        "demo": "https://marco90v.github.io/Portafolio/",
+        "repo": "https://github.com/Marco90v/Portafolio"
+    },
+    {
+        "title": "Fake Store API",
+        "badge": ["React","React Router","Fetch","HTML","CSS","Grid","Flexbox","Movil First","Keyframe"],
+        "imgMovil": "./assets/proyects/fakestoreapi/movil.webp",
+        "imgTablet": "./assets/proyects/fakestoreapi/tablet.webp",
+        "imgLaptop": "./assets/proyects/fakestoreapi/laptop.webp",
+        "imgDesktop": "./assets/proyects/fakestoreapi/desktop.webp",
+        "demo": "https://marco90v.github.io/fakestoreapi/",
+        "repo": "https://github.com/Marco90v/fakestoreapi"
+    },
+    {
+        "title": "Anime API",
+        "badge": ["React","React Router","Fetch","HTML","CSS","Grid","Flexbox"],
+        "imgMovil": "./assets/proyects/animeApiRest/movil.webp",
+        "imgTablet": "./assets/proyects/animeApiRest/tablet.webp",
+        "imgLaptop": "./assets/proyects/animeApiRest/laptop.webp",
+        "imgDesktop": "./assets/proyects/animeApiRest/desktop.webp",
+        "demo": "https://marco90v.github.io/animeApiRest/",
+        "repo": "https://github.com/Marco90v/animeApiRest"
+    },
+    {
+        "title": "Hacker News - Consumo de API de noticias de índole de tecnológico",
+        "badge": ["React","TypeScript","CSS","HTML","Api/Rest","Git","Netlify"],
+        "imgMovil": "./assets/proyects/hackerNews/movil.webp",
+        "imgTablet": "./assets/proyects/hackerNews/tablet.webp",
+        "imgLaptop": "./assets/proyects/hackerNews/laptop.webp",
+        "imgDesktop": "./assets/proyects/hackerNews/desktop.webp",
+        "demo": "https://hacker-news-reign-marco.netlify.app/",
+        "repo": "https://github.com/Marco90v/hacker-news"
+    },
+    {
+        "title": "Orbit360 - Web Empresarial de contenido multimedia inmersivo en 360 grador",
+        "badge": ["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"],
+        "imgMovil": "./assets/proyects/orbit360/movil.webp",
+        "imgTablet": "./assets/proyects/orbit360/tablet.webp",
+        "imgLaptop": "./assets/proyects/orbit360/laptop.webp",
+        "imgDesktop": "./assets/proyects/orbit360/desktop.webp",
+        "demo": "http://www.orbit360.pe/",
+        "repo": "http://www.orbit360.pe/"
+    },
+    {
+        "title": "PassWallet - Password Manager, Almacenado de contraseñas con encriptado EAS",
+        "badge": ["React","React-Bootstrap","Crypto-JS","Animate.css","Firebase","React-Icon"],
+        "imgMovil": "./assets/proyects/passWallet/movil.webp",
+        "imgTablet": "./assets/proyects/passWallet/tablet.webp",
+        "imgLaptop": "./assets/proyects/passWallet/laptop.webp",
+        "imgDesktop": "./assets/proyects/passWallet/desktop.webp",
+        "demo": "https://marco90v.github.io/passwallet/",
+        "repo": "https://github.com/Marco90v/passwallet"
+    },
+    {
+        "title": "AppEncuesta - Aplicación de encuesta con distintos tipos de tipos de puntuación",
+        "badge": ["Angular","Bootstrap","Chart.js","Angular Material"],
+        "imgMovil": "./assets/proyects/appEncuesta/movil.webp",
+        "imgTablet": "./assets/proyects/appEncuesta/tablet.webp",
+        "imgLaptop": "./assets/proyects/appEncuesta/laptop.webp",
+        "imgDesktop": "./assets/proyects/appEncuesta/desktop.webp",
+        "demo": "https://marco90v.github.io/appEncuestas/",
+        "repo": "https://github.com/Marco90v/appEncuestas"
+    },
+    {
+        "title": "Book - Consumo de API",
+        "badge": ["Angular", "javascript", "CSS"],
+        "imgMovil": "./assets/proyects/book/movil.webp",
+        "imgTablet": "./assets/proyects/book/tablet.webp",
+        "imgLaptop": "./assets/proyects/book/laptop.webp",
+        "imgDesktop": "./assets/proyects/book/desktop.webp",
+        "demo": "https://marco90v.github.io/books/",
+        "repo": "https://github.com/Marco90v/books"
+    },
+    {
+        "title": "Chat web de ejercicio de programación usando sockets",
+        "badge": ["NodeJs","AngularJS","Socket.io","CSS"],
+        "imgMovil": "./assets/proyects/chat/chatNodeAngularJS.webp",
+        "imgTablet": "./assets/proyects/chat/chatNodeAngularJS.webp",
+        "imgLaptop": "./assets/proyects/chat/chatNodeAngularJS.webp",
+        "imgDesktop": "./assets/proyects/chat/chatNodeAngularJS.webp",
+        "demo": "https://github.com/Marco90v/chat_Nodejs_Angularjs",
+        "repo": "https://github.com/Marco90v/chat_Nodejs_Angularjs"
+    },
+    {
+        "title": "Juego de Snake",
+        "badge": ["JavaScript","HTML","CSS"],
+        "imgMovil": "./assets/proyects/snake/tablet.webp",
+        "imgTablet": "./assets/proyects/snake/tablet.webp",
+        "imgLaptop": "./assets/proyects/snake/laptop.webp",
+        "imgDesktop": "./assets/proyects/snake/desktop.webp",
+        "demo": "https://marco90v.github.io/culebra/",
+        "repo": "https://github.com/Marco90v/culebra"
+    }
+]
