@@ -222,9 +222,9 @@ function mqHandler() {
     for (let [scr, mq] of Object.entries(screen)) {
       if (!mq || mq.matches) size = scr;
     }
-    // cargaItems(contentProyects,dataProyects,URLproyects);
-    // cargaItems(contentRetos,dataRetos,URLretos);
-    // cargaSkill();
+    cargaItems(contentProyects,dataProyects,URLproyects);
+    cargaItems(contentRetos,dataRetos,URLretos);
+    cargaSkill();
     if (size === "imgLaptop" || size === "imgDesktop"){
         close.forEach(element => {
             element.addEventListener("click",handlerCloseVentana);
@@ -269,10 +269,11 @@ rightProyects.addEventListener("click",()=>next(".contentProyects"));
 leftRetos.addEventListener("click",()=>prev(".contentRetos"));
 rightRetos.addEventListener("click",()=>next(".contentRetos"));
 
-mqHandler();
-
 // se ejecuta al cargar body
 window.onload = () => {
+    for (let [scr, mq] of Object.entries(screen)) {
+        if (!mq || mq.matches) size = scr;
+    }
     sistemaCargado();
     listSkills();
     listProyects();
