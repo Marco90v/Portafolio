@@ -26,10 +26,7 @@ const contentRetos = document.querySelector(".contentRetos > .content");
 const leftRetos = document.querySelector(".retos > .contentRetos > div#left");
 const rightRetos = document.querySelector(".retos > .contentRetos > div#right");
 
-const closeAcercade = document.querySelector(".ventanas > .acercade > .barra > picture > img");
-const closeHabilidades = document.querySelector(".ventanas > .habilidades > .barra > picture:last-child > img");
-const closeProyectos = document.querySelector(".ventanas > .proyectos > .barra > picture > img");
-const closeRetos = document.querySelector(".ventanas > .retos > .barGallery > picture > img");
+const close = document.querySelectorAll(".close");
 
 // Muestra datos de perfil
 function handlerClickMenu({target}) {
@@ -69,6 +66,15 @@ function cargaSkill (){
     }
 }
 
+// carga los Badge, no se usa el metodo map porque crea comas entre cada elemento
+function cargaBadge(badges) {
+    let badge = "";
+    badges.forEach((ele,index)=>{
+        badge += `<span id="${index}">${ele}</span>`;
+    });
+    return badge;
+}
+
 // lista Proyectos y Retos
 function cargaItems (content,data,URL){
     if(data.length > 0){
@@ -77,12 +83,13 @@ function cargaItems (content,data,URL){
             const item = `
                 <div id="${index}" style="background-image: url(${ele[size]})">
                     <div class="info">
-                        <a href="${ele.repo}" target="_blank">
                         <h2>${ele.title}</h2>
                         <div class="badge">
-                            ${ele.badge.map(b=>`<span>${b}</span>`)}
+                            ${cargaBadge(ele.badge)}
                         </div>
-                        </a>
+                    </div>
+                    <div class="repo">
+                        <p> <a href="${ele.repo}" target="_blank">Repositorio</a></p>
                     </div>
                 </div>
             `;
@@ -198,15 +205,13 @@ function mqHandler() {
     cargaItems(contentRetos,dataRetos,URLretos);
     cargaSkill();
     if (size === "imgLaptop" || size === "imgDesktop"){
-        closeAcercade.addEventListener("click",handlerCloseVentana);
-        closeHabilidades.addEventListener("click",handlerCloseVentana);
-        closeProyectos.addEventListener("click",handlerCloseVentana);
-        closeRetos.addEventListener("click",handlerCloseVentana);
+        close.forEach(element => {
+            element.addEventListener("click",handlerCloseVentana);
+        });
     }else{
-        closeAcercade.removeEventListener("click",handlerCloseVentana);
-        closeHabilidades.addEventListener("click",handlerCloseVentana);
-        closeProyectos.addEventListener("click",handlerCloseVentana);
-        closeRetos.addEventListener("click",handlerCloseVentana);
+        close.forEach(element => {
+            element.removeEventListener("click",handlerCloseVentana);
+        });
     }
 }
 

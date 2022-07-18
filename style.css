@@ -89,13 +89,15 @@ main > div.title > h1 {
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
+.close {
+    display: none;
+}
 .acercade,
 .habilidades,
 .proyectos,
 .retos,
 .contacto {
     color: white;
-    /* box-shadow: 0 0 10px 1px rgb(0 0 0); */
     position: absolute;
     top: calc(100% - 2.4rem);
     width: 0;
@@ -111,7 +113,7 @@ main > div.title > h1 {
 }
 .acercade > .barra {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto 2rem;
     align-items: center;
     padding: 1rem;
     border-bottom: 0.2rem solid rgb(0 3 56);
@@ -154,13 +156,14 @@ main > div.title > h1 {
 }
 .habilidades {
     overflow: auto;
-    background-color: rgb(71 71 76);
+    background-color: #202020;
     left: 30%;
 }
 .habilidades > .barra {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding: 0.5rem 1rem;
 }
 .habilidades > .barra > picture {
     text-align: end;
@@ -170,13 +173,19 @@ main > div.title > h1 {
 }
 .habilidades > .almacenamientoInterno {
     display: grid;
-    grid-template-columns: 2rem 2rem auto;
+    grid-template-columns: 2rem 2rem auto 2rem;
     align-items: center;
-    margin-left: 1rem;
+    margin: 0.5rem 1rem 0 1rem;
+}
+.habilidades > .almacenamientoInterno #menuHabilidades{
+    border-radius: 100px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.habilidades > .almacenamientoInterno #menuHabilidades:hover{
+    box-shadow: 0 0 10px 1px white;
 }
 .habilidades > ul {
     list-style: none;
-    /* margin: 1rem; */
     margin: 1rem 0 1rem 1rem;
 }
 .habilidades > ul > li {
@@ -184,7 +193,7 @@ main > div.title > h1 {
     border-bottom: 1px solid rgb(128 128 128 / 50%);
     height: 3.5rem;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
 }
 .habilidades > ul > li:hover {
     background-color: rgb(255 255 255 / 10%);
@@ -212,7 +221,7 @@ main > div.title > h1 {
     border: 1px solid rgb(128 128 128);
     border-radius: 0.5rem;
     background-color: rgb(128 128 128 / 50%);
-    transition: all 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
 }
 .habilidades > ul.grid > li:hover {
     background-color: rgb(128 128 128);
@@ -272,6 +281,10 @@ main > div.title > h1 {
     text-decoration: none;
     color: white;
 }
+.barNavigation > h1 > a:hover,
+.barGallery > h1 > a:hover {
+    text-shadow: 0 1px 10px white;
+}
 .contentProyects{
     position: relative;
     height: calc(100% - 4rem);
@@ -293,7 +306,6 @@ main > div.title > h1 {
 .contentProyects > .content > div,
 .contentRetos > .content > div {
     min-width: 100%;
-    /* background-position: center; */
     background-position: initial;
     background-size: cover;
     position: relative;
@@ -308,32 +320,63 @@ main > div.title > h1 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* background-color: rgb(0 0 0 / 50%); */
     background-color: rgb(0 0 64 / 50%);
 }
-.contentProyects > .content > div > .info > a,
-.contentRetos > .content > div > .info > a {
-    text-decoration: none;
-    color: white;
-}
-.contentProyects > .content > div > .info > a > h2,
-.contentRetos > .content > div > .info > a > h2 {
+.contentProyects > .content > div > .info > h2,
+.contentRetos > .content > div > .info > h2 {
     padding: 1rem;
     font-size: 1.2rem;
 }
-.contentProyects > .content > div > .info > a > .badge,
-.contentRetos > .content > div > .info > a > .badge {
+.contentProyects > .content > div > .info > .badge,
+.contentRetos > .content > div > .info > .badge {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 0.1rem;  
     padding: 1rem;
     justify-content: center;
 }
-.contentProyects > .content > div > .info > a > .badge > span,
-.contentRetos > .content > div > .info > a > .badge > span {
-    background-color: green;
+.contentProyects > .content > div > .info > .badge > span,
+.contentRetos > .content > div > .info > .badge > span {
+    background-color: #007442;
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
+    margin: 0 0.25rem;
+}
+.contentProyects > .content > div > .repo,
+.contentRetos > .content > div > .repo  {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.5s ease-in-out;
+}
+.contentProyects > .content > div > .repo > p,
+.contentRetos > .content > div > .repo > p {
+    background-color: #007442;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+.contentProyects > .content > div > .repo > p:hover,
+.contentRetos > .content > div > .repo > p:hover {
+    box-shadow: 0 0 10px 1px #007442;
+}
+.contentProyects > .content:hover > div > .repo,
+.contentRetos > .content:hover > div > .repo  {
+    bottom: 20%;
+}
+.contentProyects > .content:hover > div > .repo > p,
+.contentRetos > .content:hover > div > .repo > p {
+    opacity: 1;
+}
+.contentProyects > .content > div > .repo > p > a,
+.contentRetos > .content > div > .repo > p > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 .retos {
     overflow: auto;
@@ -366,7 +409,7 @@ main > div.title > h1 {
 .contacto > .barTelegram {
     position: relative;
     height: 3rem;
-    background-color: rgb(0 0 62 / 50%);
+    background-color: black;
     border-bottom: 1px solid rgb(0 0 0 / 50%);
 }
 .contacto > .barTelegram > h1 {
@@ -388,7 +431,6 @@ main > div.title > h1 {
     color: white;
 }
 .contacto > ul > li:first-child > a > picture > img {
-    background-color: white;
     border-radius: 100%;
 }
 .contacto > .barTelegram > picture {
@@ -432,12 +474,32 @@ main > div.title > h1 {
         width: 0.7rem;
     }
     *::-webkit-scrollbar-thumb {
-        background-color: green;
+        background-color: white;
         border-radius: 5px;
     }
     *::-webkit-scrollbar-track {
         background-color: grey;
         border-radius: 5px;
+    }
+    .close {
+        display: initial;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: red;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: box-shadow 0.2s ease-in-out;
+    }
+    .retos > .barGallery > .close {
+        display: initial;
+        position: absolute;
+        top: 50%;
+        transform: translate(-1rem, -50%);
+        right: 0;
+    }
+    .close:hover {
+        box-shadow: inset 0 0 10px 1px rgb(255 255 255 / 50%),
+        0 0 10px 1px rgb(255 255 255 / 50%);;
     }
     header > .right > picture:nth-child(2){
         display: none;
@@ -509,21 +571,8 @@ main > div.title > h1 {
         border-bottom:0;
         grid-column: 1/3;
     }
-    .acercade > .barra > picture > img, 
-    .habilidades > .barra > picture > img,
-    .proyectos > .barra > picture > img,
-    .retos > .barGallery > picture > img,
-    .contacto > .barTelegram > picture > img {
-        width: 1.5rem;
-        border-radius: 50%;
-        transition: all 0.2s ease-in-out;
-    }
-    .acercade > .barra > picture > img:hover,
-    .habilidades > .barra > picture > img:hover,
-    .proyectos > .barra > picture > img:hover,
-    .retos > .barGallery > picture > img:hover,
-    .contacto > .barTelegram > picture > img:hover {
-        box-shadow: 0 0 10px 1px white;
+    .acercade > .barra > picture {
+        display: none;
     }
     .acercade > .avatar {
         overflow: hidden;
@@ -622,15 +671,20 @@ main > div.title > h1 {
         overflow: hidden;
     }
     .habilidades > .barra{
-        grid-template-columns: 90% auto auto;
+        grid-template-columns: auto 2rem;
         background-color: black;
     }
     .habilidades > .barra > picture:last-child{
         display: initial;
     }
+    .habilidades > .almacenamientoInterno {
+        grid-template-columns: 2rem 2rem auto 2rem;
+    }
+    .habilidades > .almacenamientoInterno #menuHabilidades {
+        width: 2rem;
+    }
     .habilidades > ul#skills{
         overflow: auto;
-        /* height: 100%; */
         height: calc(100% - 7.5rem);
     }
     .habilidades > ul > li {
@@ -648,7 +702,6 @@ main > div.title > h1 {
         display: grid;
         grid-template-columns: 97% auto;
         align-items: center;
-        /* padding: 1rem; */
         padding: 0.5rem 1rem;
         background-color: black;
     }
@@ -659,7 +712,6 @@ main > div.title > h1 {
         margin: auto;
     }
     .contentProyects{
-        /* height: calc(100% - 7.8rem); */
         height: calc(100% - 6.7rem);
     }
     .retos {
