@@ -1,4 +1,6 @@
-// variables
+/**
+ * Definición de variable y constantes
+ */
 let size = null;
 const screen = {
     imgMovil : window.matchMedia( '(max-width: 425px)' ),
@@ -28,7 +30,10 @@ const rightRetos = document.querySelector(".retos > .contentRetos > div#right");
 
 const close = document.querySelectorAll(".close");
 
-// Muestra datos de perfil
+/**
+ * Esta función cambia las clases de las ventanas, se elimina o se agrega la clase ventanaOpen igual con la clase active para el menu y la imagen clicada
+ * @param {Objeto} target 
+ */
 function handlerClickMenu({target}) {
     
     if (target.id === "acercade" || target.id === "habilidades" || target.id === "proyectos" || target.id === "retos" || target.id === "contacto"){
@@ -45,20 +50,29 @@ function handlerClickMenu({target}) {
     }
 }
 
-// Realiza cambio vista de habilidades
+/**
+ * Esta función cambia la forma en que se ven las habilidades, en forma de lista o de grilla.
+ */
 function changeViewSkills(){
     const listGrid = document.querySelector(".habilidades > ul#skills");
     listGrid.classList.toggle("grid");
 }
 
-// list Skills
+/**
+ * Esta funcion carga las Habilidades y recupera el tipo de dispositivo para saber que tamaño de imagenes mostrar.
+ */
 function cargaSkill (){
     if(dataSkills.length > 0){
         skills.innerHTML='';
         const px = size === "imgLaptop" || size === "imgDesktop" ? "128px" : "32px";
         dataSkills.forEach((ele,index)=>{
             const item = `
-                <li id="${index}"><a href="${ele.url}" target="_blank"><img src="./assets/icons/${ele.icon}_${px}.png" alt="${ele.name}"><h3>${ele.name}</h3></a></li>
+                <li id="${index}">
+                    <a href="${ele.url}" target="_blank">
+                        <img src="./assets/icons/${ele.icon}_${px}.png" alt="${ele.name}">
+                        <h3>${ele.name}</h3>
+                    </a>
+                </li>
             `;
     
             skills.insertAdjacentHTML("beforeend",item);
@@ -66,7 +80,11 @@ function cargaSkill (){
     }
 }
 
-// carga los Badge, no se usa el metodo map porque crea comas entre cada elemento
+/**
+ * Carga los badge, no se usa el metodo map porque crea comas entre cada elemento.
+ * @param {Array} badges
+ * @return {String}
+ */
 function cargaBadge(badges) {
     let badge = "";
     badges.forEach((ele,index)=>{
@@ -75,7 +93,12 @@ function cargaBadge(badges) {
     return badge;
 }
 
-// lista Proyectos y Retos
+/**
+ * Carga los elemento de recuperados en Data y se carga en el elemento Content y URL. esto es para Proyectos y Retos
+ * @param {Element} content 
+ * @param {Array} data 
+ * @param {Element} URL 
+ */
 function cargaItems (content,data,URL){
     if(data.length > 0){
         content.innerHTML='';
@@ -99,71 +122,61 @@ function cargaItems (content,data,URL){
     }
 }
 
-// slide previo en Proyectos
-function prevProyects() {
-    const a = document.querySelector(".contentProyects > .content > div");
-    totalProyects = dataProyects.length-1;
-    let ml = a.style.marginLeft || 0;
+
+/**
+ * Previo de slide segun el contenedor que se pase como parametro
+ * @param {String} content 
+ */
+function prev(content) {
+    const element = document.querySelector(content + " > .content > div");
+    const total = content === ".contentProyects" ? dataProyects.length-1 : dataRetos.length-1;
+    let ml = element.style.marginLeft || 0;
     if( ml === 0 || Number(ml.split("%")[0]) === 0 ){
-        ml = -((totalProyects+1) * 100);
+        ml = -((total+1) * 100);
     }else{
         ml = Number(ml.split("%")[0]);
     }
-    a.style.marginLeft = (ml+100)+"%";
-    const newURL = dataProyects[-(ml+100)/100].demo;
-    if (dataProyects.length > 0) URLproyects.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
-
-}
-
-// slide siguiente en Proyectos
-function nextProyects() {
-    const a = document.querySelector(".contentProyects > .content > div");
-    totalProyects = dataProyects.length-1;
-    let ml = a.style.marginLeft || 0;
-    if(ml !== 0){
-        ml = Number(ml.split("%")[0]);
-        if( -(ml/100) === totalProyects){
-            ml = 100;
-        }
-    }
-    a.style.marginLeft = (ml-100)+"%";
-    const newURL = dataProyects[-(ml-100)/100].demo;
-    if (dataProyects.length > 0) URLproyects.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
-}
-
-// slide previo en Retos
-function prevRetos() {
-    const a = document.querySelector(".contentRetos > .content > div");
-    totalRetos = dataRetos.length-1;
-    let ml = a.style.marginLeft || 0;
-    if( ml === 0 || Number(ml.split("%")[0]) === 0 ){
-        ml = -((totalRetos+1) * 100);
+    element.style.marginLeft = (ml+100)+"%";
+    if(content === ".contentProyects") {
+        const URL = document.querySelector(".barNavigation > h1");
+        const newURL = dataProyects[-(ml+100)/100].demo;
+        if (dataProyects.length > 0) URL.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
     }else{
-        ml = Number(ml.split("%")[0]);
+        const URL = document.querySelector(".barGallery > h1");
+        const newURL = dataRetos[-(ml+100)/100].demo;
+        if (dataRetos.length > 0) URL.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
     }
-    a.style.marginLeft = (ml+100)+"%";
-    const newURL = dataRetos[-(ml+100)/100].demo;
-    if (dataRetos.length > 0) URLretos.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
-
 }
 
-// slide siguiente en Retos
-function nextRetos() {
-    const a = document.querySelector(".contentRetos > .content > div");
-    totalRetos = dataRetos.length-1;
-    let ml = a.style.marginLeft || 0;
+/**
+ * Siguiente de slide segun el contenedor que se pase como parametro
+ * @param {String} content 
+ */
+function next(content) {
+    const element = document.querySelector(content + " > .content > div");
+    const total = content === ".contentProyects" ? dataProyects.length-1 : dataRetos.length-1;
+    let ml = element.style.marginLeft || 0;
     if(ml !== 0){
         ml = Number(ml.split("%")[0]);
-        if( -(ml/100) === totalRetos){
+        if( -(ml/100) === total){
             ml = 100;
         }
     }
-    a.style.marginLeft = (ml-100)+"%";
-    const newURL = dataRetos[-(ml-100)/100].demo;
-    if (dataRetos.length > 0) URLretos.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
+    element.style.marginLeft = (ml-100)+"%";
+    if(content === ".contentProyects") {
+        const URL = document.querySelector(".barNavigation > h1");
+        const newURL = dataProyects[-(ml-100)/100].demo;
+        if (dataProyects.length > 0) URL.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
+    }else{
+        const URL = document.querySelector(".barGallery > h1");
+        const newURL = dataRetos[-(ml-100)/100].demo;
+        if (dataRetos.length > 0) URL.innerHTML = `<a href="${newURL}" target="_blank">${newURL}</a>`;
+    }
 }
 
-//Boton para cerrar ventana
+/**
+ * Función para cerrar ventanas abiertas
+ */
 function handlerCloseVentana(){
     const ventanas = document.querySelectorAll("main > div.ventanas > div");
     const listImg = menu.querySelectorAll("img");
@@ -175,35 +188,43 @@ function handlerCloseVentana(){
     })
 }
 
-// recupera los skills
+/**
+ * Función de que recupera un JSON con las habilidades
+ */
 async function listSkills(){
     const rest = await fetch("./dataSkills.json",{cache:"no-cache"}).then(e=>e.json());
     dataSkills.push(...rest);
     cargaSkill();
 }
 
-// recupera los proyectos
+/**
+ * Función de que recupera un JSON con los Proyectos
+ */
 async function listProyects(){
     const rest = await fetch("./dataProyects.json",{cache:"no-cache"}).then(e=>e.json());
     dataProyects.push(...rest);
     cargaItems(contentProyects,dataProyects,URLproyects);
 }
 
-// recupera los retos
+/**
+ * Función de que recupera un JSON con los Retos
+ */
 async function listRetos(){
     const rest = await fetch("./dataRetos.json",{cache:"no-cache"}).then(e=>e.json());
     dataRetos.push(...rest);
     cargaItems(contentRetos,dataRetos,URLretos);
 }
 
-// handler Media Querys
+/**
+ * Se recargarnas la imagenes de los retos o proyecto para cargar las imagenes correcpondientes a las dimensiones del dispositivo, se agregan o eliminan eventos del boton cerrar
+ */
 function mqHandler() {
     for (let [scr, mq] of Object.entries(screen)) {
       if (!mq || mq.matches) size = scr;
     }
-    cargaItems(contentProyects,dataProyects,URLproyects);
-    cargaItems(contentRetos,dataRetos,URLretos);
-    cargaSkill();
+    // cargaItems(contentProyects,dataProyects,URLproyects);
+    // cargaItems(contentRetos,dataRetos,URLretos);
+    // cargaSkill();
     if (size === "imgLaptop" || size === "imgDesktop"){
         close.forEach(element => {
             element.addEventListener("click",handlerCloseVentana);
@@ -215,7 +236,9 @@ function mqHandler() {
     }
 }
 
-// agregar y actualizar la hora
+/**
+ * Función para cargar la hora
+ */
 function setHora(){
     const currentTime = new Date();
     const h = currentTime.getHours();
@@ -223,7 +246,9 @@ function setHora(){
     hora.innerHTML = h + ":" + (mm < 10 ? "0" : "") + mm;
 }
 
-// elimina overlay
+/**
+ * oculta el overlay
+ */
 function sistemaCargado(){
     document.querySelector("div.overlay").style.display = "none";
     document.querySelector("div.acercade").classList.add("ventanaOpen");
@@ -238,20 +263,20 @@ for (let [scr, mq] of Object.entries(screen)) {
 menu.addEventListener("click",handlerClickMenu);
 menuHabilidades.addEventListener("click", changeViewSkills);
 
-leftProyects.addEventListener("click",prevProyects);
-rightProyects.addEventListener("click",nextProyects);
+leftProyects.addEventListener("click",()=>prev(".contentProyects"));
+rightProyects.addEventListener("click",()=>next(".contentProyects"));
 
-leftRetos.addEventListener("click",prevRetos);
-rightRetos.addEventListener("click",nextRetos);
+leftRetos.addEventListener("click",()=>prev(".contentRetos"));
+rightRetos.addEventListener("click",()=>next(".contentRetos"));
 
 mqHandler();
-listSkills();
-listProyects();
-listRetos();
-setHora();
-setInterval(setHora,10000);
 
 // se ejecuta al cargar body
 window.onload = () => {
     sistemaCargado();
+    listSkills();
+    listProyects();
+    listRetos();
+    setHora();
+    setInterval(setHora,10000);
 }
