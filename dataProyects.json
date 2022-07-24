@@ -1,5 +1,15 @@
 [
     {
+        "title": "SecretChat: Chat privado, se agregan los usuarios conociendo el nombre.",
+        "badge": ["React","Twilio","HTML","CSS","JavaScript","Grid","Flex"],
+        "imgMovil": "./assets/proyects/secret_chat/tablet.webp",
+        "imgTablet": "./assets/proyects/secret_chat/tablet.webp",
+        "imgLaptop": "./assets/proyects/secret_chat/laptop.webp",
+        "imgDesktop": "./assets/proyects/secret_chat/desktop.webp",
+        "demo": "https://secretchattwilio.netlify.app/",
+        "repo": "https://github.com/Marco90v/secret_chat"
+    },
+    {
         "title": "Portafolio",
         "badge": ["HTML","CSS","JavaScript","Fetch","Grid","Flex"],
         "imgMovil": "./assets/proyects/portafolio/movil.webp",
