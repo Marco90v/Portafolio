@@ -1,5 +1,15 @@
 [
     {
+        "title": "SecretChat: Chat privado, se agregan los usuarios conociendo el nombre.",
+        "badge": ["React","Twilio","HTML","CSS","JavaScript","Grid","Flex"],
+        "imgMovil": "./assets/proyects/secret_chat/tablet.webp",
+        "imgTablet": "./assets/proyects/secret_chat/tablet.webp",
+        "imgLaptop": "./assets/proyects/secret_chat/laptop.webp",
+        "imgDesktop": "./assets/proyects/secret_chat/desktop.webp",
+        "demo": "https://secretchattwilio.netlify.app/",
+        "repo": "https://github.com/Marco90v/secret_chat"
+    },
+    {
         "title": "Portafolio",
         "badge": ["HTML","CSS","JavaScript","Fetch","Grid","Flex"],
         "imgMovil": "./assets/proyects/portafolio/movil.webp",
@@ -42,10 +52,10 @@
     {
         "title": "Orbit360 - Web Empresarial de contenido multimedia inmersivo en 360 grador",
         "badge": ["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"],
-        "imgMovil": "./assets/proyects/orbit360/movil.webp",
-        "imgTablet": "./assets/proyects/orbit360/tablet.webp",
-        "imgLaptop": "./assets/proyects/orbit360/laptop.webp",
-        "imgDesktop": "./assets/proyects/orbit360/desktop.webp",
+        "imgMovil": "./assets/proyects/orbit360/orbit360.webp",
+        "imgTablet": "./assets/proyects/orbit360/orbit360.webp",
+        "imgLaptop": "./assets/proyects/orbit360/orbit360.webp",
+        "imgDesktop": "./assets/proyects/orbit360/orbit360.webp",
         "demo": "http://www.orbit360.pe/",
         "repo": "http://www.orbit360.pe/"
     },
