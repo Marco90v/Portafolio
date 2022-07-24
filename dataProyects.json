@@ -52,10 +52,10 @@
     {
         "title": "Orbit360 - Web Empresarial de contenido multimedia inmersivo en 360 grador",
         "badge": ["Wordpress","JavaScript","Plugins","Pano2VR","CSS","PHP"],
-        "imgMovil": "./assets/proyects/orbit360/orbit360.webp",
-        "imgTablet": "./assets/proyects/orbit360/orbit360.webp",
-        "imgLaptop": "./assets/proyects/orbit360/orbit360.webp",
-        "imgDesktop": "./assets/proyects/orbit360/orbit360.webp",
+        "imgMovil": "./assets/proyects/orbit360/movil.webp",
+        "imgTablet": "./assets/proyects/orbit360/tablet.webp",
+        "imgLaptop": "./assets/proyects/orbit360/laptop.webp",
+        "imgDesktop": "./assets/proyects/orbit360/desktop.webp",
         "demo": "http://www.orbit360.pe/",
         "repo": "http://www.orbit360.pe/"
     },
