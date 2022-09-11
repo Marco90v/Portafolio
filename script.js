@@ -216,15 +216,9 @@ async function listRetos(){
 }
 
 /**
- * Se recargarnas la imagenes de los retos o proyecto para cargar las imagenes correcpondientes a las dimensiones del dispositivo, se agregan o eliminan eventos del boton cerrar
+ * Agrega o elimina eventolistener a los botones close, que cierran las ventanas de las vistas
  */
-function mqHandler() {
-    for (let [scr, mq] of Object.entries(screen)) {
-      if (!mq || mq.matches) size = scr;
-    }
-    cargaItems(contentProyects,dataProyects,URLproyects);
-    cargaItems(contentRetos,dataRetos,URLretos);
-    cargaSkill();
+function addOrRemoveEventClose(){
     if (size === "imgLaptop" || size === "imgDesktop"){
         close.forEach(element => {
             element.addEventListener("click",handlerCloseVentana);
@@ -234,6 +228,19 @@ function mqHandler() {
             element.removeEventListener("click",handlerCloseVentana);
         });
     }
+}
+
+/**
+ * Se recargarnas la imagenes de los retos o proyecto para cargar las imagenes correcpondientes a las dimensiones del dispositivo, se agregan o eliminan eventos del boton cerrar
+ */
+function mqHandler() {
+    for (let [scr, mq] of Object.entries(screen)) {
+      if (!mq || mq.matches) size = scr;
+    }
+    cargaItems(contentProyects,dataProyects,URLproyects);
+    cargaItems(contentRetos,dataRetos,URLretos);
+    cargaSkill();
+    addOrRemoveEventClose();
 }
 
 /**
@@ -258,6 +265,9 @@ function sistemaCargado(){
 
 for (let [scr, mq] of Object.entries(screen)) {
     if (mq) mq.addEventListener('change', mqHandler);
+    if (!mq || mq.matches) size = scr;
+    // console.log(size);
+    addOrRemoveEventClose();
 }
 
 menu.addEventListener("click",handlerClickMenu);

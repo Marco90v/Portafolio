@@ -1,5 +1,15 @@
 [
     {
+        "title": "ApiBooks: consumo de api de libros varios",
+        "badge": ["React","API","HTML","CSS","JavaScript","Grid"],
+        "imgMovil": "./assets/proyects/apiBooks/Inicio.webp",
+        "imgTablet": "./assets/proyects/apiBooks/Inicio.webp",
+        "imgLaptop": "./assets/proyects/apiBooks/Inicio.webp",
+        "imgDesktop": "./assets/proyects/apiBooks/Inicio.webp",
+        "demo": "https://marco90v.github.io/apiBooks/",
+        "repo": "https://github.com/Marco90v/apiBooks"
+    },
+    {
         "title": "SecretChat: Chat privado, se agregan los usuarios conociendo el nombre.",
         "badge": ["React","Twilio","HTML","CSS","JavaScript","Grid","Flex"],
         "imgMovil": "./assets/proyects/secret_chat/tablet.webp",
