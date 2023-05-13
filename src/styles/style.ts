@@ -1,6 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 
+const COLORS = {
+    green: "#09853F",
+    blue: "#2a2aff",
+    red: "#d30000",
+    yellow: "#cbc515",
+    orange: "#eb9800",
+    purple: "#800080",
+    pink: "#dd0077",
+    black: "#000000",
+};
+
 export const Main = styled.main`
     display: grid;
     grid-template-columns: 10rem auto;
@@ -100,7 +111,7 @@ export const ContentResumen = styled.div`
     row-gap: 5rem;
     max-width: 100rem;
     margin: auto;
-    div{
+    >div{
         width: 100%;
         h1{
             margin-bottom: 1rem;
@@ -116,7 +127,7 @@ export const ContentResumen = styled.div`
             width: 100%;
         }
     }
-    div.title{
+    >div.title{
         text-align: center;
         >h1{
             font-size: 3rem;
@@ -127,112 +138,167 @@ export const ContentResumen = styled.div`
             letter-spacing: 0.1rem;
         }
     }
-    div.skills{
-        >ul{
-            display: flex;
-            column-gap: 1rem;
-            flex-wrap: wrap;
-            background-color: #2a2e36;
-            padding: 1.5rem;
-            border-radius: 0.3rem;
-            li{
-                background-color: green;
-                padding: 0.25rem 0.5rem;
-                border-radius: 10rem;
-                margin: 0.25rem 0;
-                font-weight: bold;
-            }
+`;
+
+export const ContentSkill = styled.div`
+    >ul{
+        display: flex;
+        column-gap: 1rem;
+        flex-wrap: wrap;
+        background-color: #2a2e36;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+`;
+
+export const Skill = styled.li`
+    background-color: ${COLORS.green};
+    padding: 0.25rem 1rem;
+    border-radius: 10rem;
+    margin: 0.25rem 0;
+    font-weight: bold;
+    &.green{
+        background-color: ${COLORS.green};
+    }
+    &.red{
+        background-color: ${COLORS.red};
+    }
+    &.yellow{
+        background-color: ${COLORS.yellow};
+    }
+    &.blue{
+        background-color: ${COLORS.blue};
+    }
+    &.orange{
+        background-color: ${COLORS.orange};
+    }
+    &.purple{
+        background-color: ${COLORS.purple};
+    }
+    &.pink{
+        background-color: ${COLORS.pink};
+    }
+    &.black{
+        background-color: ${COLORS.black};
+    }
+`;
+
+export const ContentEducationalBackground = styled.div`
+    margin-bottom: 3rem;
+    >ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 1rem;
+        row-gap: 2rem;
+        background-color: #2a2e36;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+`;
+
+export const ContentWorkExperience = styled(ContentEducationalBackground)`
+    margin-bottom: 0;
+    >ul{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+`;
+
+export const Activitie = styled.li`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    color: #dddddd;
+    font-size: 0.9rem;
+    >img{
+        width: 1rem;
+    }
+`;
+
+export const ListWork = styled.li`
+    &:before{
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        background-color: green;
+        position: absolute;
+        left: -0.5rem;
+        top: 1.6rem;
+        border-radius: 1rem;
+    }
+    &:hover{
+        background-color: #ffffff05;
+        border-radius: 0 1rem 1rem 0;
+    }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-left: 0.15rem solid green;
+    padding-left: 1rem;
+    transition: all ease-in-out .5s;
+    >span{
+        color: #00adff;
+        font-size: 0.7rem;
+    }
+    >p{
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+    >h4{
+        margin-top: 1rem;
+        text-decoration: underline;
+    }
+    
+    &.green{
+        border-color: ${COLORS.green};
+        &:before{
+            background-color: ${COLORS.green};
         }
     }
-    div.workExperience{
-        >ul{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-            /* gap: 1rem; */
-            column-gap: 1rem;
-            row-gap: 2rem;
-            background-color: #2a2e36;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            >li{
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                border-left: 0.12rem solid blue;
-                padding-left: 1rem;
-                >span{
-                    color: #00adff;
-                    font-size: 0.7rem;
-                }
-                p{
-                    font-size: 0.8rem;
-                    font-weight: 400;
-                }
-                h4{
-                    margin-top: 1rem;
-                    text-decoration: underline;
-                }
-                ul{
-                    li{
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                        margin: 0.5rem 0;
-                        color: #dddddd;
-                        font-size: 0.9rem;
-                        img{
-                            width: 1rem;
-                        }
-                    }
-                }
-            }
+    &.red{
+        border-color: ${COLORS.red};
+        &:before{
+            background-color: ${COLORS.red};
         }
     }
-    div.educationalBackground{
-        margin-bottom: 3rem;
-        ul{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr;
-            /* gap: 1rem; */
-            column-gap: 1rem;
-            row-gap: 2rem;
-            background-color: #2a2e36;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            >li{
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                border-left: 0.12rem solid blue;
-                padding-left: 1rem;
-                >span{
-                    color: #00adff;
-                    font-size: 0.7rem;
-                }
-                p{
-                    font-size: 0.8rem;
-                    font-weight: 400;
-                }
-                h4{
-                    margin-top: 1rem;
-                    text-decoration: underline;
-                }
-                /* ul{
-                    li{
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                        margin: 0.5rem 0;
-                        color: #dddddd;
-                        font-size: 0.9rem;
-                        img{
-                            width: 1rem;
-                        }
-                    }
-                } */
-            }
+    &.yellow{
+        border-color: ${COLORS.yellow};
+        &:before{
+            background-color: ${COLORS.yellow};
+        }
+    }
+    &.blue{
+        border-color: ${COLORS.blue};
+        &:before{
+            background-color: ${COLORS.blue};
+        }
+    }
+    &.orange{
+        border-color: ${COLORS.orange};
+        &:before{
+            background-color: ${COLORS.orange};
+        }
+    }
+    &.purple{
+        border-color: ${COLORS.purple};
+        &:before{
+            background-color: ${COLORS.purple};
+        }
+    }
+    &.pink{
+        border-color: ${COLORS.pink};
+        &:before{
+            background-color: ${COLORS.pink};
+        }
+    }
+    &.black{
+        border-color: ${COLORS.black};
+        &:before{
+            background-color: ${COLORS.black};
         }
     }
 `;
+
+export const ListStudy = styled(ListWork)``;
