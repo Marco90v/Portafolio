@@ -1,24 +1,27 @@
 import { Li, MyNavLink, Nav, Ul } from "../styles/style";
+import data from "../utils/navDataBase";
 
 function Sidebar () {
     return(
         <Nav>
             <Ul>
-                <Li>
-                    <MyNavLink to="/" >Inicio</MyNavLink>
-                </Li>
-                <Li>
-                    <MyNavLink to="/CV" >Resumen</MyNavLink>
-                </Li>
-                <Li>
-                    <MyNavLink to="/projects" >Proyectos</MyNavLink>
-                </Li>
-                <Li>
-                    <MyNavLink to="/challenges" >Retos</MyNavLink>
-                </Li>
-                <Li>
-                    <MyNavLink to="/contacts" >Contactos</MyNavLink>
-                </Li>
+            {
+                data.map((element:data, idx:number)=>{
+                    const {name, root, imgNotActive, imgActive} = element;
+                    return(
+                        <Li key={idx}>
+                            <MyNavLink to={root}>
+                            {({isActive})=>(
+                                <>
+                                    <img src={isActive ? imgActive : imgNotActive} alt={name} />
+                                    <span>{name}</span>
+                                </>
+                            )}
+                            </MyNavLink>
+                        </Li>
+                    );
+                })
+            }
             </Ul>
         </Nav>
     );
