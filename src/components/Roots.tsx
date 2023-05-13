@@ -3,7 +3,7 @@ import { useSwitchTransition } from 'transition-hook';
 import { Challenges, Contacts, Home, Projects, Resumen } from "./index";
 import { ContentTransition } from "../styles/style";
 
-const transSeg = 0.5;
+const transSeg = 0.4;
 
 const pathElement:any = {
     "/": Home,

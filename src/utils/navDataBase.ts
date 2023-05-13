@@ -13,10 +13,6 @@ import ChallengesActive from '../assets/laptop-regular-24-active.png';
 import Contacts from '../assets/contact-solid-24.png';
 import ContactsActive from '../assets/contact-solid-24-active.png';
 
-type data = {
-    name:string, root:string, imgNotActive:string, imgActive: string
-}
-
 const data:data[] = [
     { name:"Home", root:"/", imgNotActive: Home, imgActive: HomeActive },
     { name:"Resumen", root:"/resumen", imgNotActive: Resume, imgActive: ResumeActive },
