@@ -8,10 +8,10 @@ function Sidebar () {
                     <MyNavLink to="/" >Inicio</MyNavLink>
                 </Li>
                 <Li>
-                    <MyNavLink to="/cv" >Resumen</MyNavLink>
+                    <MyNavLink to="/CV" >Resumen</MyNavLink>
                 </Li>
                 <Li>
-                    <MyNavLink to="/project" >Proyectos</MyNavLink>
+                    <MyNavLink to="/projects" >Proyectos</MyNavLink>
                 </Li>
                 <Li>
                     <MyNavLink to="/challenges" >Retos</MyNavLink>

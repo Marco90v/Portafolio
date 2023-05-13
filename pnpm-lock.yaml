@@ -22,6 +22,9 @@ dependencies:
   styled-components:
     specifier: 6.0.0-rc.1
     version: 6.0.0-rc.1(react-dom@18.2.0)(react@18.2.0)
+  transition-hook:
+    specifier: ^1.5.2
+    version: 1.5.2(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
   '@types/react':
@@ -3161,6 +3164,16 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+
+  /transition-hook@1.5.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-zVW5wP+hzOCk56jU5V5GAIsuaf+gZv43pzxyimXQ74JnD1yoprxTfzoPjr0yjC/Mrc9JyCh3Wb6UhXD+8dlO4w==}
+    peerDependencies:
+      react: ^16.8.0  || ^17.0.0
+      react-dom: ^16.8.0  || ^17.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}

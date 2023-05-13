@@ -17,7 +17,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
     "sort-by": "^1.2.0",
-    "styled-components": "6.0.0-rc.1"
+    "styled-components": "6.0.0-rc.1",
+    "transition-hook": "^1.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
