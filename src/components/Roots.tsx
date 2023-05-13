@@ -1,13 +1,13 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useSwitchTransition } from 'transition-hook';
-import {CV, Challenges, Contacts, Home, Projects} from "./index";
+import { Challenges, Contacts, Home, Projects, Resumen } from "./index";
 import { ContentTransition } from "../styles/style";
 
 const transSeg = 0.5;
 
 const pathElement:any = {
     "/": Home,
-    "/CV": CV,
+    "/resumen": Resumen,
     "/projects": Projects,
     "/challenges": Challenges,
     "/contacts": Contacts,
@@ -33,7 +33,7 @@ function Roots() {
                         }}>
                             <Routes>
                                 <Route path="/" element={pathElement[path]?.()} />,
-                                <Route path="/cv" element={pathElement[path]?.()} />,
+                                <Route path="/resumen" element={pathElement[path]?.()} />,
                                 <Route path="/projects" element={pathElement[path]?.()} />,
                                 <Route path="/challenges" element={pathElement[path]?.()} />,
                                 <Route path="/contacts" element={pathElement[path]?.()} />,

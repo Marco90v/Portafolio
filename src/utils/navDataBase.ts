@@ -19,7 +19,7 @@ type data = {
 
 const data:data[] = [
     { name:"Home", root:"/", imgNotActive: Home, imgActive: HomeActive },
-    { name:"Resumen", root:"/CV", imgNotActive: Resume, imgActive: ResumeActive },
+    { name:"Resumen", root:"/resumen", imgNotActive: Resume, imgActive: ResumeActive },
     { name:"Projects", root:"/projects", imgNotActive: Projects, imgActive: ProjectsActive },
     { name:"Challenges", root:"/challenges", imgNotActive: Challenges, imgActive: ChallengesActive },
     { name:"Contacts", root:"/contacts", imgNotActive: Contacts, imgActive: ContactsActive },
