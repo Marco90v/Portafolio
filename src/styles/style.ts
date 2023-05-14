@@ -79,7 +79,7 @@ export const ContentHome = styled.div`
     align-items: center;
     height: 100%;
     row-gap: 5rem;
-    max-width: 60rem;
+    max-width: 65rem;
     margin: auto;
     >h1{
         font-size: 2rem;
@@ -88,16 +88,27 @@ export const ContentHome = styled.div`
     >div{
         display: grid;
         grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto auto auto;
         column-gap: 2rem;
+        h2{
+            margin-bottom: 1rem;
+        }
         >p{
             line-height: 2rem;
             font-weight: 100;
+            margin: 0.3rem 0;
+            >span{
+                font-weight: bold;
+                background-color: #ffffff1f;
+                padding: 0.2rem 0.5rem;
+                border-radius: 0.3rem;
+                color: orange;
+            }
         }
         >img{
-            grid-row: 1/3;
+            grid-row: 1/5;
             grid-column: 2/3;
-            width: 20rem;
+            width: 23rem;
             border-radius: 1rem;
             box-shadow: 0rem 0rem 1rem 0.1rem black;
         }
@@ -120,7 +131,8 @@ export const ContentResumen = styled.div`
             text-align: center;
             width: 100%;
             margin-bottom: 1rem;
-            color: #09853F;
+            color: ${COLORS.orange};
+            font-weight: 500;
         }
         ul{
             list-style: none;
