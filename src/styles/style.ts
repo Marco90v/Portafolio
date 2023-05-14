@@ -226,6 +226,9 @@ export const Activitie = styled.li`
     >img{
         width: 1rem;
     }
+    >span{
+        line-height: 1.2rem;
+    }
 `;
 
 export const ListWork = styled.li`
@@ -235,7 +238,7 @@ export const ListWork = styled.li`
         height: 1rem;
         background-color: green;
         position: absolute;
-        left: -0.5rem;
+        left: -0.55rem;
         top: 1.6rem;
         border-radius: 1rem;
     }
@@ -313,4 +316,16 @@ export const ListWork = styled.li`
     }
 `;
 
-export const ListStudy = styled(ListWork)``;
+export const ListStudy = styled(ListWork)`
+    >p:last-child{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        line-height: 1.2rem;
+        font-size: 0.9rem;
+        color: #dddddd;
+        >img{
+            width: 1rem;
+        }
+    }
+`;

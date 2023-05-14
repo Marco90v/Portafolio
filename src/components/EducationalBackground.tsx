@@ -1,5 +1,6 @@
 import { ContentEducationalBackground, ListStudy } from "../styles/style";
 import { educationalBackground } from "../utils/resumenData";
+import Arrow from "../assets/right-arrow-solid-24.png";
 
 function EducationalBackground() {
     return(
@@ -14,7 +15,10 @@ function EducationalBackground() {
                                 <h3>{study}</h3>
                                 <span>{date}</span>
                                 <p>{institution}</p>
-                                <p>{detail}</p>
+                                <p>
+                                    <img src={Arrow} alt="Arrow" />
+                                    {detail}
+                                </p>
                             </ListStudy>
                         );
                     })
