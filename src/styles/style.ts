@@ -69,14 +69,17 @@ export const MyNavLink = styled(NavLink)`
 
 export const ContentTransition = styled.div`
     margin: auto;
-    height: 100%;
+    min-height: 100%;
 `;
 
-export const ContentHome = styled.div`
+const ContentSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+`;
+
+export const ContentHome = styled(ContentSection)`
     height: 100%;
     row-gap: 5rem;
     max-width: 65rem;
@@ -115,7 +118,7 @@ export const ContentHome = styled.div`
     }
 `;
 
-export const ContentResumen = styled.div`
+export const ContentResumen = styled(ContentSection)`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -326,6 +329,181 @@ export const ListStudy = styled(ListWork)`
         color: #dddddd;
         >img{
             width: 1rem;
+        }
+    }
+`;
+
+export const ContentProjects = styled(ContentSection)`
+    row-gap: 3rem;
+    padding: 0 2rem;
+    div.title{
+        text-align: center;
+        >h1{
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            color: #09853F;
+        }
+        >span{
+            font-size: 1.3rem;
+            letter-spacing: 0.1rem;
+        }
+    }
+    div.projectsList>ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding-bottom: 2rem;
+    }
+`;
+
+export const ListProjects = styled.li`
+    position: relative;
+    transition: all ease-in-out .5s;
+    >img{
+        width: 25rem;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 0.1rem solid orange;
+        transition: all ease-in-out .5s;
+    }
+    >div.info{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 2rem;
+        width: 100%;
+        height: 99%;
+        background: rgb(0 0 0 / 50%);
+        border-radius: 1rem;
+        opacity: 0;
+        transition: all ease-in-out .5s;
+        >h2{
+            color: ${COLORS.orange};
+            text-shadow: 0rem 0rem 1rem black;
+            font-size: 2rem;
+        }
+        div.icons{
+            display: flex;
+            column-gap: 2rem;
+            >button{
+                background-color: transparent;
+                cursor: pointer;
+            }
+            img{
+                background-color: white;
+                border-radius: 1rem;
+                padding: 0.1rem;
+                transition: all ease .25s;
+                &:hover{
+                    box-shadow: 0 0 1rem 0.1rem white;
+                }
+            }
+        }
+    }
+    &:hover{
+        transform: scale(1.05);;
+        >img{
+            box-shadow: 0rem 0rem 0.5rem 0.2rem ${COLORS.black};
+        }
+        >div.info{
+            opacity: 1;
+        }
+    }
+`;
+
+export const ContentDetails = styled.div`
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0 0 0 / 50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    >div.modal{
+        position: relative;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-content: center;
+        justify-content: center;
+        max-width: 75rem;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        background-color: white;
+        >div.title{
+            grid-row: 1/2;
+            grid-column: 1/3;
+            background-color: #d9d9d9;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            h2{
+                margin-bottom: 0.5rem;
+                color: ${COLORS.green};
+            }
+            >button.close{
+                background-color: transparent;
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin: 0.5rem;
+                cursor: pointer;
+                >img{
+                    border-radius: 1rem;
+                    transition: all ease-in-out 0.15s;
+                }
+                &:hover>img{
+                    background-color: orange;
+                    box-shadow: 0 0 0.5rem 0.1rem orange;
+                }
+            }
+        }
+        >div.description{
+            grid-row: 2/3;
+            grid-column: 1/2;
+            >p{
+                margin: 0.5rem 0;
+                font-weight: 100;
+                &:last-child{
+                    margin-top: 1rem;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+        >div.info{
+            grid-row: 2/3;
+            grid-column: 2/3;
+            >img{
+                width: 40rem;
+                border: 0.15rem solid black;
+                border-radius: 0.5rem;
+                margin: 1rem 0;
+            }
+            >p>span{
+                background-color: orange;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                margin-left: 0.5rem;
+                color: white;
+                font-weight: bold;
+            }
+            >div.link>a>img{
+                border-radius: 1rem;
+                transition: all ease-in-out 0.15s;
+                &:hover{
+                    background-color: orange;
+                    box-shadow: 0 0 0.5rem 0.1rem orange;
+                }
+            }
         }
     }
 `;

@@ -16,3 +16,18 @@ type educationalBackground = {
     detail:string,
     color:string,
 }
+type project = {
+    title:string,
+    img:string,
+    linkGithub:string,
+    linkLive:string,
+    description:string,
+    details:string,
+    author:string,
+    skills:string,
+    client:string
+}
+type LinkWithIcon = {
+    link:string,
+    icon:string
+}
