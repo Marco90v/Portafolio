@@ -6,3 +6,8 @@ export * from "./Contacts";
 export * from "./Skills";
 export * from "./WorkExperience";
 export * from "./EducationalBackground";
+export * from "./LinkWithIcon";
+export * from "./ProjectDetails";
+export * from "./ProjectsAndChallenges";
+export * from "./Skills";
+export * from "./Details";

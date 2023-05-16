@@ -27,6 +27,7 @@ type project = {
     skills:string,
     client:string
 }
+type challenge = project
 type LinkWithIcon = {
     link:string,
     icon:string

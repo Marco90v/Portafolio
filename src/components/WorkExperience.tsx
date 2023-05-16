@@ -1,6 +1,6 @@
+import { Activitie, ContentWorkExperience, ListWork } from "../styles/style";
 import { workExperience } from "../utils/resumenData";
 import Arrow from "../assets/right-arrow-solid-24.png";
-import { Activitie, ContentWorkExperience, ListWork } from "../styles/style";
 
 function WorkExperience(){
     return(

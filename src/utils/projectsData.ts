@@ -1,5 +1,16 @@
 const projects:project[] = [
     {
+        title: "Control de Estudio",
+        img: "/src/assets/projects/controlEstudio_teachers_desktop.webp",
+        linkGithub: "https://github.com/Marco90v/ControlEstudio",
+        linkLive: "",
+        description: "University System - Study Control",
+        details: "This is a personal project, the final was to practice my skills and expand my knowledge in other areas, the application has a backend in express with JWT and MySQL and a frontend in react, with styled-components and redeux, has path protection and user roles, the roles are administration, teacher, student. The general functions are CRUD, classes, professions, people, students, teachers and notes. Only the data that were inserted are added and the indicated data are modified or deleted, if a student is added but a profession is not assigned, this information is omitted, if the classes of the teachers are edited only those data are modified omitting the personal data of the same one. It also has an action confirmation system. Use of global and local states, use of localStorage to store refused data and use of RTK.",
+        author: "Marco Velasquez",
+        skills: "React, Styled-Components, Redux, RTK, React-Router, TypeScript, NodeJs, Express, JWT, MySQL, Dotenv",
+        client: "Personal"
+    },
+    {
         title: "Orbit360.pe",
         img: "/src/assets/projects/orbit360_desktop.webp",
         linkGithub: "",

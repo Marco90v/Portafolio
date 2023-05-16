@@ -1,18 +1,18 @@
 import { useContext } from "react";
 import { DetailsModal } from "../context/MyContext";
 import { ContentDetails } from "../styles/style";
-import LinkWithIcon from "./LinkWithIcon";
+import { LinkWithIcon } from ".";
 import iconGithub from "../assets/github-logo-24.png";
 import iconLive from "../assets/planet-solid-24.png";
 import iconClose from "../assets/x-circle-solid-24.png";
 
-function ProjectDetails() {
+function ModalDetails() {
     const { data, setData } = useContext(DetailsModal);
 
     if(!data) return null;
 
     const { title, img, linkGithub, linkLive, description, details, author, skills, client } = data;
-    
+
     return(
         <ContentDetails>
             <div className="modal">
@@ -43,5 +43,5 @@ function ProjectDetails() {
         </ContentDetails>
     );
 }
-export default  ProjectDetails;
-export  { ProjectDetails };
+export default  ModalDetails;
+export  { ModalDetails };

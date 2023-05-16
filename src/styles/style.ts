@@ -346,7 +346,7 @@ export const ContentProjects = styled(ContentSection)`
             letter-spacing: 0.1rem;
         }
     }
-    div.projectsList>ul{
+    div.projetsOrChallengesList>ul{
         list-style: none;
         display: flex;
         justify-content: center;
@@ -356,6 +356,8 @@ export const ContentProjects = styled(ContentSection)`
         padding-bottom: 2rem;
     }
 `;
+
+export const ContentChallenges = styled(ContentProjects)``;
 
 export const ListProjects = styled.li`
     position: relative;
