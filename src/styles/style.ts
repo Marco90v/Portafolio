@@ -81,6 +81,7 @@ const ContentSection = styled.div`
 
 export const ContentHome = styled(ContentSection)`
     height: 100%;
+    min-height: 93vh;
     row-gap: 5rem;
     max-width: 65rem;
     margin: auto;
@@ -119,9 +120,6 @@ export const ContentHome = styled(ContentSection)`
 `;
 
 export const ContentResumen = styled(ContentSection)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     row-gap: 5rem;
     max-width: 100rem;
     margin: auto;
@@ -367,7 +365,7 @@ export const ListProjects = styled.li`
         height: 15rem;
         object-fit: cover;
         border-radius: 1rem;
-        border: 0.1rem solid orange;
+        border: 0.15rem solid orange;
         transition: all ease-in-out .5s;
     }
     >div.info{
@@ -440,6 +438,7 @@ export const ContentDetails = styled.div`
         padding: 2rem;
         border-radius: 0.5rem;
         background-color: white;
+        box-shadow: 0 0 0.5rem 0.25rem grey;
         >div.title{
             grid-row: 1/2;
             grid-column: 1/3;
@@ -489,19 +488,26 @@ export const ContentDetails = styled.div`
                 margin: 1rem 0;
             }
             >p>span{
-                background-color: orange;
-                padding: 0.5rem;
-                border-radius: 0.5rem;
                 margin-left: 0.5rem;
-                color: white;
+                color: ${COLORS.orange};
                 font-weight: bold;
             }
-            >div.link>a>img{
-                border-radius: 1rem;
-                transition: all ease-in-out 0.15s;
-                &:hover{
-                    background-color: orange;
-                    box-shadow: 0 0 0.5rem 0.1rem orange;
+            >div.link{
+                display: flex;
+                flex-direction: row;
+                column-gap: 0.5rem;
+                justify-content: left;
+                align-items: center;
+                >p{
+                    font-weight:bold;
+                }
+                >a>img{
+                    border-radius: 1rem;
+                    transition: all ease-in-out 0.15s;
+                    &:hover{
+                        background-color: orange;
+                        box-shadow: 0 0 0.5rem 0.1rem orange;
+                    }
                 }
             }
         }
