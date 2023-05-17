@@ -389,6 +389,7 @@ export const ListProjects = styled.li`
             color: ${COLORS.orange};
             text-shadow: 0rem 0rem 1rem black;
             font-size: 2rem;
+            text-align: center;
         }
         div.icons{
             display: flex;
