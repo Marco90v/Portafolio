@@ -31,7 +31,7 @@ export const Nav = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #00081B;
+    background-color: #060912;
     box-shadow: 0rem 0rem 1rem 0.1rem black;
     z-index: 9;
 `;
@@ -167,7 +167,7 @@ export const ContentSkill = styled.div`
 export const Skill = styled.li`
     background-color: ${COLORS.green};
     padding: 0.25rem 1rem;
-    border-radius: 10rem;
+    border-radius: 0.3rem;
     margin: 0.25rem 0;
     font-weight: bold;
     &.green{
