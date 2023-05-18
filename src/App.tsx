@@ -1,9 +1,8 @@
 import { BrowserRouter } from "react-router-dom";
-import Sidebar from "./components/Nav";
 import { Container, Main } from "./styles/style";
 import Roots from "./components/Roots";
-import ModalDetails from "./components/ProjectDetails";
 import MyContext from "./context/MyContext";
+import { Sidebar, ModalDetails } from "./components";
 
 function App() {
 
@@ -11,9 +10,9 @@ function App() {
     <BrowserRouter>
       <MyContext>
         <Main>
-          <Sidebar/>
+          <Sidebar />
           <Container>
-            <Roots/>
+            <Roots />
           </Container>
           <ModalDetails />
         </Main>
