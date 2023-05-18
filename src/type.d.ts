@@ -32,3 +32,19 @@ type LinkWithIcon = {
     link:string,
     icon:string
 }
+type alertContact = {
+    result:string,
+    type:string,
+    icon:string
+}
+type formContact = {
+    fullName:string,
+    email:string,
+    subject:string,
+    message:string,
+}
+type stateContact = {
+    formContact:formContact,
+    alert:alertContact,
+    modal:null | project | challenge
+}

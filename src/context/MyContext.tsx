@@ -1,20 +1,76 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
 
-type a = {
-  data:null | project,
-  setData:any
-}
+const initialForm:formContact = {
+  fullName:"",
+  email:"",
+  subject:"",
+  message:"",
+};
 
-const DetailsModal = createContext<a>({data:null, setData:null});
+const initialAlert:alertContact = {
+  result: "",
+  type: "",
+  icon: "",
+};
+
+const initialModal: null | project | challenge = null;
+
+const initialState:stateContact = {
+  formContact: initialForm,
+  alert: initialAlert,
+  modal: initialModal
+};
+
+const Context = createContext<any>(initialState);
+
+const reducer = (state:any, action:any) => {
+  switch (action.type) {
+    case "addDataModal":
+      return {
+        ...state,
+        modal: action.data,
+      };    
+      case "resetModal":
+        return {
+          ...state,
+          modal: null,
+        };
+      case "setValueForm":
+        return{
+          ...state,
+          formContact:{
+            ...state.formContact,
+            ...action.data,
+          }
+        };
+      case "resetForm":
+        return{
+          ...state,
+          formContact: initialForm,
+        };
+      case "changeAlert":
+        return{
+          ...state,
+          alert: action.msgAlert,
+        };
+      case "resetAlert":
+        return{
+          ...state,
+          alert:initialAlert,
+        };
+    default:
+      break;
+  }
+};
 
 function MyContext({children}:any) {
-  const [data, setData] = useState<null|project>(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
     return(
-      <DetailsModal.Provider value={{data, setData}}>
+      <Context.Provider value={{state, dispatch}}>
         {children}
-      </DetailsModal.Provider>
+      </Context.Provider>
     );
 }
 export default MyContext;
-export { MyContext, DetailsModal };
+export { MyContext, Context };

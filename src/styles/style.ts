@@ -532,7 +532,7 @@ export const ContentContact = styled(ContentSection)`
     >form{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto 1fr;
+        grid-template-rows: auto auto 1fr auto auto;
         gap: 2rem;
         margin-top: 5rem;
         width: 55rem;
@@ -554,6 +554,7 @@ export const ContentContact = styled(ContentSection)`
         }
         >textarea{
             grid-column: 1/3;
+            resize: none;
         }
         >input[type="submit"]{
             grid-column: 2/3;
@@ -568,5 +569,31 @@ export const ContentContact = styled(ContentSection)`
                 color: black;
             }
         }
+    }
+`;
+
+export const AlertContact = styled.span`
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    grid-column: 1/3;
+    font-weight: bold;
+    line-height: 2rem;
+    padding: 0.5rem;
+    height: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: all ease-in-out 0.15s;
+    &.error{
+        opacity:1;
+        color:${COLORS.red};
+        background-color: rgb(255 255 255 / 10%);
+    }
+    &.success{
+        opacity:1;
+        color:${COLORS.green};
+        background-color: rgb(255 255 255 / 10%);
     }
 `;

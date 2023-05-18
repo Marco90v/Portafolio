@@ -1,28 +1,35 @@
-import { useState } from "react";
-import { ContentContact } from "../styles/style";
+import { useContext } from "react";
+import { AlertContact, ContentContact } from "../styles/style";
+import { Context } from "../context/MyContext";
+import emailjs from '@emailjs/browser';
+import iconSuccess from "../assets/check-circle-solid-24.png";
+import iconError from "../assets/error-circle-solid-24.png";
 
-const initialForm = {
-    fullName:"",
-    email:"",
-    subject:"",
-    message:"",
-};
+const SERVICE_ID = "service_gvdn1yc";
+const TEMPLATE_ID = "template_yyeh6th";
+const PUBLIC_KEY = "cuaNdUhdGOg7KbRC3";
 
 function Contacts(){
-
-    const [formContact, setFormContact] = useState(initialForm);
-
+    const { state:{formContact, alert}, dispatch } = useContext(Context);    
+    
     const handlerChange = (e:any) => {
         const key = e.target.name;
         const value = e.target.value;
-        setFormContact((p)=>{
-            return {...p, [key]:value};
-        });
+        const data = {[key]:value};
+        dispatch({type:"setValueForm",data});
     };
 
     const submit = (e:any) => {
         e.preventDefault();
-        console.log(formContact);
+        dispatch({type:"resetAlert"});
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, formContact, PUBLIC_KEY).then(()=>{
+            const msgAlert = {result:"Message sent successfully.", type:"success", icon:iconSuccess};
+            dispatch({type:"changeAlert", msgAlert});
+            dispatch({type:"resetForm"});
+        }).catch(()=>{
+            const msgAlert = {result:"The message could not be sent, please try again.", type:"error", icon:iconError};
+            dispatch({type:"changeAlert", msgAlert});
+        });
     };
 
     return(
@@ -36,6 +43,7 @@ function Contacts(){
                 <input type="email" placeholder="Email" name="email" onChange={handlerChange} value={formContact.email} />
                 <input type="text" placeholder="Subject" name="subject" onChange={handlerChange} value={formContact.subject} />
                 <textarea cols={30} rows={10} placeholder="Message" name="message" onChange={handlerChange} value={formContact.message} />
+                <AlertContact className={alert.type}><img src={alert.icon} alt="icon" />{alert.result}</AlertContact>
                 <input type="submit" value="Send message" />
             </form>
         </ContentContact>

@@ -37,6 +37,7 @@ function Roots() {
                                 <Route path="/projects" element={pathElement[path]?.()} />,
                                 <Route path="/challenges" element={pathElement[path]?.()} />,
                                 <Route path="/contacts" element={pathElement[path]?.()} />,
+                                {/* <Route path="/*" element={<>no exist</>} />, */}
                             </Routes>
                         </ContentTransition>
                     );

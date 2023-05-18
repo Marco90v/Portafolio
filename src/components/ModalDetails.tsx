@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { DetailsModal } from "../context/MyContext";
+import { Context } from "../context/MyContext";
 import { ContentDetails } from "../styles/style";
 import { LinkWithIcon } from ".";
 import iconGithub from "../assets/github-logo-24.png";
@@ -8,7 +8,9 @@ import iconClose from "../assets/x-circle-solid-24.png";
 import { useTransition } from "transition-hook";
 
 function ModalDetails() {
-    const { data, setData } = useContext(DetailsModal);
+    // const { data, setData } = useContext(DetailsModal);
+    const { state:{modal:data}, dispatch } = useContext(Context);
+    // console.log(data);
     const [transition, setTransition] = useState<boolean>(false);
     const modelTrans = useTransition(transition, 300);
 
@@ -25,7 +27,8 @@ function ModalDetails() {
     const close = () => {
         setTransition(false);
         setTimeout(() => {
-            setData(null);
+            // setData(null);
+            dispatch({type:"resetModal"});
         }, 300);
     };
 
