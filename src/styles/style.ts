@@ -516,3 +516,57 @@ export const ContentDetails = styled.div`
         }
     }
 `;
+
+export const ContentContact = styled(ContentSection)`
+    display: flex;
+    height: 93vh;
+    align-items: center;
+    >div.title{
+        text-align: center;
+        >h1{
+            font-size: 3rem;
+            color: #09853F;
+            margin-bottom: 2rem;
+        }
+    }
+    >form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr;
+        gap: 2rem;
+        margin-top: 5rem;
+        width: 55rem;
+        >input, >textarea{
+            background-color: #2a2e36;
+            padding: 1rem 0.5rem;
+            font-size: 1rem;
+            color: white;
+            letter-spacing: 0.1rem;
+            border-radius: 0.5rem;
+            border: 0.1rem solid transparent;
+            outline: none;
+            &:active, &:focus{
+                border-color: orange;
+            }
+        }
+        >input[type="text"]:nth-child(3){
+            grid-column: 1/3;
+        }
+        >textarea{
+            grid-column: 1/3;
+        }
+        >input[type="submit"]{
+            grid-column: 2/3;
+            margin-left: 10rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: orange;
+            transition: all ease-in-out 0.25s;
+            &:hover{
+                box-shadow: 0rem 0rem 0.5rem 0.1rem black;
+                background-color: orange;
+                color: black;
+            }
+        }
+    }
+`;
