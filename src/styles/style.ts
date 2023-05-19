@@ -38,14 +38,16 @@ export const Nav = styled.nav`
 export const Ul = styled.ul`
     display: flex;
     flex-direction: column;
-    row-gap: 5rem;
+    row-gap: 3rem;
     align-items: center;
     list-style: none;
     overflow: hidden;
     width: 100%;
+    padding: 3rem 0;
 `;
 
 export const Li = styled.li`
+    position: relative;
     font-weight: bold;
     width: 100%;
     text-align: center;
@@ -58,12 +60,36 @@ export const MyNavLink = styled(NavLink)`
     justify-content: center;
     flex-direction: column;
     row-gap: 0.5rem;
+    height: 5rem;
     color: white;
     text-decoration: none;
     transition: all ease-in-out 0.25s;
     &.active{
         color: #09853F;
         text-shadow: 0rem 0rem 0.3rem black;
+        &:before{
+            background-color: orange;
+            box-shadow: 0 0 1rem 1rem orange;
+        }
+    }
+    &:before{
+        content: "";
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        border-radius: 4rem;
+        opacity: 0.2;
+        transition: all ease-in-out 0.15s;
+    }
+    &:hover{
+        &:before{
+            background-color: orange;
+            box-shadow: 0 0 1rem 1rem orange;
+        }
     }
 `;
 
