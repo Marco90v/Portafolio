@@ -20,7 +20,9 @@ export const Main = styled.main`
 `;
 
 export const Container = styled.section`
-    background-color: #1b202a;
+    /* background-color: #1b202a; */
+    background: rgb(49,57,75);
+    background: linear-gradient(90deg, rgba(49,57,75,1) 0%, rgba(27,32,42,1) 50%, rgba(13,16,20,1) 100%);
     color: white;
     padding: 2rem;
     overflow: auto;
@@ -31,7 +33,9 @@ export const Nav = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #060912;
+    /* background-color: #060912; */
+    background: rgb(6,9,18);
+    background: radial-gradient(circle, rgba(6,9,18,1) 50%, rgba(16,25,48,1) 100%);
     box-shadow: 0rem 0rem 1rem 0.1rem black;
     z-index: 9;
 `;
