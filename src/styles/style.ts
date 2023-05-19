@@ -630,3 +630,14 @@ export const AlertContact = styled.span`
         background-color: rgb(255 255 255 / 10%);
     }
 `;
+
+export const Content404 = styled(ContentSection)`
+    height: 93vh;
+    >h1{
+        font-size: 10rem;
+        color: red;
+    }
+    >span{
+        font-size: 2rem;
+    }
+`;

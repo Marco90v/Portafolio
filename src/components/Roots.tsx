@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useSwitchTransition } from 'transition-hook';
-import { Challenges, Contacts, Home, Projects, Resumen } from "./index";
+import { Challenges, Contacts, Home, Page404, Projects, Resumen } from "./index";
 import { ContentTransition } from "../styles/style";
 
 const transSeg = 0.4;
@@ -11,6 +11,7 @@ const pathElement:any = {
     "/projects": Projects,
     "/challenges": Challenges,
     "/contacts": Contacts,
+    "404": Page404,
 };
 
 function Roots() {
@@ -37,7 +38,7 @@ function Roots() {
                                 <Route path="/projects" element={pathElement[path]?.()} />,
                                 <Route path="/challenges" element={pathElement[path]?.()} />,
                                 <Route path="/contacts" element={pathElement[path]?.()} />,
-                                {/* <Route path="/*" element={<>no exist</>} />, */}
+                                <Route path="/*" element={pathElement["404"]?.()} />,
                             </Routes>
                         </ContentTransition>
                     );

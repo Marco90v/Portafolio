@@ -12,3 +12,4 @@ export * from "./ProjectsAndChallenges";
 export * from "./Skills";
 export * from "./Details";
 export * from "./Nav";
+export * from "./404";
