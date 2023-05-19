@@ -187,34 +187,12 @@ export const ContentSkill = styled.div`
 `;
 
 export const Skill = styled.li`
-    background-color: ${COLORS.green};
-    padding: 0.25rem 1rem;
     border-radius: 0.3rem;
     margin: 0.25rem 0;
     font-weight: bold;
-    &.green{
-        background-color: ${COLORS.green};
-    }
-    &.red{
-        background-color: ${COLORS.red};
-    }
-    &.yellow{
-        background-color: ${COLORS.yellow};
-    }
-    &.blue{
-        background-color: ${COLORS.blue};
-    }
-    &.orange{
-        background-color: ${COLORS.orange};
-    }
-    &.purple{
-        background-color: ${COLORS.purple};
-    }
-    &.pink{
-        background-color: ${COLORS.pink};
-    }
-    &.black{
-        background-color: ${COLORS.black};
+    overflow: hidden;
+    >img{
+        border-radius: 0.3rem;
     }
 `;
 

@@ -27,22 +27,22 @@ const educationalBackground:educationalBackground[] = [
 ];
 
 const skills:skill[] = [
-    { name: "JavaScript", color:COLORS.GREEN },
-    { name: "TypeScript", color:COLORS.BLUE },
-    { name: "React", color:COLORS.RED },
-    { name: "Redux", color:COLORS.YELLOW },
-    { name: "Styled-Components", color:COLORS.ORANGE },
-    { name: "Angular", color:COLORS.PURPLE },
-    { name: "Node.Js", color:COLORS.PINK },
-    { name: "CSS", color:COLORS.BLACK },
-    { name: "BootStrap", color:COLORS.GREEN },
-    { name: "PHP", color:COLORS.BLUE },
-    { name: "Python", color:COLORS.RED },
-    { name: "Electron", color:COLORS.YELLOW },
-    { name: "MySQL", color:COLORS.ORANGE },
-    { name: "FireBase", color:COLORS.PURPLE },
-    { name: "Windows", color:COLORS.PINK },
-    { name: "Linux", color:COLORS.BLACK },
+    { name: "JavaScript", color:COLORS.GREEN, img: "https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1" },
+    { name: "TypeScript", color:COLORS.BLUE, img: "https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" },
+    { name: "React", color:COLORS.RED, img: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" },
+    { name: "Redux", color:COLORS.YELLOW, img: "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" },
+    { name: "Styled-Components", color:COLORS.ORANGE, img: "https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" },
+    { name: "Angular", color:COLORS.PURPLE, img: "https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" },
+    { name: "Node.Js", color:COLORS.PINK, img: "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" },
+    { name: "CSS", color:COLORS.BLACK, img: "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" },
+    { name: "BootStrap", color:COLORS.GREEN, img: "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" },
+    { name: "PHP", color:COLORS.BLUE, img: "https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" },
+    { name: "Python", color:COLORS.RED, img: "https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" },
+    { name: "Electron", color:COLORS.YELLOW, img: "https://img.shields.io/badge/Electron-3B3E48?style=for-the-badge&logo=electron&logoColor=9FEAF9" },
+    { name: "MySQL", color:COLORS.ORANGE, img: "https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" },
+    { name: "FireBase", color:COLORS.PURPLE, img: "https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" },
+    { name: "Windows", color:COLORS.PINK, img: "https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" },
+    { name: "Linux", color:COLORS.BLACK, img: "https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" },
 ];
 
 const workExperience:workExperience[] = [

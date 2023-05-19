@@ -8,8 +8,12 @@ function Skills(){
             <ul>
                 {
                     skills.map((skill:skill, idx:number)=>{
-                        const {name, color} = skill;
-                        return <Skill className={color} key={idx}>{name}</Skill>;
+                        const {name, img} = skill;
+                        return (
+                            <Skill key={idx}>
+                                <img src={img} alt={name} />
+                            </Skill>
+                        );
                     })
                 }
             </ul>

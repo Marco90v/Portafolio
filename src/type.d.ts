@@ -1,6 +1,6 @@
 // type color = "green" | "red" | "blue" | "yellow"
 type data = { name:string, root:string, imgNotActive:string, imgActive: string }
-type skill = {  name:string, color:string }
+type skill = {  name:string, color:string, img:string }
 type activitie = string
 type workExperience = {
     company:string,
