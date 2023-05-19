@@ -1,4 +1,4 @@
-import { ListProjects } from "../styles/style";
+import { ContentList, InfoProjects, ListProjects } from "../styles/style";
 import iconGithub from "../assets/github-logo-24.png";
 import iconLive from "../assets/planet-solid-24.png";
 import { Details, LinkWithIcon } from ".";
@@ -13,14 +13,14 @@ function ProjectsAndChallenges({data}:{data:project[] | challenge[]}) {
                         return(
                             <ListProjects key={idx}>
                                 <img src={img} alt={title} />
-                                <div className="info">
+                                <InfoProjects>
                                     <h2>{title}</h2>
                                     <div className="icons">
                                         <Details data={d} />
                                         { linkGithub !== "" && <LinkWithIcon link={linkGithub} icon={iconGithub} /> }
                                         { linkLive !== "" && <LinkWithIcon link={linkLive} icon={iconLive} /> }
                                     </div>
-                                </div>
+                                </InfoProjects>
                             </ListProjects>
                         );
                     })

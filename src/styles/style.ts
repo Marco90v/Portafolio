@@ -115,10 +115,6 @@ export const ContentHome = styled(ContentSection)`
     row-gap: 5rem;
     max-width: 65rem;
     margin: auto;
-    >h1{
-        font-size: 3rem;
-        color: #09853F;
-    }
     >div{
         display: grid;
         grid-template-columns: auto auto;
@@ -174,33 +170,40 @@ export const ContentHome = styled(ContentSection)`
     }
 `;
 
+export const ContentList = styled.ul`
+    list-style: none;
+    background-color: #2a2e36;
+    padding: 1.5rem;
+    border-radius: 1rem;
+`;
+
+export const H1 = styled.h1<{marginbottom?:string}>`
+    font-size: 3rem;
+    color: #09853F;
+    margin-bottom: ${ ({marginbottom="0"}) => marginbottom };
+`;
+export const SubTitle = styled.span`
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+`;
+export const ContentTitle = styled.div`
+    text-align: center;
+`;
 export const ContentResumen = styled(ContentSection)`
     row-gap: 5rem;
     max-width: 100rem;
     margin: auto;
     >div{
         width: 100%;
-        h1{
-            margin-bottom: 1rem;
-        }
         h2{
             text-align: center;
-            width: 100%;
             margin-bottom: 1rem;
             color: ${COLORS.orange};
             font-weight: 500;
         }
-        ul{
-            list-style: none;
-            width: 100%;
-        }
     }
     >div.title{
         text-align: center;
-        >h1{
-            font-size: 3rem;
-            color: #09853F;
-        }
         >span{
             font-size: 1.3rem;
             letter-spacing: 0.1rem;
@@ -265,12 +268,13 @@ export const Activitie = styled.li`
     }
 `;
 
-export const ListWork = styled.li`
+export const ListWork = styled.li<{color:string}>`
+    --color:${ ({color="green"}) => COLORS[color] };
     &:before{
         content: "";
         width: 1rem;
         height: 1rem;
-        background-color: green;
+        background-color: var(--color);
         position: absolute;
         left: -0.55rem;
         top: 1.6rem;
@@ -284,7 +288,7 @@ export const ListWork = styled.li`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    border-left: 0.15rem solid green;
+    border-left: 0.15rem solid var(--color);
     padding-left: 1rem;
     transition: all ease-in-out .5s;
     >span{
@@ -298,55 +302,6 @@ export const ListWork = styled.li`
     >h4{
         margin-top: 1rem;
         text-decoration: underline;
-    }
-    
-    &.green{
-        border-color: ${COLORS.green};
-        &:before{
-            background-color: ${COLORS.green};
-        }
-    }
-    &.red{
-        border-color: ${COLORS.red};
-        &:before{
-            background-color: ${COLORS.red};
-        }
-    }
-    &.yellow{
-        border-color: ${COLORS.yellow};
-        &:before{
-            background-color: ${COLORS.yellow};
-        }
-    }
-    &.blue{
-        border-color: ${COLORS.blue};
-        &:before{
-            background-color: ${COLORS.blue};
-        }
-    }
-    &.orange{
-        border-color: ${COLORS.orange};
-        &:before{
-            background-color: ${COLORS.orange};
-        }
-    }
-    &.purple{
-        border-color: ${COLORS.purple};
-        &:before{
-            background-color: ${COLORS.purple};
-        }
-    }
-    &.pink{
-        border-color: ${COLORS.pink};
-        &:before{
-            background-color: ${COLORS.pink};
-        }
-    }
-    &.black{
-        border-color: ${COLORS.black};
-        &:before{
-            background-color: ${COLORS.black};
-        }
     }
 `;
 
@@ -364,21 +319,11 @@ export const ListStudy = styled(ListWork)`
     }
 `;
 
+
+
 export const ContentProjects = styled(ContentSection)`
     row-gap: 3rem;
     padding: 0 2rem;
-    div.title{
-        text-align: center;
-        >h1{
-            margin-bottom: 1rem;
-            font-size: 3rem;
-            color: #09853F;
-        }
-        >span{
-            font-size: 1.3rem;
-            letter-spacing: 0.1rem;
-        }
-    }
     div.projetsOrChallengesList>ul{
         list-style: none;
         display: flex;
@@ -392,6 +337,23 @@ export const ContentProjects = styled(ContentSection)`
 
 export const ContentChallenges = styled(ContentProjects)``;
 
+export const InfoProjects = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2rem;
+    width: 100%;
+    height: 99%;
+    background: rgb(0 0 0 / 50%);
+    border-radius: 1rem;
+    opacity: 0;
+    transition: all ease-in-out .5s;
+`;
+
 export const ListProjects = styled.li`
     position: relative;
     transition: all ease-in-out .5s;
@@ -403,21 +365,7 @@ export const ListProjects = styled.li`
         border: 0.15rem solid orange;
         transition: all ease-in-out .5s;
     }
-    >div.info{
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        row-gap: 2rem;
-        width: 100%;
-        height: 99%;
-        background: rgb(0 0 0 / 50%);
-        border-radius: 1rem;
-        opacity: 0;
-        transition: all ease-in-out .5s;
+    ${InfoProjects} {
         >h2{
             color: ${COLORS.orange};
             text-shadow: 0rem 0rem 1rem black;
@@ -447,7 +395,7 @@ export const ListProjects = styled.li`
         >img{
             box-shadow: 0rem 0rem 0.5rem 0.2rem ${COLORS.black};
         }
-        >div.info{
+        ${InfoProjects}{
             opacity: 1;
         }
     }
@@ -554,14 +502,6 @@ export const ContentContact = styled(ContentSection)`
     display: flex;
     height: 93vh;
     align-items: center;
-    >div.title{
-        text-align: center;
-        >h1{
-            font-size: 3rem;
-            color: #09853F;
-            margin-bottom: 2rem;
-        }
-    }
     >form{
         display: grid;
         grid-template-columns: 1fr 1fr;

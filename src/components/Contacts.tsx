@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AlertContact, ContentContact } from "../styles/style";
+import { AlertContact, ContentContact, ContentTitle, H1, SubTitle } from "../styles/style";
 import { Context } from "../context/MyContext";
 import emailjs from '@emailjs/browser';
 import iconSuccess from "../assets/check-circle-solid-24.png";
@@ -46,10 +46,10 @@ function FormContact(){
 function Contacts(){
     return(
         <ContentContact>
-            <div className="title">
-                <h1>Contact</h1>
-                <span>In this section you can contact me to inquire about my work or to schedule a meeting.</span>
-            </div>
+            <ContentTitle>
+                <H1 marginbottom={"2rem"}>Contact</H1>
+                <SubTitle>In this section you can contact me to inquire about my work or to schedule a meeting.</SubTitle>
+            </ContentTitle>
             <FormContact />
         </ContentContact>
     );

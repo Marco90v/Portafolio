@@ -1,4 +1,4 @@
-import { ContentEducationalBackground, ListStudy } from "../styles/style";
+import { ContentEducationalBackground, ContentList, ListStudy } from "../styles/style";
 import { educationalBackground } from "../utils/resumenData";
 import Arrow from "../assets/right-arrow-solid-24.png";
 
@@ -6,12 +6,12 @@ function EducationalBackground() {
     return(
         <ContentEducationalBackground>
             <h2>Educational Background</h2>
-            <ul>
+            <ContentList>
                 {
                     educationalBackground.map((eB:educationalBackground, idz:number)=>{
                         const { study, date, institution, detail, color } = eB;
                         return (
-                            <ListStudy className={color} key={idz}>
+                            <ListStudy color={color} key={idz}>
                                 <h3>{study}</h3>
                                 <span>{date}</span>
                                 <p>{institution}</p>
@@ -23,7 +23,7 @@ function EducationalBackground() {
                         );
                     })
                 }
-            </ul>
+            </ContentList>
         </ContentEducationalBackground>
     );
 }

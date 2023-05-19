@@ -1,4 +1,4 @@
-import { Activitie, ContentWorkExperience, ListWork } from "../styles/style";
+import { Activitie, ContentList, ContentWorkExperience, ListWork } from "../styles/style";
 import { workExperience } from "../utils/resumenData";
 import Arrow from "../assets/right-arrow-solid-24.png";
 
@@ -6,12 +6,12 @@ function WorkExperience(){
     return(
         <ContentWorkExperience>
             <h2>Work Experience</h2>
-            <ul>
+            <ContentList>
                 {
                     workExperience.map((wE:workExperience, idx:number)=>{
                         const { company, duration, description, activities, color } = wE;
                         return (
-                            <ListWork className={color} key={idx}>
+                            <ListWork color={color} key={idx}>
                                 <h3>{company}</h3>
                                 <span>{duration}</span>
                                 <p>{description}</p>
@@ -32,7 +32,7 @@ function WorkExperience(){
                         );
                     })
                 }
-            </ul>
+            </ContentList>
         </ContentWorkExperience>
     );
 }

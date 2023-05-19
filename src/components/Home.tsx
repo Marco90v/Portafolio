@@ -1,4 +1,4 @@
-import { ContentHome } from "../styles/style";
+import { ContentHome, H1 } from "../styles/style";
 import Avatar from '../assets/DSC_0343.jpg';
 import IconGithub from '../assets/github-white.png';
 import IconLinkedin from '../assets/linkedin-white.png';
@@ -7,7 +7,7 @@ import IconPDF from '../assets/file-pdf-white.png';
 function Home(){
     return(
         <ContentHome>
-            <h1>Marco Velasquez Figarella</h1>
+            <H1>Marco Velasquez Figarella</H1>
             <div>
                 <h2>Front-end Developer</h2>
                 <p>
