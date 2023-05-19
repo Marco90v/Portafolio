@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AlertContact, ContentContact, ContentTitle, H1, SubTitle } from "../styles/style";
 import { Context } from "../context/MyContext";
 import emailjs from '@emailjs/browser';
@@ -11,6 +11,7 @@ const PUBLIC_KEY = "cuaNdUhdGOg7KbRC3";
 
 function FormContact(){
     const { state:{formContact, alert}, dispatch } = useContext(Context);
+    const [ disabled, setDisabled ] = useState<boolean>(false);
     
     const handlerChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const key = e.target.name;
@@ -21,24 +22,27 @@ function FormContact(){
 
     const submit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setDisabled(true);
         dispatch({type:"resetAlert"});
         emailjs.send(SERVICE_ID, TEMPLATE_ID, formContact, PUBLIC_KEY).then(()=>{
             const msgAlert = {result:"Message sent successfully.", type:"success", icon:iconSuccess};
             dispatch({type:"changeAlert", msgAlert});
             dispatch({type:"resetForm"});
+            setDisabled(false);
         }).catch(()=>{
             const msgAlert = {result:"The message could not be sent, please try again.", type:"error", icon:iconError};
             dispatch({type:"changeAlert", msgAlert});
+            setDisabled(false);
         });
     };
     return(
         <form onSubmit={submit} >
-            <input type="text" placeholder="Full name" name="fullName" onChange={handlerChange} value={formContact.fullName} />
-            <input type="email" placeholder="Email" name="email" onChange={handlerChange} value={formContact.email} />
-            <input type="text" placeholder="Subject" name="subject" onChange={handlerChange} value={formContact.subject} />
-            <textarea cols={30} rows={10} placeholder="Message" name="message" onChange={handlerChange} value={formContact.message} />
+            <input type="text" placeholder="Full name" name="fullName" onChange={handlerChange} value={formContact.fullName} required />
+            <input type="email" placeholder="Email" name="email" onChange={handlerChange} value={formContact.email} required />
+            <input type="text" placeholder="Subject" name="subject" onChange={handlerChange} value={formContact.subject} required />
+            <textarea cols={30} rows={10} placeholder="Message" name="message" onChange={handlerChange} value={formContact.message} required />
             <AlertContact className={alert.type}><img src={alert.icon} alt="icon" />{alert.result}</AlertContact>
-            <input type="submit" value="Send message" />
+            <input type="submit" value="Send message" disabled={disabled} />
         </form>
     );
 }

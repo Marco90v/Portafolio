@@ -541,6 +541,11 @@ export const ContentContact = styled(ContentSection)`
                 background-color: orange;
                 color: black;
             }
+            &:disabled{
+                box-shadow: 0rem 0rem 0 0 transparent;
+                background-color: black;
+                color: white;
+            }
         }
     }
 `;
