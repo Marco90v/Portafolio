@@ -4,7 +4,7 @@ import Roots from "./components/Roots";
 import MyContext from "./context/MyContext";
 import { Sidebar, ModalDetails } from "./components";
 
-function App() {
+function App() { 
 
   return (
     <BrowserRouter>

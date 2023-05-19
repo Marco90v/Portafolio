@@ -1,4 +1,4 @@
-import { ContentList, InfoProjects, ListProjects } from "../styles/style";
+import { InfoProjects, ListProjects } from "../styles/style";
 import iconGithub from "../assets/github-logo-24.png";
 import iconLive from "../assets/planet-solid-24.png";
 import { Details, LinkWithIcon } from ".";
