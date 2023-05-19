@@ -55,6 +55,28 @@ const projects:project[] = [
         client: "Personal"
     },
     {
+        title: "AnimeAPI",
+        img: "https://raw.githubusercontent.com/Marco90v/animeApiRest/master/assets/Top_desktop.webp",
+        linkGithub: "https://github.com/Marco90v/animeApiRest",
+        linkLive: "https://marco90v.github.io/animeApiRest/",
+        description: "Anime search engine",
+        details: "This web application is with the purpose of putting into practice, my knowledge in web application development, making APIs consumption, using pagination, component creation, data storage, design creation, responsiveness, use of routes, the application shows the top anime, the recommended and the most watched, the detailed description has the name in Japanese, English or Spanish, number of chapters, if it is a movie or series, duration, date of issue and extract that describes the anime.",
+        author: "Marco Velasquez",
+        skills: "React, React-Router, Fetch, HTML, CSS, Grid, Flexbox",
+        client: "Personal"
+    },
+    {
+        title: "Book application",
+        img: "https://raw.githubusercontent.com/Marco90v/apiBooks/master/screenshot/Inicio.webp",
+        linkGithub: "https://github.com/Marco90v/apiBooks",
+        linkLive: "https://marco90v.github.io/apiBooks/",
+        description: "Information on books of different categories",
+        details: "Book API consumption application, where books are retrieved by categories, also retrieves detailed information of the book, such as author, publication date, number of pages, publisher, language, tags and an extract of the content, this project was done to put into practice the development skills in Angular and TypeScript, as well as the consumption of APIs.",
+        author: "Marco Velasquez",
+        skills: "Angular, Openlibra API, CSS, Grid, Flexbox",
+        client: "Personal"
+    },
+    {
         title: "Survey",
         img: "/src/assets/projects/encuesta_desktop.webp",
         linkGithub: "https://github.com/Marco90v/appEncuestas",
