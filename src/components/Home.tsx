@@ -1,5 +1,8 @@
 import { ContentHome } from "../styles/style";
 import Avatar from '../assets/DSC_0343.jpg';
+import IconGithub from '../assets/github-white.png';
+import IconLinkedin from '../assets/linkedin-white.png';
+import IconPDF from '../assets/file-pdf-white.png';
 
 function Home(){
     return(
@@ -18,6 +21,23 @@ function Home(){
                 </p>
                 <p> Additional knowledge of <span>NodeJS, Python and PHP.</span></p>
                 <img src={Avatar} alt="Marco Velasquez" />
+                <ul>
+                    <li>
+                        <a href="https://github.com/Marco90v" target="_blank" rel="noopener noreferrer">
+                            <img src={IconGithub} alt="github"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/marco90v/" target="_blank" rel="noopener noreferrer">
+                            <img src={IconLinkedin} alt="linkedin"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" rel="noopener noreferrer">
+                            <img src={IconPDF} alt="PDF"/>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </ContentHome>
     );

@@ -86,16 +86,18 @@ export const ContentHome = styled(ContentSection)`
     max-width: 65rem;
     margin: auto;
     >h1{
-        font-size: 2rem;
+        font-size: 3rem;
         color: #09853F;
     }
     >div{
         display: grid;
         grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
         column-gap: 2rem;
         h2{
             margin-bottom: 1rem;
+            font-size: 2rem;
+            grid-row: 1/3;
         }
         >p{
             line-height: 2rem;
@@ -115,6 +117,26 @@ export const ContentHome = styled(ContentSection)`
             width: 23rem;
             border-radius: 1rem;
             box-shadow: 0rem 0rem 1rem 0.1rem black;
+        }
+        >ul{
+            grid-column: 2/3;
+            grid-row: 5/6;
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.5rem;
+            >li>a>img{
+                border-radius: 1rem;
+                padding: 0.2rem;
+                cursor: pointer;
+                transition: all ease-in-out 0.15s;
+                &:hover{
+                    background-color: orange;
+                    box-shadow: 0 0 0.5rem 0.1rem orange;
+                }
+            }
         }
     }
 `;
