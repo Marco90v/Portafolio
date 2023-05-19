@@ -124,6 +124,9 @@ export const ContentHome = styled(ContentSection)`
         grid-template-columns: auto auto;
         grid-template-rows: auto auto auto auto auto;
         column-gap: 2rem;
+        background-color: #2a2e36;
+        padding: 2rem;
+        border-radius: 1rem;
         h2{
             margin-bottom: 1rem;
             font-size: 2rem;

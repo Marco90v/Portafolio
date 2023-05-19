@@ -21,9 +21,9 @@ const initialState:stateContact = {
   modal: initialModal
 };
 
-const Context = createContext<any>(initialState);
+const Context = createContext<{state:stateContact, dispatch: React.Dispatch<any>}>({state:initialState, dispatch:()=>null });
 
-const reducer = (state:any, action:any) => {
+const reducer = (state:stateContact, action:any):stateContact => {
   switch (action.type) {
     case "addDataModal":
       return {
@@ -59,11 +59,11 @@ const reducer = (state:any, action:any) => {
           alert:initialAlert,
         };
     default:
-      break;
+      return state;
   }
 };
 
-function MyContext({children}:any) {
+function MyContext({children}:{children:React.ReactNode}) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
     return(
