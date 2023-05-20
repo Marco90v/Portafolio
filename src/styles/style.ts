@@ -121,7 +121,7 @@ export const ContentHome = styled(ContentSection)`
         grid-template-rows: auto auto auto auto auto;
         column-gap: 2rem;
         background-color: #2a2e36;
-        padding: 2rem;
+        padding: 2rem 2rem 1rem 2rem;
         border-radius: 1rem;
         h2{
             margin-bottom: 1rem;
@@ -155,8 +155,10 @@ export const ContentHome = styled(ContentSection)`
             gap: 1rem;
             justify-content: center;
             align-items: center;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             >li>a>img{
+                width: 2rem;
+                height: 2rem;
                 border-radius: 1rem;
                 padding: 0.2rem;
                 cursor: pointer;

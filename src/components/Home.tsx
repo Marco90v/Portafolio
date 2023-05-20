@@ -3,6 +3,8 @@ import Avatar from '../assets/DSC_0343.jpg';
 import IconGithub from '../assets/github-white.png';
 import IconLinkedin from '../assets/linkedin-white.png';
 import IconPDF from '../assets/file-pdf-white.png';
+import IconFrontendMentor from '../assets/frontend-mentor.svg';
+import IconCodeWars from '../assets/logo.61192cf7.svg';
 
 function Home(){
     return(
@@ -35,6 +37,16 @@ function Home(){
                     <li>
                         <a href="" target="_blank" rel="noopener noreferrer">
                             <img src={IconPDF} alt="PDF"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.frontendmentor.io/profile/marco90v" target="_blank" rel="noopener noreferrer">
+                            <img src={IconFrontendMentor} alt="PDF"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.codewars.com/users/mvf90" target="_blank" rel="noopener noreferrer">
+                            <img src={IconCodeWars} alt="PDF"/>
                         </a>
                     </li>
                 </ul>
