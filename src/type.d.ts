@@ -46,5 +46,6 @@ type formContact = {
 type stateContact = {
     formContact:formContact,
     alert:alertContact,
-    modal:null | project | challenge
+    modal:null | project | challenge,
+    showSidebar: boolean,
 }

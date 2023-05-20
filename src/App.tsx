@@ -1,21 +1,29 @@
 import { BrowserRouter } from "react-router-dom";
 import { Container, Main } from "./styles/style";
 import Roots from "./components/Roots";
-import MyContext from "./context/MyContext";
+import MyContext, { Context } from "./context/MyContext";
 import { Sidebar, ModalDetails } from "./components";
+import { useContext } from "react";
+
+function ContentMain(){
+  const { state:{showSidebar} } = useContext(Context);
+
+  return(
+    <Main show={showSidebar.toString()} >
+      <Sidebar />
+        <Container>
+          <Roots />
+        </Container>
+      <ModalDetails />
+    </Main>
+  );
+}
 
 function App() { 
-
   return (
     <BrowserRouter>
       <MyContext>
-        <Main>
-          <Sidebar />
-          <Container>
-            <Roots />
-          </Container>
-          <ModalDetails />
-        </Main>
+        <ContentMain />
       </MyContext>
     </BrowserRouter>
   );

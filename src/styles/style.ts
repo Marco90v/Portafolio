@@ -12,11 +12,31 @@ const COLORS = {
     black: "#000000",
 };
 
-export const Main = styled.main`
-    display: grid;
-    grid-template-columns: 10rem auto;
-    grid-template-rows: auto;
+export const Main = styled.main<{show:string}>`
     height: 100vh;
+    @media (min-width: 1023px){
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 10rem auto;
+    }
+`;
+
+export const ToggleSidebar = styled.button<{show:string}>`
+    background-color: green;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    left: ${ ( {show} ) => show==="true" ? "9rem" : "11rem" };
+    box-shadow: 0 0 0.1rem 0.2rem #00000078;
+    transition: all ease-in-out 0.25s;
+    >img{
+        transform: rotateZ(${ ( {show} ) => show==="true" ? "180deg" : "360deg" });
+        transition: all ease-in-out 0.25s;
+    }
+    @media (min-width: 1023px){
+        display: none;
+    }
 `;
 
 export const Container = styled.section`
@@ -24,11 +44,14 @@ export const Container = styled.section`
     background: rgb(49,57,75);
     background: linear-gradient(90deg, rgba(49,57,75,1) 0%, rgba(27,32,42,1) 50%, rgba(13,16,20,1) 100%);
     color: white;
-    padding: 2rem;
+    padding: 2rem 1rem;
     overflow: auto;
+    @media (min-width:1023px) {
+        padding: 2rem;
+    }
 `;
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{show:string}>`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +61,14 @@ export const Nav = styled.nav`
     background: radial-gradient(circle, rgba(6,9,18,1) 50%, rgba(16,25,48,1) 100%);
     box-shadow: 0rem 0rem 1rem 0.1rem black;
     z-index: 9;
+    transition: all ease-in-out 0.25s;
+
+    @media (max-width: 1023px) {
+        position: fixed;
+        height: 100vh;
+        width: 8rem;
+        left: ${ ( {show} ) => show==="true" ? "0rem" : "-10rem" };
+    }
 `;
 export const Ul = styled.ul`
     display: flex;
@@ -117,16 +148,17 @@ export const ContentHome = styled(ContentSection)`
     margin: auto;
     >div{
         display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
         column-gap: 2rem;
         background-color: #2a2e36;
         padding: 2rem 2rem 1rem 2rem;
         border-radius: 1rem;
         h2{
+            text-align: center;
+            margin-top: 2rem;
             margin-bottom: 1rem;
             font-size: 2rem;
-            grid-row: 1/3;
         }
         >p{
             line-height: 2rem;
@@ -141,15 +173,13 @@ export const ContentHome = styled(ContentSection)`
             }
         }
         >img{
-            grid-row: 1/5;
-            grid-column: 2/3;
-            width: 23rem;
+            grid-row: 1/2;
+            margin: auto;
+            max-width: 18rem;
             border-radius: 1rem;
             box-shadow: 0rem 0rem 1rem 0.1rem black;
         }
         >ul{
-            grid-column: 2/3;
-            grid-row: 5/6;
             list-style: none;
             display: flex;
             gap: 1rem;
@@ -170,6 +200,25 @@ export const ContentHome = styled(ContentSection)`
             }
         }
     }
+    @media (min-width: 1023px) {
+        >div{
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto auto auto auto;
+            >h2{
+                text-align: left;
+                grid-row: 1/3;
+            }
+            >img{
+                grid-row: 1/5;
+                grid-column: 2/3;
+                max-width: 23rem;
+            }
+            >ul{
+                grid-column: 2/3;
+                grid-row: 5/6;
+            }
+        }
+    }
 `;
 
 export const ContentList = styled.ul`
@@ -180,9 +229,13 @@ export const ContentList = styled.ul`
 `;
 
 export const H1 = styled.h1<{marginbottom?:string}>`
-    font-size: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
     color: #09853F;
     margin-bottom: ${ ({marginbottom="0"}) => marginbottom };
+    @media (min-width: 1023px) {
+        font-size: 3rem;
+    }
 `;
 export const SubTitle = styled.span`
     font-size: 1.3rem;
@@ -221,6 +274,10 @@ export const ContentSkill = styled.div`
         background-color: #2a2e36;
         padding: 1.5rem;
         border-radius: 1rem;
+        justify-content: center;
+        @media (min-width: 1023px) {
+            justify-content: flex-start;
+        };
     }
 `;
 
@@ -238,20 +295,30 @@ export const ContentEducationalBackground = styled.div`
     margin-bottom: 3rem;
     >ul{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         column-gap: 1rem;
         row-gap: 2rem;
         background-color: #2a2e36;
         padding: 1.5rem;
         border-radius: 1rem;
+        @media (min-width: 1023px) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 `;
 
 export const ContentWorkExperience = styled(ContentEducationalBackground)`
     margin-bottom: 0;
-    >ul{
-        grid-template-columns: 1fr 1fr 1fr;
+    @media (min-width: 1023px) {
+        >ul{
+            grid-template-columns: 1fr 1fr;
+        }   
+    }
+    @media (min-width: 1300px) {
+        >ul{
+            grid-template-columns: 1fr 1fr 1fr;
+        }   
     }
 `;
 
@@ -360,12 +427,16 @@ export const ListProjects = styled.li`
     position: relative;
     transition: all ease-in-out .5s;
     >img{
-        width: 25rem;
+        /* width: 25rem; */
+        width: 22rem;
         height: 15rem;
         object-fit: cover;
         border-radius: 1rem;
         border: 0.15rem solid orange;
         transition: all ease-in-out .5s;
+        @media (min-width: 1024px) {
+            width: 25rem;
+        }
     }
     ${InfoProjects} {
         >h2{
@@ -405,6 +476,8 @@ export const ListProjects = styled.li`
 
 export const ContentDetails = styled.div`
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -416,18 +489,17 @@ export const ContentDetails = styled.div`
         position: relative;
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 2rem;
-        align-content: center;
         justify-content: center;
-        max-width: 75rem;
+        max-width: 100%;
+        max-height: 100%;
         padding: 2rem;
         border-radius: 0.5rem;
         background-color: white;
         box-shadow: 0 0 0.5rem 0.25rem grey;
+        overflow: auto;
         >div.title{
-            grid-row: 1/2;
-            grid-column: 1/3;
             background-color: #d9d9d9;
             padding: 0.5rem;
             border-radius: 0.5rem;
@@ -453,8 +525,6 @@ export const ContentDetails = styled.div`
             }
         }
         >div.description{
-            grid-row: 2/3;
-            grid-column: 1/2;
             >p{
                 margin: 0.5rem 0;
                 font-weight: 100;
@@ -465,10 +535,8 @@ export const ContentDetails = styled.div`
             }
         }
         >div.info{
-            grid-row: 2/3;
-            grid-column: 2/3;
             >img{
-                width: 40rem;
+                width: 100%;
                 border: 0.15rem solid black;
                 border-radius: 0.5rem;
                 margin: 1rem 0;
@@ -498,6 +566,29 @@ export const ContentDetails = styled.div`
             }
         }
     }
+    @media (min-width: 1024px) {
+        >div.modal{
+            grid-template-columns: 1fr 1fr;
+            align-content: center;
+            max-width: 75rem;
+            height: auto;
+            >div.title{
+                grid-row: 1/2;
+                grid-column: 1/3;
+            }
+            >div.description{
+                grid-row: 2/3;
+                grid-column: 1/2;
+            }
+            >div.info{
+                grid-row: 2/3;
+                grid-column: 2/3;
+                >img{
+                    width: 40rem;
+                }
+            }
+        }
+    }
 `;
 
 export const ContentContact = styled(ContentSection)`
@@ -506,14 +597,14 @@ export const ContentContact = styled(ContentSection)`
     align-items: center;
     >form{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto 1fr auto auto;
-        gap: 2rem;
-        margin-top: 5rem;
-        width: 55rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 1rem;
+        margin-top: 1rem;
+        width: 100%;
         >input, >textarea{
             background-color: #2a2e36;
-            padding: 1rem 0.5rem;
+            padding: 0.5rem 0.5rem;
             font-size: 1rem;
             color: white;
             letter-spacing: 0.1rem;
@@ -524,16 +615,10 @@ export const ContentContact = styled(ContentSection)`
                 border-color: orange;
             }
         }
-        >input[type="text"]:nth-child(3){
-            grid-column: 1/3;
-        }
         >textarea{
-            grid-column: 1/3;
             resize: none;
         }
         >input[type="submit"]{
-            grid-column: 2/3;
-            margin-left: 10rem;
             cursor: pointer;
             font-weight: bold;
             color: orange;
@@ -549,6 +634,26 @@ export const ContentContact = styled(ContentSection)`
                 color: white;
             }
         }
+        @media (min-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto 1fr auto auto;
+            grid-gap: 2rem;
+            margin-top: 5rem;
+            width: 50rem;
+            >input, >textarea{
+                padding: 1rem 0.5rem;
+            }
+            >input[type="text"]:nth-child(3){
+                grid-column: 1/3;
+            }
+            >textarea{
+                grid-column: 1/3;
+            }
+            >input[type="submit"]{
+                grid-column: 2/3;
+                margin-left: 10rem;
+            }
+        }
     }
 `;
 
@@ -556,7 +661,6 @@ export const AlertContact = styled.span`
     display: flex;
     align-items: center;
     column-gap: 1rem;
-    grid-column: 1/3;
     font-weight: bold;
     line-height: 2rem;
     padding: 0.5rem;
@@ -575,6 +679,9 @@ export const AlertContact = styled.span`
         opacity:1;
         color:${COLORS.green};
         background-color: rgb(255 255 255 / 10%);
+    }
+    @media (min-width: 1024px) {
+        grid-column: 1/3;
     }
 `;
 
