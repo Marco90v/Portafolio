@@ -1,4 +1,4 @@
-// type color = "green" | "red" | "blue" | "yellow"
+type color = "green" | "blue" | "red" | "yellow" | "orange" | "purple" | "pink" | "black"
 type data = { name:string, root:string, imgNotActive:string, imgActive: string }
 type skill = {  name:string, color:string, img:string }
 type activitie = string
@@ -48,4 +48,6 @@ type stateContact = {
     alert:alertContact,
     modal:null | project | challenge,
     showSidebar: boolean,
+    projectsData:project[],
+    challengesData:challenge[],
 }

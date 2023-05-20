@@ -12,4 +12,6 @@ export * from "./ProjectsAndChallenges";
 export * from "./Skills";
 export * from "./Details";
 export * from "./Nav";
+export * from "./Data";
+export * from "./Roots";
 export * from "./404";

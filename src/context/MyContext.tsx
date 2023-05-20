@@ -19,8 +19,12 @@ const initialState:stateContact = {
     formContact: initialForm,
     alert: initialAlert,
     modal: initialModal,
-    showSidebar:false
+    showSidebar:false,
+    projectsData: [],
+    challengesData: [],
 };
+
+
 
 const Context = createContext<{state:stateContact, dispatch: React.Dispatch<any>}>({state:initialState, dispatch:()=>null });
 
@@ -63,6 +67,16 @@ const reducer = (state:stateContact, action:any):stateContact => {
             return {
                 ...state,
                 showSidebar: !state.showSidebar
+            };
+        case "setProjects":
+            return{
+                ...state,
+                projectsData: action.data
+            };
+        case "setChallenges":
+            return{
+                ...state,
+                challengesData: action.data
             };
         default:
             return state;

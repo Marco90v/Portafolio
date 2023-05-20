@@ -1,5 +1,5 @@
 import { ContentHome, H1 } from "../styles/style";
-import Avatar from '../assets/DSC_0343.jpg';
+import Avatar from '../assets/yo.webp';
 import IconGithub from '../assets/github-white.png';
 import IconLinkedin from '../assets/linkedin-white.png';
 import IconPDF from '../assets/file-pdf-white.png';

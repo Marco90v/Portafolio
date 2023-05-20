@@ -10,8 +10,9 @@ function WorkExperience(){
                 {
                     workExperience.map((wE:workExperience, idx:number)=>{
                         const { company, duration, description, activities, color } = wE;
+                        const c:any = color; // <-- usado para evitar error con typescript y el compilado
                         return (
-                            <ListWork color={color} key={idx}>
+                            <ListWork color={c} key={idx}>
                                 <h3>{company}</h3>
                                 <span>{duration}</span>
                                 <p>{description}</p>

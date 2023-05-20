@@ -1,12 +1,21 @@
+import { useContext, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Container, Main } from "./styles/style";
-import Roots from "./components/Roots";
 import MyContext, { Context } from "./context/MyContext";
-import { Sidebar, ModalDetails } from "./components";
-import { useContext } from "react";
+import { Sidebar, ModalDetails, Roots } from "./components";
+import { useFetch } from "./hooks/useFetch";
 
 function ContentMain(){
-  const { state:{showSidebar} } = useContext(Context);
+  const { state:{showSidebar}, dispatch } = useContext(Context);
+
+  const [ projects ] = useFetch("https://raw.githubusercontent.com/Marco90v/JSONs/main/projectsData.json");
+  const [ challenges ] = useFetch("https://raw.githubusercontent.com/Marco90v/JSONs/main/challengesData.json");
+
+  useEffect(() => {
+    projects && dispatch({ type:"setProjects", data:projects });
+    challenges && dispatch({ type:"setChallenges", data:challenges });
+  }, [projects, challenges, dispatch]);
+  
 
   return(
     <Main show={showSidebar.toString()} >

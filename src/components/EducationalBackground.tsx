@@ -10,8 +10,9 @@ function EducationalBackground() {
                 {
                     educationalBackground.map((eB:educationalBackground, idz:number)=>{
                         const { study, date, institution, detail, color } = eB;
+                        const c:any = color; // <-- usado para evitar error con typescript y el compilado
                         return (
-                            <ListStudy color={color} key={idz}>
+                            <ListStudy color={c} key={idz}>
                                 <h3>{study}</h3>
                                 <span>{date}</span>
                                 <p>{institution}</p>

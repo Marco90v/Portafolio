@@ -337,7 +337,7 @@ export const Activitie = styled.li`
     }
 `;
 
-export const ListWork = styled.li<{color:string}>`
+export const ListWork = styled.li<{color:color}>`
     --color:${ ({color="green"}) => COLORS[color] };
     &:before{
         content: "";
@@ -427,15 +427,19 @@ export const ListProjects = styled.li`
     position: relative;
     transition: all ease-in-out .5s;
     >img{
-        /* width: 25rem; */
-        width: 22rem;
-        height: 15rem;
+        min-width: 22rem;
+        min-height: 15rem;
+        max-width: 22rem;
+        max-height: 15rem;
         object-fit: cover;
         border-radius: 1rem;
         border: 0.15rem solid orange;
         transition: all ease-in-out .5s;
         @media (min-width: 1024px) {
-            width: 25rem;
+            min-width: 25rem;
+            min-height: 15rem;
+            max-width: 25rem;
+            max-height: 15rem;
         }
     }
     ${InfoProjects} {
