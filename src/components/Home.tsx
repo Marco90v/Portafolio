@@ -35,7 +35,7 @@ function Home(){
                         </a>
                     </li>
                     <li>
-                        <a href="" target="_blank" rel="noopener noreferrer">
+                        <a href="https://flowcv.com/resume/6gnga9oa1r" target="_blank" rel="noopener noreferrer">
                             <img src={IconPDF} alt="PDF"/>
                         </a>
                     </li>
