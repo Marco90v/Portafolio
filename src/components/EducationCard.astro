@@ -1,0 +1,15 @@
+---
+// Componente tarjeta de educación
+const { education, classes="" } = Astro.props;
+---
+<li class=`border-l-2 border-${education.color}-600 pl-4 py-2 relative ${classes}
+          before:content-[''] before:bg-${education.color}-600 before:rounded-full before:h-4 before:w-4 before:absolute before:-left-[0.55rem] before:top-[2.1rem]`>
+    <h3 class="text-base font-bold">{education.title}</h3>
+    <span class="text-xs text-blue-600 font-bold">education.institution</span>
+    <span class="text-[0.6rem] text-gray-500">{education.years}</span>
+    <ul class="list-disc ml-4 mt-2">
+      {
+        education.description.map((description:string) => (<li class="text-[0.6rem] leading-4 font-light">{description}</li>))
+      }
+    </ul>
+</li>

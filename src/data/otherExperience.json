@@ -1,0 +1,27 @@
+[
+    { 
+        "position":"Sales and customer service",
+        "company":"Inversiones E&P",
+        "years":"Sep 2015 – Jun 2017",
+        "details":"Sale of communication equipment and related accessories",
+        "description":[
+            "Maintenance of computer equipment and networks.",
+            "Script development for sales management.",
+            "Product invoicing.",
+            "Optimization of the environment for higher productivity."
+        ],
+        "color":"red"
+    },
+    { 
+        "position":"Head of Services",
+        "company":"ESIS, C.A",
+        "years":"Oct 2013 – May 2014",
+        "details":"Management and monitoring of electronic security equipment",
+        "description":[
+            "Script development for management of daily activities.",
+            "Operations center management and coordination with field personnel.",
+            "Coordination of the installation of electronic equipment in operational fields."
+        ],
+        "color":"orange"
+    }
+]

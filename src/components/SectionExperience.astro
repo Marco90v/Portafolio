@@ -1,0 +1,52 @@
+---
+// Componente de la sección de experiencia
+import skills from '../data/skills.json';
+import experience from '../data/experience.json';
+import otherExperience from '../data/otherExperience.json';
+import education from '../data/education.json';
+
+import ExperienceCard from './ExperienceCard.astro';
+import Badge from './Badge.astro';
+import EducationCard from './EducationCard.astro';
+---
+<section id="experience" class="relative w-10/12 m-auto mt-28 bg-[#1c1c1c] p-10 rounded-lg border border-[#272727] border-solid">
+  <div class="absolute top-[-0.8rem] left-0 w-full text-center text-white text-sm font-bold">
+    <h3 class="border border-[#272727] border-solid inline text-center py-1 px-6 rounded-full bg-[#1c1c1c] text-lg">Experience</h3>
+  </div>
+    <div id="skills" class="mt-4">
+      <h2 class="text-center text-white text-lg font-bold">Skills</h2c>
+      <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
+        {
+          skills.map((skill) => ( <Badge skill={skill} /> ))
+        }
+      </ul>
+    </div>
+
+    <div id="workExperience" class="mt-8">
+      <h2 class="text-center text-white text-lg font-bold">Work Experience</h2>
+      <ul class="grid grid-cols-3 gap-x-4 gap-y-2 mt-4">
+        {
+          experience.map((experience) => ( <ExperienceCard experience={experience}/> ))
+        }
+      </ul>
+    </div>
+
+    <div id ="otherExperience" class="mt-8">
+      <h2 class="text-center text-white text-lg font-bold">Other Experience</h2>
+      <ul class="grid grid-cols-4 gap-x-4 gap-y-2 mt-4">
+        {
+          otherExperience.map((otherexperience) => ( <ExperienceCard experience={otherexperience} classes="col-span-2"/> ))
+        }
+      </ul>
+    </div>
+
+    <div id="education" class="mt-8">
+      <h2 class="text-center text-white text-lg font-bold">Education</h2>
+      <ul class="grid grid-cols-4 gap-x-4 gap-y-2 mt-4">
+        {
+          education.map((e) => ( <EducationCard education={e} classes="col-span-2"/> ))
+        }
+      </ul>
+    </div>
+
+</section>

@@ -1,0 +1,44 @@
+---
+// Componente tarjeta de proyecto
+interface Project {
+    title:       string;
+    img:         string;
+    linkGithub:  string;
+    linkLive:    string;
+    description: string;
+    details:     string;
+    author:      string;
+    skills:      string;
+    client:      string;
+}
+interface Props {
+  project: Project;
+  id: number;
+  path: "projects"|"challenges";
+}
+import IconGithub from '../assets/icons/brand-github.svg';
+import IconWeb from '../assets/icons/world-www.svg';
+import IconDetail from '../assets/icons/file-description.svg';
+import IconProjectCard from './IconProjectCard.astro';
+const { project, id, path } = Astro.props;
+const link = [
+    {alt:"Code", link:project.linkGithub, src:IconGithub},
+    {alt:"Live", link:project.linkLive, src:IconWeb},
+    {alt:"Detail", link:`${path}/${id}`, src:IconDetail}
+]
+---
+<li class="min-w-60 max-w-72">
+    <img transition:name={project.title} src={project.img} alt={project.title} srcset={project.img} class="min-w-60 max-w-72 rounded-lg border border-orange-400 border-solid">
+    <div class="p-1 text-sm text-gray-400 mt-1 bg-[#222222] border border-solid border-[#272727] rounded-md">
+        <p class="text-white text-xs block text-center font-bold mb-1">{project.title}</p>
+        <div class="flex flex-row justify-center gap-x-4">
+            {
+                link.map(({alt,link, src}) => (
+                    <a href={link} target={alt !== "Detail" ? "_blank" : "_parent"} class="text-white hover:text-orange-400">
+                        <IconProjectCard src={src} alt={alt}/>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</li>

@@ -1,0 +1,22 @@
+---
+// Componente de input
+import type { HTMLAttributes } from 'astro/types';
+type Type = HTMLAttributes<'input'>;
+interface Props extends HTMLAttributes<'input'>{
+  id: string;
+  name: string;
+  placeholder: string;
+  type: Type['type'];
+  class?:string;
+  required?: boolean;
+}
+const { id, name, placeholder, type, class:c, required=true } = Astro.props;
+---
+<input
+    type={type}
+    id={id}
+    name={name}
+    placeholder={placeholder}
+    class={`py-2 px-3 rounded-md bg-[#2a2e36] text-white focus:outline-none focus:ring-1 focus:ring-orange-400  ${c}`}
+    required={required}
+>

@@ -1,0 +1,38 @@
+---
+// Componente de la sección de inicio
+// shadow-[0_0.1rem_0.5rem_rgba(43,43,43,0.5)]
+import { Image } from 'astro:assets';
+import Profile from '../assets/img/profile2.png';
+import { profile }  from '../data/data.json';
+// console.log(profile);
+---
+<section id="home" class="relative w-[50rem] m-auto mt-28 bg-[#1c1c1c] p-10 rounded-lg border border-[#272727] border-solid">
+    <div class="absolute top-[-0.8rem] left-0 w-full text-center text-white text-sm font-bold">
+        <h3 class="border border-[#272727] border-solid inline text-center py-1 px-6 rounded-full bg-[#1c1c1c] text-lg">Profile</h3>
+    </div>
+    <h1 class="text-center text-white text-3xl font-bold">Marco Velasquez Figarella</h1>
+    <div id="contentProfile" class="grid grid-cols-3 gap-4 mt-4">
+        <h2 class="col-span-2 text-white text-xl font-bold">Frontend Developer</h2>
+        <p class="col-span-2">
+            I am a Frontend Developer with more than 3 years of experience in creating efficient, intuitive and performance optimized web interfaces.
+            My focus is to deliver quality user-centric solutions, ensuring a smooth, accessible and visually appealing experience.
+            I work with technologies such as React, TypeScript, JavaScript and CSS, along with tools such as Zustand, Tailwind CSS and Bootstrap.
+        </p>
+        <p class="col-span-2">
+            I have participated in a variety of projects, from administrative systems to landing pages and interactive applications, always prioritizing accessibility and cross-browser compatibility.
+        </p>
+        <p class="col-span-2">
+            With knowledge in backend like Node.js, Express and databases like MySQL and MongoDB, I ensure a smooth integration between frontend and backend to create robust and scalable applications.
+        </p>
+        <!-- <img src="/assets/img/profile.png" alt="Profile" class="w-full rounded-lg shadow-xl"> -->
+        <!-- border border-[#272727] shadow-md shadow-[#a8a8a8] -->
+        <!-- filter: drop-shadow(0px 0px 10px rgba(227, 227, 227, 0.2)); -->
+        <Image src={Profile} alt="Profile" class="w-full rounded-md col-start-3 row-start-1 row-span-3 m-auto drop-shadow-[0_0_5px_rgba(227,227,227,0.2)] mask-gradient"/>
+        <div id="links" class="col-start-3 row-start-4 content-center text-center">
+            <a href="https://www.linkedin.com/in/marco-velasquez-figarella-b54a0a221/" target="_blank" class="text-white text-sm font-bold">Linkedin</a>
+            <a href="https://github.com/marco-velasquez" target="_blank" class="text-white text-sm font-bold">Github</a>
+            <a href="https://twitter.com/marco_figarella" target="_blank" class="text-white text-sm font-bold">Twitter</a>
+            <a href="https://www.instagram.com/marco_figarella/" target="_blank" class="text-white text-sm font-bold">Instagram</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,63 @@
+[
+    { 
+        "position":"Freelancer",
+        "company":"Remotasks",
+        "years":"Mar 2020 - Present",
+        "details":"Various Projects",
+        "description":[
+            "Image annotation to train artificial intelligence models.",
+            "Relevant information labeling, image classification, attribute definition.",
+            "Data quality assurance, for the achievement of an accurate model."
+        ],
+        "color":"green"
+    },
+    { 
+        "position":"Computer support technician",
+        "company":"Space Studio Perú",
+        "years":"Feb 2019 - Dec 2019",
+        "details":"Application development, web maintenance and equipment management, Collaboration for the acquisition of technological supplements.",
+        "description":[
+            "Developed websites and blogs for a new startup, using WordPress, PHP, CSS, HTML, JavaScript and plugins.",
+            "Designed and developed web survey system with Angular, PHP, MySQL, Bootstrap.",
+            "I designed an image creation application from a form and biometric reader, made in C#.",
+            "Optimized and extended the organization's website using plugins, JavaScript and CSS."
+        ],
+        "color":"blue"
+    },
+    { 
+        "position":"Computer support assistant",
+        "company":"Saxon Energy Services de Venezuela, C.A",
+        "years":"May 2014 – Aug 2014",
+        "details":"Computer support assistant, requirements assistance.",
+        "description":[
+            "Development of script to extract data from documents and perform calculations on the data obtained.",
+            "Installation and optimization of computer equipment both in office and oil fields.",
+            "Management of servers with Active Directory and physical access system."
+        ],
+        "color":"pink"
+    },
+    { 
+        "position":"Technical assistant",
+        "company":"Vivolca",
+        "years":"Mar 2013 – Aug 2013",
+        "details":"Computer support assistant, requirements assistance.",
+        "description":[
+            "Management and optimization of SAP Business One administrative software.",
+            "Optimization and repair of the organization's internal network.",
+            "Backup of main servers and workstations."
+        ],
+        "color":"purple"
+    },
+    { 
+        "position":"Developer",
+        "company":"Universidad de Oriente",
+        "years":"Apr 2011 – Jun 2011",
+        "details":"Programmer and IT assistant",
+        "description":[
+            "Optimization of the university website in HTML, CSS, JavaScript and PHP.",
+            "Management of requests in Oracle databases.",
+            "Enrollment and administrative system solutions."
+        ],
+        "color":"yellow"
+    }
+]

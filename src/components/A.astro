@@ -1,0 +1,9 @@
+---
+  const raiz = Astro.url.hostname;
+  const {section, classExtra} = Astro.props;
+---
+<a
+  class={`transition ease-in-out duration-500 block h-12 px-4 border-b-2 border-transparent ${classExtra}`}
+  href={`http://${raiz}:4321/#${section.toLowerCase()}`}>
+  {section}
+</a>

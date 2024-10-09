@@ -1,0 +1,51 @@
+---
+// Componente de la sección de retos
+interface project {
+    title:       string;
+    img:         string;
+    linkGithub:  string;
+    linkLive:    string;
+    description: string;
+    details:     string;
+    author:      string;
+    skills:      string;
+    client:      string;
+}
+
+interface Props {
+  all?: "no" | "yes";
+}
+
+import ProjectCard from './ProjectCard.astro';
+// const projects = await fetch('https://raw.githubusercontent.com/Marco90v/JSONs/refs/heads/main/challengesData.json');
+// const data:project[] = await projects.json();
+import data from '../data/challenge.json';
+
+// export async function getStaticPaths() {
+//   const data = await fetch("https://raw.githubusercontent.com/Marco90v/JSONs/refs/heads/main/challengesData.json").then(response => response.json());
+
+//   return data;
+// }
+
+import ViewMore from './ViewMore.astro';
+
+const { all="no" } = Astro.props;
+
+
+const newData = all === "no" ? data.slice(0, 6) : data;
+---
+<section id="challenges" class="relative w-10/12 m-auto mt-28 bg-[#1c1c1c] p-10 rounded-lg border border-[#272727] border-solid">
+  <div class="absolute top-[-0.8rem] left-0 w-full text-center text-white text-sm font-bold">
+    <h3 class="border border-[#272727] border-solid inline text-center py-1 px-6 rounded-full bg-[#1c1c1c] text-lg">Challenge</h3>
+  </div>
+  <div class="projects-grid">
+    <!-- <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4"> -->
+    <ul class="grid grid-cols-[repeat(auto-fit,minmax(15rem,18rem))] justify-items-center content-center justify-center gap-x-4 gap-y-2 mt-4">
+        {
+          newData.map((project, index) => ( <ProjectCard project={project} id={index} path="challenges" /> ))
+        }
+    </ul>
+  </div>
+  <!-- <a href="" class="block text-center">View more.</a> -->
+  {all==="no" && <ViewMore  href="/challenges"/>}
+</section>

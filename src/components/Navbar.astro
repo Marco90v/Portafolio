@@ -1,0 +1,21 @@
+---
+// Componente del menú de navegación
+import A from "./A.astro";
+const sections = ['Home', 'Experience', 'Projects', 'Challenges', 'Contact'];
+const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+// console.log(Astro.url.pathname);
+---
+<header class="border-b-2 border-[rgba(43,43,43,0.5)] border-solid bg-[#121212] shadow-[0_0.1rem_0.5rem_rgba(43,43,43,0.5)] fixed w-full z-10"> 
+  <nav>
+    <ul class="flex justify-center">
+      {
+        sections.map((section, index) => {
+          return (
+            <li class="leading-[3rem]">
+              <A section={section} classExtra={`hover:border-${colors[index]}-900`} />
+            </li>
+          )
+        })
+      }
+  </nav>
+</header>
