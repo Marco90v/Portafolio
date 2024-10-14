@@ -10,54 +10,17 @@ interface project {
     skills:      string;
     client:      string;
 }
-// src/pages/project/[id].astro
 import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import IconGithub from '../../assets/icons/brand-github.svg';
-import IconWeb from '../../assets/icons/world-www.svg';
-import IconBack from '../../assets/icons/arrow-back-up.svg';
 
 // const data:project[] = await fetch('https://api.example.com/projects').then(response => response.json());
 import data from '../../data/projects.json'
-import IconProjectCard from '../../components/IconProjectCard.astro';
+import DetailProject from '../../components/DetailProject.astro';
 const { id } = Astro.params;
 const project = data.find((_, index:number) => index === Number(id));
-// console.log(project);
 if(!project){
   return Astro.redirect('/404');
 }
-const link = [
-    {alt:"Code", link:project.linkGithub, src:IconGithub},
-    {alt:"Live", link:project.linkLive, src:IconWeb},
-]
 ---
-
 <Layout title={`${project?.title} | Marco Velasquez Figarella`}>
-  <section id="project" class="relative bg-[#1c1c1c] border border-[#272727] w-10/12 m-auto p-10 rounded-lg grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
-    <a href="/" class="absolute top-2 left-4 text-center text-white text-sm font-bold">
-      <IconProjectCard src={IconBack} alt="Back"/>
-    </a>
-    <article>
-      <Image transition:name={project.title} src={project?.img} alt={project?.title} inferSize class="rounded-lg border border-orange-400 border-solid" /> 
-      <p class="text-gray-400 text-sm my-2"><strong class="text-orange-400">Skills:</strong> {project?.skills}</p>
-      <div class="flex flex-row justify-center gap-x-4">
-          {
-            link.map(({alt,link, src}) => (
-              <a href={link} target="_blank" class="text-white hover:text-orange-400">
-                <IconProjectCard src={src} alt={alt}/>
-              </a>
-            ))
-          }
-      </div>
-    </article>
-    <div class="flex flex-col lg:col-span-2">
-      <div class="bg-[#272727] border border-solid border-[#272727] rounded-md p-2 text-white mb-2">
-        <h1 class="text-orange-500 text-2xl font-bold">{project?.title}</h1>
-        <h2 class="text-gray-400 text-sm">{project?.description}</h2>
-      </div>
-      <p class="text-gray-400 text-sm"><strong class="text-orange-400">Author:</strong> {project?.author}</p>
-      <p class="text-gray-400 text-sm"><strong class="text-orange-400">Client:</strong> {project?.client}</p>
-      <p class="text-white text-sm mt-4"><strong class="text-orange-400">Details:</strong> {project?.details}</p>
-    </div>
-  </section>
+  <DetailProject project={project} id="project"/>
 </Layout>

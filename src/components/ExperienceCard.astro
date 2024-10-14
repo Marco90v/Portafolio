@@ -1,16 +1,11 @@
 ---
 // Componente tarjeta de experiencia
+import ExperienceLayout from "../layouts/ExperienceLayout.astro";
+
 const { experience, classes="" } = Astro.props;
 ---
-<li class=`border-l-2 border-${experience.color}-600 pl-4 py-2 relative ${classes}
-          before:content-[''] before:bg-${experience.color}-600 before:rounded-full before:h-4 before:w-4 before:absolute before:-left-[0.55rem] before:top-[2.1rem]`>
-    <h3 class="text-base font-bold">{experience.position}</h3>
-    <span class="text-xs text-blue-600 font-bold">{experience.company}</span>
-    <span class="text-[0.6rem] text-gray-500">{experience.years}</span>
-    <p class="text-xs leading-4 my-2">{experience.details}</p>
-    <ul class="list-disc ml-4 mt-2">
-      {
-        experience.description.map((description:string) => (<li class="text-[0.6rem] leading-4 font-light">{description}</li>))
-      }
-    </ul>
-</li>
+<ExperienceLayout data={experience} classes={classes}>
+  {
+    experience.description.map((description:string) => (<li class="text-sm text-gray-500">{description}</li>))
+  }
+</ExperienceLayout>

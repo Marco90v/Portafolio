@@ -3,10 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 const title = Astro.props.title;
-// const lang = Astro.url.searchParams.get('lang');
-// console.log(Astro.url.hostname);
 const {id} = Astro.params;
-
 ---
 
 <!DOCTYPE html>
@@ -20,8 +17,7 @@ const {id} = Astro.params;
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <ClientRouter />
 </head>
-<!-- bg-gradient-to-b from-slate-950 from-50% to-blue-950  pb-16-->
-<body class="text-sm text-white bg-[#121212] min-h-screen"> 
+<body class="text-base text-white bg-[#121212] min-h-screen pb-14"> 
   { !id && <Navbar /> }
   <main class="flex flex-col min-h-screen">
     <slot />

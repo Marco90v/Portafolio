@@ -7,11 +7,11 @@ const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
 ---
 <header class="border-b-2 border-[rgba(43,43,43,0.5)] border-solid bg-[#121212] shadow-[0_0.1rem_0.5rem_rgba(43,43,43,0.5)] fixed w-full z-10"> 
   <nav>
-    <ul class="flex justify-center">
+    <ul class="flex justify-center content-center text-2xl font-bold">
       {
         sections.map((section, index) => {
           return (
-            <li class="leading-[3rem]">
+            <li class="leading-[5rem]">
               <A section={section} classExtra={`hover:border-${colors[index]}-900`} />
             </li>
           )

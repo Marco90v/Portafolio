@@ -1,17 +1,19 @@
 ---
-import Input from "./Input.astro";
-
 // Componente de la sección de contacto
+import ContentTitleLayout from "../layouts/ContentTitleLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
+import TitleSection from "./TitleSection.astro";
+import Input from "./Input.astro";
 ---
-<section id="contact" class="relative w-10/12 m-auto mt-28 mb-14 bg-[#1c1c1c] p-10 rounded-lg border border-[#272727] border-solid">
-  <div class="absolute top-[-0.8rem] left-0 w-full text-center text-white text-sm font-bold">
-    <h3 class="border border-[#272727] border-solid inline text-center py-1 px-6 rounded-full bg-[#1c1c1c] text-lg">Contact</h3>
-  </div>
-  <form class="w-10/12 max-w-[600px] m-auto mt-20 grid grid-cols-2 gap-6">
-    <Input type="text" id="name" name="name" placeholder="Full name" />
-    <Input type="text" id="email" name="name" placeholder="Email" />
+<ContentLayout id="contact">
+  <ContentTitleLayout>
+    <TitleSection title="Contact" />
+  </ContentTitleLayout>
+  <form class="md:max-w-[800px] m-auto mt-5 grid grid-cols-2 gap-6">
+    <Input type="text" id="name" name="name" placeholder="Full name" class="col-span-2 md:col-span-1"/>
+    <Input type="text" id="email" name="name" placeholder="Email" class="col-span-2 md:col-span-1" />
     <Input type="text" id="subject" name="subject" placeholder="Subject" class="col-span-2" />
     <textarea id="message" name="message" placeholder="Message" rows="10" class="col-span-2 py-2 px-3 rounded-md bg-[#2a2e36] text-white focus:outline-none focus:ring-1 focus:ring-orange-400" required></textarea>
-    <button type="submit" class="p-2 text-orange-400 text-sm font-bold bg-[#2a2e36] rounded-md col-start-2 ml-auto w-44 hover:bg-orange-400 hover:text-black transition-colors duration-300">Send message</button>
+    <button type="submit" class="p-2 col-span-2 md:col-span-1 md:col-start-2 w-full md:w-60 text-orange-400 text-base font-bold bg-[#2a2e36] rounded-md ml-auto hover:bg-orange-400 hover:text-black transition-colors duration-300">Send message</button>
   </form>
-</section>
+</ContentLayout>
