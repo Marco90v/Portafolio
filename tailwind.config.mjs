@@ -8,7 +8,11 @@ export default {
 		},
 		{
 			pattern: /bg-(red|blue|green|yellow|purple|pink|orange)-(900|600|500|400|300|200|100)/,
-			variants: ['hover', 'before']
+			variants: ['hover', 'before', 'hover:before']
+		},
+		{
+			pattern: /shadow-(red|blue|green|yellow|purple|pink|orange)-(900|600|500|400|300|200|100)/,
+			variants: ['hover', 'before', 'hover:before']
 		}
 	],
 	theme: {
