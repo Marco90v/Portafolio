@@ -33,11 +33,15 @@ const link = [
     <p class="text-white block text-center font-bold mb-1">{project.title}</p>
     <div class="flex flex-row justify-center gap-x-4">
       {
-        link.map(({alt,link, src}) => (
-          <a href={link} target={alt !== "Detail" ? "_blank" : "_parent"} class="text-white hover:text-orange-400">
-            <Icon src={src} alt={alt}/>
-          </a>
-        ))
+        link.map(({alt,link, src}) => {
+          if(link !== ""){
+            return(
+              <a href={link} target={alt !== "Detail" ? "_blank" : "_parent"} class="text-white hover:text-orange-400">
+                <Icon src={src} alt={alt}/>
+              </a>
+            )
+          }
+        })
       }
     </div>
   </div>
