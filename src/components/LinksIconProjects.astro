@@ -1,0 +1,25 @@
+---
+// Componente para los iconos de los proyectos
+import Icon from "./Icon.astro";
+interface link {
+  alt: string;
+  link: any;
+  src: ImageMetadata;
+}
+interface Props{
+  links:link[]
+}
+
+const {links} = Astro.props;
+---
+{
+  links.map(({alt,link, src}) => {
+    if(link !== ""){
+      return(
+        <a href={link} target={alt !== "Detail" ? "_blank" : "_parent"} class="text-white hover:text-orange-400">
+          <Icon src={src} alt={alt}/>
+        </a>
+      )
+    }
+  })
+}

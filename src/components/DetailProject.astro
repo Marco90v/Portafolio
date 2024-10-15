@@ -15,6 +15,7 @@ import IconGithub from '../assets/icons/brand-github.svg';
 import IconWeb from '../assets/icons/world-www.svg';
 import IconBack from '../assets/icons/arrow-back-up.svg';
 import Icon from './Icon.astro';
+import LinksIconProjects from './LinksIconProjects.astro';
 
 const { project, id } = Astro.props;
 const link = [
@@ -30,17 +31,7 @@ const link = [
     <Image transition:name={project.title} src={project?.img} alt={project?.title} inferSize class="rounded-lg border border-orange-400 border-solid" /> 
     <p class="text-gray-400 text-base my-2"><strong class="text-orange-400">Skills:</strong> {project?.skills}</p>
     <div class="flex flex-row justify-center gap-x-4">
-      {
-        link.map(({alt,link, src}) => {
-          if(link !== ""){
-            return(
-              <a href={link} target="_blank" class="text-white hover:text-orange-400">
-                <Icon src={src} alt={alt}/>
-              </a>
-            )
-          }
-        })
-      }
+      <LinksIconProjects links={link} />
     </div>
   </article>
   <div class="flex flex-col lg:col-span-2">
