@@ -26,7 +26,7 @@ const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
 <script>
   const btnMenu = document.getElementById('btnMenu');
   const ul = document.querySelector('ul');
-  btnMenu?.addEventListener("click", e=>{
+  btnMenu?.addEventListener("click", ()=>{
     btnMenu.classList.toggle('rotate-180');
     ul?.classList.toggle('h-[160px]');
   });
