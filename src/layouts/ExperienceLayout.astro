@@ -20,9 +20,9 @@ const { position, company, details, title, institution, years, color } = data;
 ---
 <li class=`border-l-2 border-${color}-600 pl-4 py-2 relative ${classes}
       before:content-[''] before:bg-${color}-600 before:rounded-full before:h-4 before:w-4 before:absolute before:-left-[0.55rem] before:top-[2.1rem]`>
-  <h3 class="text-lg font-bold">{position || title}</h3>
-  <span class="text-base text-blue-600 font-bold">{company || institution}</span>
-  <span class="text-sm text-gray-500">{years}</span>
+  <h3 class="text-lg font-bold text-white">{position || title}</h3>
+  <span class="text-base text-slate-400 font-bold">{company || institution}</span>
+  <span class="text-sm text-slate-500">{years}</span>
   { details &&<p class="text-sm leading-4 my-2">{details}</p> }
   <ul class="list-disc ml-4 mt-2">
     <slot />

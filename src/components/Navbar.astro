@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 const sections = ['Home', 'Experience', 'Projects', 'Challenges', 'Contact'];
 const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
 ---
-<header class="border-b-2 border-[rgba(43,43,43,0.5)] border-solid bg-[#121212] shadow-[0_0.1rem_0.5rem_rgba(43,43,43,0.5)] fixed w-full z-10"> 
+<header class="border-b-2 border-[rgba(43,43,43,0.5)] border-solid bg-gradient-to-r from-zinc-950 from-40% via-slate-950 via-70% to-zinc-900 to-95% shadow-[0_0.1rem_0.5rem_rgba(43,43,43,0.5)] fixed w-full z-10"> 
   <nav>
     <div class="md:hidden">
       <Image id="btnMenu" src={arrow} alt="Menu" class="w-8 h-8 cursor-pointer m-auto border border-orange-500 rounded-full mt-4 transition-transform duration-300" width="32" height="32" />
@@ -16,7 +16,7 @@ const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
         sections.map((section, index) => {
           return (
             <li class="leading-8 md:leading-[5rem]"> 
-              <A section={section} classExtra={`hover:border-${colors[index]}-900 hover:before:bg-${colors[index]}-900/10 hover:before:shadow-${colors[index]}-900/10`} />
+              <A section={section} classExtra={`hover:border-${colors[index]}-900 hover:before:bg-${colors[index]}-900/20 hover:before:shadow-${colors[index]}-900/20`} />
             </li>
           )
         })
