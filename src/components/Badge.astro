@@ -1,5 +1,8 @@
 ---
 // Componente Badge Skills
+import { Image } from "astro:assets";
 const { skill } = Astro.props;
 ---
-<li><img class="h-5 md:h-7 rounded-sm" src={skill.img} alt={skill.text} /></li>
+<li>
+  <Image inferSize src={skill.img} alt={skill.text} class="h-5 md:h-7 rounded-sm" />
+</li>

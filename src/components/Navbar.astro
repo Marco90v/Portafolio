@@ -1,12 +1,16 @@
 ---
 // Componente del menú de navegación
+interface Props {
+  color: string;
+}
 import A from "./A.astro";
 import arrow from '../assets/icons/caret-up.svg';
 import { Image } from "astro:assets";
 const sections = ['Home', 'Experience', 'Projects', 'Challenges', 'Contact'];
 const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+const {color} = Astro.props;
 ---
-<header class="border-b-2 border-[rgba(43,43,43,0.5)] border-solid bg-gradient-to-r from-zinc-950 from-40% via-slate-950 via-70% to-zinc-900 to-95% shadow-[0_0.1rem_0.5rem_rgba(43,43,43,0.5)] fixed w-full z-10"> 
+<header class={`border-b-2 border-gray-800 border-solid bg-gradient-to-r from-zinc-950 from-40% via-${color}-950 via-70% to-zinc-900 to-95% shadow-[0_0_1rem_1rem_rgb(0,0,0,50%)] fixed w-full z-10`}> 
   <nav>
     <div class="md:hidden">
       <Image id="btnMenu" src={arrow} alt="Menu" class="w-8 h-8 cursor-pointer m-auto border border-orange-500 rounded-full mt-4 transition-transform duration-300" width="32" height="32" />

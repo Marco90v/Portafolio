@@ -1,6 +1,5 @@
 ---
 // Componente para los iconos de los proyectos
-import Icon from "./Icon.astro";
 interface link {
   alt: string;
   link: any;
@@ -9,6 +8,7 @@ interface link {
 interface Props{
   links:link[]
 }
+import Icon from "./Icon.astro";
 
 const {links} = Astro.props;
 ---
