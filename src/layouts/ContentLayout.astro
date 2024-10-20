@@ -5,6 +5,6 @@ interface Props {
 }
 const { id, class:c="" } = Astro.props;
 ---
-<section id={id} class={`relative w-11/12 md:w-10/12 m-auto mt-28 bg-zinc-900 p-5 md:p-10 rounded-lg border border-zinc-700 border-solid ${c}`}>
+<section id={id} class={`relative w-11/12 md:w-10/12 m-auto mt-28 bg-zinc-900/50 p-5 md:p-10 rounded-lg border border-zinc-700 border-solid ${c}`}>
 	<slot />
 </section>
