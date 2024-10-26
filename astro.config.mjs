@@ -15,5 +15,8 @@ export default defineConfig({
       PUBLIC_TEMPLATE_ID: envField.string({context:"client", access: "public", optional: false}),
       PUBLIC_KEY: envField.string({context:"client", access: "public", optional: false}),
     }
-  }
+  },
+  build: {
+    inlineStylesheets: 'always'
+  },
 });
