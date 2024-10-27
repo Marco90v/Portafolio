@@ -40,12 +40,21 @@ const link = [
       <p class="md:col-span-2 text-lg">
         With knowledge in backend like <span class="bg-zinc-700 text-orange-400 px-2 rounded">Node.js, Express and databases like MySQL and MongoDB</span>, I ensure a smooth integration between frontend and backend to create robust and scalable applications.
       </p>
-      <Image src={Profile} alt="Profile" class="w-full rounded-md row-start-1 max-w-60 sm:max-w-60 md:max-w-80 md:row-start-1 md:col-start-3 md:row-span-3 m-auto drop-shadow-[0_0_5px_rgba(227,227,227,0.2)] mask-gradient"/>
+      <Image
+        width={313}
+        height={313}
+        loading="eager"
+        quality={50}
+        format="webp"
+        src={Profile}
+        alt="Profile"
+        class="w-full rounded-md row-start-1 max-w-60 sm:max-w-60 md:max-w-80 md:row-start-1 md:col-start-3 md:row-span-3 m-auto drop-shadow-[0_0_5px_rgba(227,227,227,0.2)] mask-gradient"
+      />
       <div id="links" class="md:col-start-3 md:row-start-4 text-center flex justify-center items-center gap-x-4">
         {
           link.map(({alt,link, src}) => (
             <a href={link} target={alt !== "Detail" ? "_blank" : "_parent"} rel="noopener noreferrer" class="text-white hover:text-orange-400">
-              <Icon src={src} alt={alt}/>
+              <Icon src={src} alt={alt} loading="eager" />
             </a>
           ))
         }

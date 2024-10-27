@@ -4,5 +4,14 @@ import { Image } from "astro:assets";
 const { skill } = Astro.props;
 ---
 <li>
-  <Image inferSize src={skill.img} alt={skill.text} class="h-10 md:h-12 rounded-sm" />
+  <Image
+    width={48}
+    height={48}
+    loading="lazy"
+    quality={50}
+    format="webp"
+    src={skill.img}
+    alt={skill.text}
+    class="h-10 md:h-12 rounded-sm"
+  />
 </li>

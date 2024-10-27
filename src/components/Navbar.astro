@@ -13,7 +13,16 @@ const {color} = Astro.props;
 <header class={`border-b-2 border-gray-800 border-solid bg-gradient-to-r from-zinc-950 from-40% via-${color}-950 via-70% to-zinc-900 to-95% shadow-[0_0_1rem_1rem_rgb(0,0,0,50%)] fixed w-full z-10`}> 
   <nav>
     <div class="md:hidden">
-      <Image id="btnMenu" src={arrow} alt="Menu" class="w-8 h-8 cursor-pointer m-auto border border-orange-500 rounded-full mt-4 transition-transform duration-300" width="32" height="32" />
+      <Image
+        id="btnMenu"
+        width="32"
+        height="32"
+        loading="eager"
+        quality={50}
+        src={arrow}
+        alt="Menu"
+        class="rotate-180 w-8 h-8 cursor-pointer m-auto border border-orange-500 rounded-full mt-4 transition-transform duration-300"
+      />
     </div>
     <ul class="flex flex-col mt-4 md:mt-0 md:flex-row justify-center content-center text-lg md:text-2xl font-bold h-[0px] md:h-auto overflow-hidden transition-all duration-300">
       {
@@ -31,7 +40,7 @@ const {color} = Astro.props;
   const btnMenu = document.getElementById('btnMenu');
   const ul = document.querySelector('ul');
   btnMenu?.addEventListener("click", ()=>{
-    btnMenu.classList.toggle('rotate-180');
+    btnMenu.classList.toggle('rotate-0');
     ul?.classList.toggle('h-[160px]');
   });
 </script>

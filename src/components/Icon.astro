@@ -1,6 +1,20 @@
 ---
 // Componente icon de la tarjeta de proyecto
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  loading?: "eager" | "lazy";
+}
 import { Image } from 'astro:assets';
-const { src, alt } = Astro.props;
+const { src, alt, loading="lazy" } = Astro.props;
 ---
-<Image src={src} alt={alt} width={26} height={26} class="rounded-full p-[0.1rem] transition-all duration-300 hover:bg-orange-500 hover:shadow-[0_0_0.25rem_0.25rem] hover:shadow-orange-500" />
+<Image
+  width={26}
+  height={26}
+  loading={loading}
+  quality={50}
+  format="webp"
+  src={src}
+  alt={alt}
+  class="rounded-full p-[0.1rem] transition-all duration-300 hover:bg-orange-500 hover:shadow-[0_0_0.25rem_0.25rem] hover:shadow-orange-500"
+/>

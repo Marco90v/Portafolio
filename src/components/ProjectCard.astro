@@ -27,13 +27,32 @@ const link = [
     {alt:"Live", link:project.linkLive, src:IconWeb},
     {alt:"Detail", link:`${path}/${id}`, src:IconDetail}
 ]
+const pathName = Astro.url.pathname;
+let loadingProject:"eager" | "lazy" = "lazy";
+let loadingIcon:"eager" | "lazy" = "lazy";
+if(pathName.includes("projects")){
+  if(id<9) loadingProject = "eager";
+  if(id<6) loadingIcon = "eager";
+}else if(pathName.includes("challenges")){
+  if(id<6) loadingProject = "eager";
+  if(id<3) loadingIcon = "eager";
+}
 ---
 <li class="">
-  <Image inferSize transition:name={project.title} src={project.img} alt={project.title} class=" rounded-lg border border-orange-500 border-solid" />
+  <Image
+    width={448}
+    height={218}
+    loading={loadingProject}
+    quality={50}
+    format="webp"
+    src={project.img}
+    alt={project.title}
+    class="rounded-lg border border-zinc-700 border-solid"
+  />
   <div class="p-1 text-base text-gray-400 mt-1 bg-zinc-800 border border-solid border-zinc-700 rounded-md">
     <p class="text-white block text-center font-bold mb-1">{project.title}</p>
     <div class="flex flex-row justify-center gap-x-4">
-      <LinksIconProjects links={link} />
+      <LinksIconProjects links={link} loading={loadingIcon}/>
     </div>
   </div>
 </li>

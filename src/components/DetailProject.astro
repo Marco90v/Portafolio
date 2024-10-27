@@ -28,7 +28,15 @@ const link = [
     <Icon src={IconBack} alt="Back"/>
   </a>
   <article>
-    <Image transition:name={project.title} src={project?.img} alt={project?.title} inferSize class="rounded-lg border border-orange-500 border-solid" /> 
+    <Image
+      width={448}
+      height={218}
+      quality={50}
+      loading="eager"
+      src={project.img}
+      alt={project.title}
+      class="rounded-lg border border-zinc-700 border-solid"
+    />
     <p class="text-gray-400 text-base my-2"><strong class="text-orange-500">Skills:</strong> {project?.skills}</p>
     <div class="flex flex-row justify-center gap-x-4">
       <LinksIconProjects links={link} />
