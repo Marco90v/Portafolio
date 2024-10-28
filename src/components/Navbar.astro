@@ -40,7 +40,6 @@ const {color} = Astro.props;
   const btnMenu = document.getElementById('btnMenu');
   const ul = document.querySelector('ul');
   btnMenu?.addEventListener("click", ()=>{
-    console.log("click");
     btnMenu.classList.toggle('rotate-180');
     ul?.classList.toggle('h-[160px]');
   });

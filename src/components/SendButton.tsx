@@ -102,13 +102,12 @@ const SendButton = () => {
 			setDisabled(e=>!e);
 			updateState(msgAlertErrorFields,dataForm);
 		}
-
 	};
 
 	return (
 	<>
 		<button
-			type="submit"
+			type="button"
 			className="p-2 col-span-2 md:col-span-1 md:col-start-2 w-full md:w-60 text-orange-500 text-base font-bold bg-zinc-700 rounded-md ml-auto hover:bg-orange-500 hover:text-zinc-700 transition-colors duration-300 disabled:bg-slate-950 disabled:text-zinc-700"
 			onClick={sendEmail}
 			disabled={disabled}
