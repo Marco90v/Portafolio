@@ -19,7 +19,6 @@ import error from '../assets/icons/exclamation-circle.svg';
 
 // Constantes
 const SERVICE_ID = import.meta.env.PUBLIC_SERVICE_ID;
-console.log(SERVICE_ID)
 const TEMPLATE_ID = import.meta.env.PUBLIC_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.PUBLIC_KEY;
 const msgAlertSuccess:state = {result:"Message sent successfully.", type:"success", icon:check};
@@ -83,7 +82,7 @@ const SendButton = () => {
 
 	// envio de mensaje
 	const sendEmail = async () => {
-		console.log(import.meta.env.PUBLIC_SERVICE_ID);
+		console.log("envio de mensaje");
 		const form = document.querySelector("form");
 		const dataForm = new FormData(form as HTMLFormElement | undefined);
 		const formContact = {
@@ -116,7 +115,7 @@ const SendButton = () => {
 		>
 			Send message
 		</button>
-		<Alert type={state.type} result={state.result} src={state.icon?.src} />
+		{/* <Alert type={state.type} result={state.result} src={state.icon?.src} /> */}
 	</>
 	);
 
