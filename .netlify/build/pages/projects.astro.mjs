@@ -1,7 +1,7 @@
 /* empty css                                */
 import { c as createComponent, r as renderTemplate, a as renderComponent } from '../chunks/astro/server_DEzlIf-r.mjs';
-import { $ as $$Layout } from '../chunks/Layout_DbdnWanK.mjs';
-import { $ as $$SectionProjects } from '../chunks/SectionProjects_DV9GYj7X.mjs';
+import { $ as $$Layout } from '../chunks/Layout_CphKNEXU.mjs';
+import { $ as $$SectionProjects } from '../chunks/SectionProjects_geDRakLo.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

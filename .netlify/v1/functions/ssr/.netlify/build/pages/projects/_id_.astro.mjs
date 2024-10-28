@@ -1,8 +1,8 @@
 /* empty css                                   */
 import { c as createComponent, r as renderTemplate, a as renderComponent, b as createAstro } from '../../chunks/astro/server_DEzlIf-r.mjs';
-import { $ as $$Layout } from '../../chunks/Layout_DbdnWanK.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_CphKNEXU.mjs';
 import { d as data } from '../../chunks/projects_DSVKMc7d.mjs';
-import { $ as $$DetailProject } from '../../chunks/DetailProject_UfIhKFih.mjs';
+import { $ as $$DetailProject } from '../../chunks/DetailProject_Cpce2baW.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro = createAstro();

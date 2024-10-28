@@ -13,11 +13,7 @@ export default defineConfig({
     inlineStylesheets: 'always'
   },
   image: {
-    // remotePatterns: [{ protocol: "https://raw.githubusercontent.com/Marco90v/**", hostname: "raw.githubusercontent.com" }],
-    remotePatterns: [
-      { protocol: "https", hostname: "raw.githubusercontent.com", pathname: "/Marco90v/**" },
-      { protocol: "https", hostname: "skillicons.dev", pathname: "/**" },
-    ],
+    domains:["skillicons.dev", "raw.githubusercontent.com"],
   },
   adapter: netlify()
 });

@@ -1,14 +1,14 @@
 /* empty css                                */
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, d as addAttribute, b as createAstro, e as renderSlot } from '../chunks/astro/server_DEzlIf-r.mjs';
-import { $ as $$Image } from '../chunks/_astro_assets__uYuLBJr.mjs';
-import { a as $$ContentTitleLayout, $ as $$SectionProjects } from '../chunks/SectionProjects_DV9GYj7X.mjs';
-import { $ as $$TitleSection, a as $$ContentLayout } from '../chunks/ViewMore_cRXxeL6w.mjs';
-import { $ as $$Icon, G as Github } from '../chunks/LinksIconProjects_C-3XH2iI.mjs';
-import { $ as $$SectionChallenges } from '../chunks/SectionChallenges_BUx6lWs5.mjs';
+import { $ as $$Image } from '../chunks/_astro_assets_PzJTsDmN.mjs';
+import { a as $$ContentTitleLayout, $ as $$SectionProjects } from '../chunks/SectionProjects_geDRakLo.mjs';
+import { $ as $$TitleSection, a as $$ContentLayout } from '../chunks/ViewMore_hC8F571F.mjs';
+import { $ as $$Icon, G as Github } from '../chunks/LinksIconProjects_CgfxO6lG.mjs';
+import { $ as $$SectionChallenges } from '../chunks/SectionChallenges_BXLz1aiD.mjs';
 import { jsxs, Fragment, jsx } from 'react/jsx-runtime';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
-import { $ as $$Layout } from '../chunks/Layout_DbdnWanK.mjs';
+import { $ as $$Layout } from '../chunks/Layout_CphKNEXU.mjs';
 export { renderers } from '../renderers.mjs';
 
 const Profile = new Proxy({"src":"/_astro/profile2.DQNFT0SW.png","width":460,"height":460,"format":"png"}, {
