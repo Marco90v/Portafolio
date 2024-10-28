@@ -83,7 +83,7 @@ const SendButton = () => {
 
 	// envio de mensaje
 	const sendEmail = async () => {
-		console.log("envio de mensaje");
+		console.log(import.meta.env.PUBLIC_SERVICE_ID);
 		const form = document.querySelector("form");
 		const dataForm = new FormData(form as HTMLFormElement | undefined);
 		const formContact = {
