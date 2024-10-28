@@ -81,8 +81,7 @@ const SendButton = () => {
 	};
 
 	// envio de mensaje
-	const sendEmail = async (event:React.SyntheticEvent) => {
-		event.preventDefault();
+	const sendEmail = async () => {
 		const form = document.querySelector("form");
 		const dataForm = new FormData(form as HTMLFormElement | undefined);
 		const formContact = {
