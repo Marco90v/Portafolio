@@ -7,6 +7,7 @@ export default {
 		},
 		{
 			pattern: /border-(red|blue|green|yellow|purple|pink|orange)-(900|600)/,
+			variants: ['hover']
 		},
 		{
 			pattern: /bg-(red|blue|green|yellow|purple|pink|orange)-(900|600)/,

@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'server',
   image: {
-    domains:["skillicons.dev", "raw.githubusercontent.com"],
+    domains:["skillicons.dev", "raw.githubusercontent.com", "github.com"],
   },
   adapter: netlify()
 });
