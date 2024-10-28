@@ -9,11 +9,5 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'server',
-  build: {
-    inlineStylesheets: 'always'
-  },
-  image: {
-    remotePatterns: [{ protocol: "https://raw.githubusercontent.com/Marco90v/**", hostname: "raw.githubusercontent.com" }],
-  },
   adapter: netlify()
 });
