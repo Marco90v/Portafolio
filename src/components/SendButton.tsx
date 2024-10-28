@@ -1,16 +1,3 @@
-// interface usadas en este componente
-interface state {
-	result: string;
-	type: string;
-	icon: ImageMetadata | null;
-}
-interface formContact {
-	fullName: FormDataEntryValue | null;
-	email: FormDataEntryValue | null;
-	subject: FormDataEntryValue | null;
-	message: FormDataEntryValue | null;
-}
-
 // Importaciones
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';

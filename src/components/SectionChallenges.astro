@@ -9,9 +9,9 @@ import ContentLayout from '../layouts/ContentLayout.astro';
 import TitleSection from './TitleSection.astro';
 import ProjectCard from './ProjectCard.astro';
 import ViewMore from './ViewMore.astro';
-import data from '../data/challenge.json';
-// const projects = await fetch('https://raw.githubusercontent.com/Marco90v/JSONs/refs/heads/main/challengesData.json');
-// const data:project[] = await projects.json();
+import { URLChallenges } from '../utils/const';
+// import data from '../data/challenge.json';
+const data:project[] = await fetch(URLChallenges).then(response => response.json());
 const { all="no" } = Astro.props;
 const newData = all === "no" ? data.slice(0, 6) : data;
 ---

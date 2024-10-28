@@ -3,16 +3,15 @@
 interface Props {
   all?: "no" | "yes";
 }
-
 import ContentTitleLayout from '../layouts/ContentTitleLayout.astro';
 import ContentCardLayout from '../layouts/ContentCardLayout.astro';
 import ContentLayout from '../layouts/ContentLayout.astro';
 import TitleSection from './TitleSection.astro';
 import ProjectCard from './ProjectCard.astro';
 import ViewMore from './ViewMore.astro';
-import data from '../data/projects.json';
-// const projects = await fetch('https://raw.githubusercontent.com/Marco90v/JSONs/refs/heads/main/projectsData.json');
-// const data:project[] = await projects.json();
+import { URLProjects } from '../utils/const';
+// import data from '../data/projects.json';
+const data:project[] = await fetch(URLProjects).then(response => response.json());
 const { all="no" } = Astro.props;
 const newData = all === "no" ? data.slice(0, 6) : data;
 ---

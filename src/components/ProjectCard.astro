@@ -1,18 +1,7 @@
 ---
 // Componente tarjeta de proyecto
-interface Project {
-    title:       string;
-    img:         string;
-    linkGithub:  string;
-    linkLive:    string;
-    description: string;
-    details:     string;
-    author:      string;
-    skills:      string;
-    client:      string;
-}
 interface Props {
-  project: Project;
+  project: project;
   id: number;
   path: "projects"|"challenges";
 }
