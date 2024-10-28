@@ -7,6 +7,7 @@ const title = Astro.props.title;
 const {id} = Astro.params;
 const colors = ["blue", "cyan", "indigo"];
 const color = colors[Math.floor(Math.random() * colors.length)];
+import favicon from '../assets/icons8-source-code-48.png';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +16,7 @@ const color = colors[Math.floor(Math.random() * colors.length)];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <title>{title}</title>
+  <link rel="shortcut icon" href={favicon.src} type="image/png">
   <ViewTransitions />
 </head>
 <body class={`text-base text-white bg-gradient-to-r from-gray-900 from-40% via-${color}-950 via-70% to-gray-900 to-95% min-h-screen`}>
