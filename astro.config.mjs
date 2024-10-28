@@ -8,7 +8,7 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  output: 'server',
+  output: 'hybrid',
   image: {
     domains:["skillicons.dev", "raw.githubusercontent.com", "github.com"],
   },

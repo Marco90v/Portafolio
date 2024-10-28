@@ -19,6 +19,7 @@ import error from '../assets/icons/exclamation-circle.svg';
 
 // Constantes
 const SERVICE_ID = import.meta.env.PUBLIC_SERVICE_ID;
+console.log(SERVICE_ID)
 const TEMPLATE_ID = import.meta.env.PUBLIC_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.PUBLIC_KEY;
 const msgAlertSuccess:state = {result:"Message sent successfully.", type:"success", icon:check};
