@@ -6,6 +6,6 @@ const { education, classes="" } = Astro.props;
 ---
 <ExperienceLayout data={education} classes={classes}>
   {
-    education.description.map((description:string) => (<li class="text-sm text-gray-500">{description}</li>))
+    education.description.map((description:string) => (<li class="text-sm text-gray-400">{description}</li>))
   }
 </ExperienceLayout>

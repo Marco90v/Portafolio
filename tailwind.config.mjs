@@ -3,28 +3,26 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	safelist: [
 		{
-			pattern: /via-./,
-			variants: ['hover', 'before']
+			pattern: /via-(blue|cyan|indigo)-(950)/,
 		},
 		{
-			pattern: /border-(red|blue|green|yellow|purple|pink|orange)-(900|600|500|400|300|200|100)/,
-			variants: ['hover', 'before']
+			pattern: /border-(red|blue|green|yellow|purple|pink|orange)-(900|600)/,
 		},
 		{
-			pattern: /bg-(red|blue|green|yellow|purple|pink|orange)-(900|600|500|400|300|200|100)/,
+			pattern: /bg-(red|blue|green|yellow|purple|pink|orange)-(900|600)/,
 			variants: ['hover', 'before', 'hover:before']
 		},
 		{
-			pattern: /shadow-(red|blue|green|yellow|purple|pink|orange)-(900|600|500|400|300|200|100)/,
-			variants: ['hover', 'before', 'hover:before']
-		},
-		{
-			pattern: /text-(red|blue|green|yellow|purple|pink|orange)-(900|600|500|400|300|200|100)/,
-			variants: ['hover', 'before', 'hover:before']
+			pattern: /shadow-(red|blue|green|yellow|purple|orange)-(900|500)/,
+			variants: ['hover', 'hover:before']
 		}
 	],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				'onest': ['Onest Variable', 'Onest', 'sans-serif'],
+			},
+		},
 	},
 	plugins: [],
 }

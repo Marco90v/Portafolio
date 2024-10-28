@@ -9,9 +9,6 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'server',
-  build: {
-    inlineStylesheets: 'always'
-  },
   image: {
     domains:["skillicons.dev", "raw.githubusercontent.com"],
   },

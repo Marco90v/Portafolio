@@ -16,6 +16,7 @@ interface Props {
   id: number;
   path: "projects"|"challenges";
 }
+type loading = "eager" | "lazy"
 import IconGithub from '../assets/icons/brand-github.svg';
 import IconWeb from '../assets/icons/world-www.svg';
 import IconDetail from '../assets/icons/file-description.svg';
@@ -28,8 +29,8 @@ const link = [
     {alt:"Detail", link:`${path}/${id}`, src:IconDetail}
 ]
 const pathName = Astro.url.pathname;
-let loadingProject:"eager" | "lazy" = "lazy";
-let loadingIcon:"eager" | "lazy" = "lazy";
+let loadingProject:loading = "lazy";
+let loadingIcon:loading = "lazy";
 if(pathName.includes("projects")){
   if(id<9) loadingProject = "eager";
   if(id<6) loadingIcon = "eager";
@@ -38,7 +39,7 @@ if(pathName.includes("projects")){
   if(id<3) loadingIcon = "eager";
 }
 ---
-<li class="">
+<li>
   <Image
     width={448}
     height={218}
@@ -48,6 +49,7 @@ if(pathName.includes("projects")){
     src={project.img}
     alt={project.title}
     class="rounded-lg border border-zinc-700 border-solid aspect-[16/8] object-cover"
+    transition:name={project.title}
   />
   <div class="p-1 text-base text-gray-400 mt-1 bg-zinc-800 border border-solid border-zinc-700 rounded-md">
     <p class="text-white block text-center font-bold mb-1">{project.title}</p>

@@ -4,12 +4,7 @@
 @tailwind utilities;
 html {
   scroll-behavior: smooth;
-  /* font-size: 12px; */
-}
-body{
-  font-family: "Inter", system-ui;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: 'Onest Variable';
 }
 .mask-gradient {
   mask-image: linear-gradient(black 70%, transparent 100%);

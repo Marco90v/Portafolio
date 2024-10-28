@@ -17,7 +17,7 @@ const {links, loading="lazy"} = Astro.props;
   links.map(({alt,link, src}) => {
     if(link !== ""){
       return(
-        <a href={link} target={alt !== "Detail" ? "_blank" : "_parent"} class="text-white hover:text-orange-400">
+        <a href={link} target={alt !== "Detail" ? "_blank" : "_parent"} class="text-white hover:text-orange-500">
           <Icon src={src} alt={alt} loading={loading}/>
         </a>
       )
