@@ -1,0 +1,26 @@
+---
+interface project {
+    title:       string;
+    img:         string;
+    linkGithub:  string;
+    linkLive:    string;
+    description: string;
+    details:     string;
+    author:      string;
+    skills:      string;
+    client:      string;
+}
+import Layout from '../../layouts/Layout.astro';
+
+// const data:project[] = await fetch('https://api.example.com/projects').then(response => response.json());
+import data from '../../data/projects.json'
+import DetailProject from '../../components/DetailProject.astro';
+const { id } = Astro.params;
+const project = data.find((_, index:number) => index === Number(id));
+if(!project){
+  return Astro.redirect('/404');
+}
+---
+<Layout title={`${project?.title} | Marco Velasquez Figarella`}>
+  <DetailProject project={project} id="project"/>
+</Layout>

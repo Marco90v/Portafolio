@@ -1,14 +1,14 @@
 /* empty css                                */
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, d as addAttribute, b as createAstro, e as renderSlot } from '../chunks/astro/server_DEzlIf-r.mjs';
-import { $ as $$Image } from '../chunks/_astro_assets_D5AlKkcn.mjs';
-import { a as $$ContentTitleLayout, $ as $$SectionProjects } from '../chunks/SectionProjects_DeD_ULfg.mjs';
-import { $ as $$TitleSection, a as $$ContentLayout } from '../chunks/ViewMore_DODy7a3l.mjs';
-import { $ as $$Icon, G as Github } from '../chunks/LinksIconProjects_CHGT-7iQ.mjs';
-import { $ as $$SectionChallenges } from '../chunks/SectionChallenges_CGOZ5Os-.mjs';
+import { $ as $$Image } from '../chunks/_astro_assets__uYuLBJr.mjs';
+import { a as $$ContentTitleLayout, $ as $$SectionProjects } from '../chunks/SectionProjects_DV9GYj7X.mjs';
+import { $ as $$TitleSection, a as $$ContentLayout } from '../chunks/ViewMore_cRXxeL6w.mjs';
+import { $ as $$Icon, G as Github } from '../chunks/LinksIconProjects_C-3XH2iI.mjs';
+import { $ as $$SectionChallenges } from '../chunks/SectionChallenges_BUx6lWs5.mjs';
 import { jsxs, Fragment, jsx } from 'react/jsx-runtime';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
-import { $ as $$Layout } from '../chunks/Layout_pnKvg0xY.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DbdnWanK.mjs';
 export { renderers } from '../renderers.mjs';
 
 const Profile = new Proxy({"src":"/_astro/profile2.DQNFT0SW.png","width":460,"height":460,"format":"png"}, {
@@ -483,7 +483,6 @@ const $$SectionContact = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "ContentLayout", $$ContentLayout, { "id": "contact" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "ContentTitleLayout", $$ContentTitleLayout, {}, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "TitleSection", $$TitleSection, { "title": "Contact", "colorTitle": "text-purple-700" })} ` })} ${maybeRenderHead()}<form id="contactForm" class="md:max-w-[800px] m-auto mt-5 grid grid-cols-2 gap-6"> ${renderComponent($$result2, "Input", $$Input, { "type": "text", "id": "name", "name": "name", "placeholder": "Full name", "class": "col-span-2 md:col-span-1" })} ${renderComponent($$result2, "Input", $$Input, { "type": "text", "id": "email", "name": "email", "placeholder": "Email", "class": "col-span-2 md:col-span-1" })} ${renderComponent($$result2, "Input", $$Input, { "type": "text", "id": "subject", "name": "subject", "placeholder": "Subject", "class": "col-span-2" })} <textarea id="message" name="message" placeholder="Message" rows="10" class="col-span-2 py-2 px-3 rounded-md bg-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-orange-500" required></textarea> ${renderComponent($$result2, "SendButton", SendButton, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/media/i320/Respaldo/Code/Portafolio/src/components/SendButton", "client:component-export": "default" })} </form> ` })}`;
 }, "/media/i320/Respaldo/Code/Portafolio/src/components/SectionContact.astro", void 0);
 
-const prerender = true;
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Portfolio frontend developer | Marco Velasquez Figarella" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "SectionHome", $$SectionHome, {})} ${renderComponent($$result2, "SectionExperience", $$SectionExperience, {})} ${renderComponent($$result2, "SectionProjects", $$SectionProjects, {})} ${renderComponent($$result2, "SectionChallenges", $$SectionChallenges, {})} ${renderComponent($$result2, "SectionContact", $$SectionContact, {})} ` })}`;
 }, "/media/i320/Respaldo/Code/Portafolio/src/pages/index.astro", void 0);
@@ -495,7 +494,6 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
 	default: $$Index,
 	file: $$file,
-	prerender,
 	url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
