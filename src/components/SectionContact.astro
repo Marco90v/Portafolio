@@ -15,7 +15,7 @@ import SendButton from "./SendButton";
     <Input type="text" id="email" name="email" placeholder="Email" class="col-span-2 md:col-span-1" />
     <Input type="text" id="subject" name="subject" placeholder="Subject" class="col-span-2" />
     <textarea id="message" name="message" placeholder="Message" rows="10" class="col-span-2 py-2 px-3 rounded-md bg-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-orange-500" required></textarea>
-    <SendButton client:only="react" />
+    <SendButton client:load />
   </form>
 </ContentLayout>
 <script>

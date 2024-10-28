@@ -82,6 +82,7 @@ const SendButton = () => {
 
 	// envio de mensaje
 	const sendEmail = async () => {
+		console.log("envio de mensaje");
 		const form = document.querySelector("form");
 		const dataForm = new FormData(form as HTMLFormElement | undefined);
 		const formContact = {
