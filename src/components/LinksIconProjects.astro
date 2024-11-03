@@ -4,7 +4,7 @@ interface Props{
   links:link[],
   loading?: "eager" | "lazy";
 }
-import Icon from "./Icon.astro";
+import Icon from "@components/Icon.astro";
 
 const {links, loading="lazy"} = Astro.props;
 ---

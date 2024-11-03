@@ -4,12 +4,12 @@ interface Props {
   all?: "no" | "yes";
 }
 
-import ContentCardLayout from '../layouts/ContentCardLayout.astro';
-import ContentLayout from '../layouts/ContentLayout.astro';
-import TitleSection from './TitleSection.astro';
-import ProjectCard from './ProjectCard.astro';
-import ViewMore from './ViewMore.astro';
-import { URLChallenges } from '../utils/const';
+import ContentCardLayout from '@layouts/ContentCardLayout.astro';
+import ContentLayout from '@layouts/ContentLayout.astro';
+import TitleSection from '@components/TitleSection.astro';
+import ProjectCard from '@components/ProjectCard.astro';
+import ViewMore from '@components/ViewMore.astro';
+import { URLChallenges } from '@utils/const';
 // import data from '../data/challenge.json';
 const data:project[] = await fetch(URLChallenges).then(response => response.json());
 const { all="no" } = Astro.props;

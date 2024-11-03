@@ -1,8 +1,8 @@
 // Importaciones
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
-import check from '../assets/icons/circle-check.svg';
-import error from '../assets/icons/exclamation-circle.svg';
+import check from '@assets/icons/circle-check.svg';
+import error from '@assets/icons/exclamation-circle.svg';
 
 // Constantes
 const SERVICE_ID = import.meta.env.PUBLIC_SERVICE_ID;

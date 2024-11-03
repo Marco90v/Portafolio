@@ -1,9 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 
 // import data from '../../data/challenge.json'
-import DetailProject from '../../components/DetailProject.astro';
-import { URLChallenges } from '../../utils/const';
+import DetailProject from '@components/DetailProject.astro';
+import { URLChallenges } from '@utils/const';
 const data:project[] = await fetch(URLChallenges).then(response => response.json());
 const { id } = Astro.params;
 const project = data.find((_, index:number) => index === Number(id));

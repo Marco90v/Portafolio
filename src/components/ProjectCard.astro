@@ -6,10 +6,10 @@ interface Props {
   path: "projects"|"challenges";
 }
 type loading = "eager" | "lazy"
-import IconGithub from '../assets/icons/brand-github.svg';
-import IconWeb from '../assets/icons/world-www.svg';
-import IconDetail from '../assets/icons/file-description.svg';
-import LinksIconProjects from './LinksIconProjects.astro';
+import IconGithub from '@assets/icons/brand-github.svg';
+import IconWeb from '@assets/icons/world-www.svg';
+import IconDetail from '@assets/icons/file-description.svg';
+import LinksIconProjects from '@components/LinksIconProjects.astro';
 import { Image } from 'astro:assets';
 const { project, id, path } = Astro.props;
 const link = [
