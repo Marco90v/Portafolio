@@ -11,9 +11,10 @@ const link = [
   {alt:"Code", link:project.linkGithub, src:IconGithub},
   {alt:"Live", link:project.linkLive, src:IconWeb},
 ]
+const previous = Astro.url.pathname.split('/').slice(0, -1).join('/');
 ---
 <section id={id} class="relative bg-zinc-900 border border-zinc-700 w-10/12 max-w-[1250px] m-auto p-10 rounded-lg grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
-  <a href="/" class="absolute top-2 left-4 text-center text-white text-sm font-bold">
+  <a href={previous} rel="noopener noreferrer" class="absolute top-2 left-4 text-center text-white text-sm font-bold">
     <Icon src={IconBack} alt="Back"/>
   </a>
   <article>

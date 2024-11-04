@@ -13,10 +13,10 @@ interface Props extends HTMLAttributes<'input'>{
 const { id, name, placeholder, type, class:c, required=true } = Astro.props;
 ---
 <input
-    type={type}
-    id={id}
-    name={name}
-    placeholder={placeholder}
-    class={`py-2 px-3 rounded-md bg-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-orange-500 ${c}`}
-    required={required}
+  type={type}
+  id={id}
+  name={name}
+  placeholder={placeholder}
+  class={`py-2 px-3 rounded-md bg-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-orange-500 ${c}`}
+  required={required}
 >
