@@ -8,6 +8,14 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true
+    },
+  },
   output: 'server',
   image: {
     domains:["skillicons.dev", "raw.githubusercontent.com", "github.com"],

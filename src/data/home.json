@@ -1,0 +1,32 @@
+{
+	"en": [
+		"Frontend Developer",
+		[
+			"I am a Frontend Developer with more than 3 years of experience in creating efficient, intuitive and performance optimized web interfaces. My focus is to deliver quality user-centric solutions, ensuring a smooth, accessible and visually appealing experience. I work with technologies such as",
+			"React, TypeScript, JavaScript and CSS",
+			", along with tools such as ",
+			"Zustand, Tailwind CSS and Bootstrap."
+		],
+		"I have participated in a variety of projects, from administrative systems to landing pages and interactive applications, always prioritizing accessibility and cross-browser compatibility.",
+		[
+			"With knowledge in backend like ",
+			"Node.js, Express and databases like MySQL and MongoDB",
+			", I ensure a smooth integration between frontend and backend to create robust and scalable applications."
+		]
+	],
+	"es": [
+		"Desarrollador Frontend",
+		[
+			"Soy un Desarrollador Frontend con más de 3 años de experiencia en la creación de interfaces web eficientes, intuitivas y de rendimiento optimizado. Mi enfoque es entregar soluciones de calidad centradas en el usuario, asegurando una experiencia fluida, accesible y visualmente atractiva. Trabajo con tecnologías como ",
+			"React, TypeScript, JavaScript and CSS",
+			", junto con herramientas como ",
+			"Zustand, Tailwind CSS y Bootstrap."
+		],
+		"He participado en una gran variedad de proyectos, desde sistemas administrativos hasta páginas de aterrizaje y aplicaciones interactivas, priorizando siempre la accesibilidad y la compatibilidad entre navegadores.",
+		[
+			"Con conocimientos en backend como ",
+			"Node.js, Express y bases de datos como MySQL y MongoDB, ",
+			"aseguro una integración fluida entre frontend y backend para crear aplicaciones robustas y escalables."
+		]
+	]
+}

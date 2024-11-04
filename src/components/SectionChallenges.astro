@@ -2,6 +2,7 @@
 // Componente de la sección de retos
 interface Props {
   all?: "no" | "yes";
+  lang: "en" | "es";
 }
 
 import ContentCardLayout from '@layouts/ContentCardLayout.astro';
@@ -10,19 +11,23 @@ import TitleSection from '@components/TitleSection.astro';
 import ProjectCard from '@components/ProjectCard.astro';
 import ViewMore from '@components/ViewMore.astro';
 import { URLChallenges } from '@utils/const';
-// import data from '../data/challenge.json';
-const data:project[] = await fetch(URLChallenges).then(response => response.json());
-const { all="no" } = Astro.props;
-const newData = all === "no" ? data.slice(0, 6) : data;
+import data from '@data/challenge.json';
+// const data:project[] = await fetch(URLChallenges).then(response => response.json());
+const { all="no", lang } = Astro.props;
+const newData = all === "no" ? data[lang].slice(0, 6) : data[lang];
+
+import titleSection from '@data/titleSections.json';
+
+const title = titleSection[lang].challenges;
 ---
 <ContentLayout id="challenges">
   <div class="absolute top-[-0.8rem] left-0 w-full text-center text-white text-sm font-bold">
-    <TitleSection title="Challenge" colorTitle="text-orange-700" />
+    <TitleSection title={title} colorTitle="text-orange-700" />
   </div>
   <ContentCardLayout>
     {
-      newData.map((project, index) => ( <ProjectCard project={project} id={index} path="challenges" /> ))
+      newData.map((project, index) => ( <ProjectCard project={project as project} id={index} path="challenges" /> ))
     }
   </ContentCardLayout>
-  {all==="no" && <ViewMore  href="/challenges"/>}
+  {all==="no" && <ViewMore lang={lang} href="challenges"/>}
 </ContentLayout>

@@ -1,14 +1,26 @@
 ---
+interface Props {
+  name: string;
+  link: string;
+  classExtra: string;
+}
+import { getLangFromUrl } from '@i18n/utils';
 const pathName = Astro.url.pathname;
 const raiz = Astro.url.hostname;
 const port = Astro.url.port === '80' ? '' : ':' + Astro.url.port;
-const {section, classExtra} = Astro.props;
-const href = pathName === "/" ? `#${section.toLowerCase()}` : `http://${raiz}${port}/#${section.toLowerCase()}`; 
+const {name, link, classExtra} = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+let href:string = lang;
+if(pathName.includes('projects') || pathName.includes('challenges') || pathName.length > 4){
+  href = `http://${raiz}${port}/${lang}#${link.toLowerCase()}`
+}else{
+  href = `#${link.toLowerCase()}`
+}
 ---
 <a
   class={`transition ease-in-out duration-300 text-center relative block h-8 md:h-20 px-4 border-b-2 border-transparent 
   before:content-[""] before:w-16 before:h-16 before:absolute before:left-2/4 before:top-2/4 before:-translate-x-2/4 before:-translate-y-2/4 hover:before:shadow-[0_0_1rem_1rem] before:rounded-full before:transition-all before:duration-300 before:-z-10
   ${classExtra}`}
   href={href}>
-  {section}
+  {name}
 </a>

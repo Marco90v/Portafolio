@@ -25,3 +25,4 @@ interface formContact {
 	subject: FormDataEntryValue | null;
 	message: FormDataEntryValue | null;
 }
+type lang = "en" | "es";

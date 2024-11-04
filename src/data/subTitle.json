@@ -1,0 +1,14 @@
+{
+	"en": {
+		"skills": "Skills",
+		"work-experience": "Work Experience",
+		"other-experience": "Other Experience",
+		"education": "Education"
+	},
+	"es": {
+		"skills": "Habilidades",
+		"work-experience": "Experiencia profesional",
+		"other-experience": "Otras experiencias",
+		"education": "Educación"
+	}
+}

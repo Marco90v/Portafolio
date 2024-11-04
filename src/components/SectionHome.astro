@@ -1,5 +1,11 @@
 ---
 // Componente de la sección de inicio
+interface Props{
+  lang: "en" | "es";
+}
+
+const { lang } = Astro.props;
+
 import { Image } from 'astro:assets';
 import ContentTitleLayout from '@layouts/ContentTitleLayout.astro';
 import ContentLayout from '@layouts/ContentLayout.astro';
@@ -13,10 +19,17 @@ import PDF from '@assets/icons/file-type-pdf.svg';
 import FM from '@assets/icons/frontend-mentor.svg';
 import CW from '@assets/icons/code-wars.svg';
 
+import titleSection from '@data/titleSections.json';
+import home from '@data/home.json';
+import cv from '@data/cv.json';
+
+const title = titleSection[lang].profile;
+const content = home[lang];
+
 const link = [
   {alt:"Github", src:Github, link:"https://github.com/Marco90v"},
   {alt:"Linkedin", src:Linkedin, link:"https://www.linkedin.com/in/marco90v/"},
-  {alt:"PDF", src:PDF, link:"https://flowcv.com/resume/6gnga9oa1r"},
+  {alt:"PDF", src:PDF, link:cv[lang].link},
   {alt:"FM", src:FM, link:"https://www.frontendmentor.io/profile/marco90v"},
   {alt:"CW", src:CW, link:"https://www.codewars.com/users/mvf90"}
 ]
@@ -24,21 +37,33 @@ const link = [
 <div class="min-h-screen flex">
   <ContentLayout id="home" class="max-w-[1000px] md:mt-auto">
     <ContentTitleLayout>
-        <TitleSection title="Profile" colorTitle="text-red-700"/>
+        <TitleSection title={title} colorTitle="text-red-700"/>
     </ContentTitleLayout>
     <h1 class="text-center text-white text-4xl font-bold">Marco Velasquez Figarella</h1>
     <div id="contentProfile" class="grid  md:grid-cols-3 gap-4 mt-4">
-      <h2 class="md:col-span-2 text-orange-500 text-2xl font-bold">Frontend Developer</h2>
+      <h2 class="md:col-span-2 text-orange-500 text-2xl font-bold">{content[0]}</h2>
       <p class="md:col-span-2 text-lg">
-        I am a Frontend Developer with more than 3 years of experience in creating efficient, intuitive and performance optimized web interfaces.
-        My focus is to deliver quality user-centric solutions, ensuring a smooth, accessible and visually appealing experience.
-        I work with technologies such as <span class="bg-zinc-700 text-orange-500 px-2 rounded">React, TypeScript, JavaScript and CSS</span>, along with tools such as <span class="bg-zinc-700 text-orange-500 px-2 rounded">Zustand, Tailwind CSS and Bootstrap.</span>
+        {
+          (content[1] as [string]).map((text:string, index:number) => {
+            if(index === 0 || index === 2) return text;
+            return (
+              <span class='bg-zinc-700 text-orange-500 px-2 rounded'>{text}</span>
+            )
+          })
+        }
       </p>
       <p class="md:col-span-2 text-lg">
-        I have participated in a variety of projects, from administrative systems to landing pages and interactive applications, always prioritizing accessibility and cross-browser compatibility.
+        {content[2]}
       </p>
       <p class="md:col-span-2 text-lg">
-        With knowledge in backend like <span class="bg-zinc-700 text-orange-500 px-2 rounded">Node.js, Express and databases like MySQL and MongoDB</span>, I ensure a smooth integration between frontend and backend to create robust and scalable applications.
+        {
+          (content[3] as [string]).map((text:string, index:number) => {
+            if(index === 0 || index === 2) return text;
+            return (
+              <span class='bg-zinc-700 text-orange-500 px-2 rounded'>{text}</span>
+            )
+          })
+        }
       </p>
       <Image
         width={313}

@@ -16,6 +16,10 @@ const initicalState:state = {
 	type: "",
 	icon: null
 };
+const text = {
+	"en": "Send message",
+	"es": "Enviar mensaje"
+}
 
 // validacion de email
 const validarEmail = (email:string):boolean => {
@@ -45,7 +49,7 @@ const Alert = ({ type, result, src }:{type:string, result:string, src:string | u
 };
 
 // Componente de envío de mensaje
-const SendButton = () => {
+const SendButton = ({lang}:{lang:"en" | "es"}) => {
 	const [state, setState] = useState<state>(initicalState);
 	const [disabled, setDisabled] = useState<boolean>(false);
 
@@ -99,7 +103,7 @@ const SendButton = () => {
 			onClick={sendEmail}
 			disabled={disabled}
 		>
-			Send message
+			{text[lang]}
 		</button>
 		<Alert type={state.type} result={state.result} src={state.icon?.src} />
 	</>

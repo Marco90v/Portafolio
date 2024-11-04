@@ -1,0 +1,15 @@
+---
+import {URLProjects} from '@utils/const';
+// const data:project[] = await fetch(URLProjects).then(response => response.json());
+import data from '@data/projects.json'
+import BaseIdProject from '@components/BaseIdProject.astro';
+import { getLangFromUrl } from '@i18n/utils';
+
+const { id } = Astro.params;
+const lang:lang = getLangFromUrl(Astro.url);
+const project = data[lang].find((_, index:number) => index === Number(id));
+if(!project){
+  return Astro.redirect('/404');
+}
+---
+<BaseIdProject project={project} />

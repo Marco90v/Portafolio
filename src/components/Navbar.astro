@@ -3,12 +3,18 @@
 interface Props {
   color: string;
 }
+interface sections {
+  [key: string]: string;
+}
 import A from "@components/A.astro";
 import arrow from '@assets/icons/caret-up.svg';
 import { Image } from "astro:assets";
-const sections = ['Home', 'Experience', 'Projects', 'Challenges', 'Contact'];
-const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+import  nav from '@data/nav.json';
+import { getLangFromUrl } from "@i18n/utils";
 const {color} = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const sections:sections = nav[lang];
+const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
 ---
 <header class={`border-b-2 border-gray-800 border-solid bg-gradient-to-r from-zinc-950 from-40% via-${color}-950 via-70% to-zinc-900 to-95% shadow-[0_0_1rem_1rem_rgb(0,0,0,50%)] fixed w-full z-10`}> 
   <nav>
@@ -26,10 +32,10 @@ const {color} = Astro.props;
     </div>
     <ul class="flex flex-col mt-4 md:mt-0 md:flex-row justify-center content-center text-lg md:text-2xl font-bold h-[0px] md:h-auto overflow-hidden transition-all duration-300">
       {
-        sections.map((section, index) => {
+        Object.entries(sections).map(([k,v], index) => {
           return (
             <li class="leading-8 md:leading-[5rem]"> 
-              <A section={section} classExtra={`hover:border-${colors[index]}-900 hover:before:bg-${colors[index]}-900/20 hover:before:shadow-${colors[index]}-900/20`} />
+              <A name={v} link={k} classExtra={`hover:border-${colors[index]}-900 hover:before:bg-${colors[index]}-900/20 hover:before:shadow-${colors[index]}-900/20`} />
             </li>
           )
         })

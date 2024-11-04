@@ -1,21 +1,44 @@
-[
-    { 
-        "title":"Senior computer technician, specializing in programming",
-        "institution":"Instituto Universitario de Tecnología Industrial Rodolfo Loero Arismendi (IUTIRLA)",
-        "years":"Feb 2007 – Feb 2010",
-        "description":[
-            "Training in software development, with focus on C/C++, C#, Visual Basic, and database management.",
-            "Thesis: Automated system for the administration of computer equipment in the police department."
-        ],
-        "color":"green"
+{	
+	"en":[
+		{ 
+			"title":"Senior computer technician, specializing in programming",
+			"institution":"Instituto Universitario de Tecnología Industrial Rodolfo Loero Arismendi (IUTIRLA)",
+			"years":"Feb 2007 – Feb 2010",
+			"description":[
+					"Training in software development, with focus on C/C++, C#, Visual Basic, and database management.",
+					"Thesis: Automated system for the administration of computer equipment in the police department."
+			],
+			"color":"green"
     },
     { 
-        "title":"Secondary School | Bachelor of Science",
-        "institution":"U.E. Colegio San Francisco de Asís",
-        "years":"Sep 2001 – Jul 2006",
-        "description":[
-            "High school studies."
-        ],
-        "color":"blue"
+			"title":"Secondary School | Bachelor of Science",
+			"institution":"U.E. Colegio San Francisco de Asís",
+			"years":"Sep 2001 – Jul 2006",
+			"description":[
+					"High school studies."
+			],
+			"color":"blue"
     }
-]
+	],
+	"es":[
+		{ 
+			"title":"Técnico de informática secundario, especialización en programación",
+			"institution":"Instituto Universitario de Tecnología Industrial Rodolfo Loero Arismendi (IUTIRLA)",
+			"years":"Feb 2007 – Feb 2010",
+			"description":[
+					"Formación en el desarrollo de software, con enfoque en C/C++, C#, Visual Basic y administración de bases de datos.",
+					"Tesis: Sistema automatizado para la administración de equipos informáticos en la policía."
+			],
+			"color":"green"
+    },
+    { 
+			"title":"Colegio secundario | Bachiller de Ciencias",
+			"institution":"U.E. Colegio San Francisco de Asís",
+			"years":"Sep 2001 – Jul 2006",
+			"description":[
+					"Estudios de secundaria."
+			],
+			"color":"blue"
+    }
+	]
+}

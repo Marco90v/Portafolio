@@ -1,5 +1,9 @@
 ---
 // Componente de la sección de experiencia
+interface Props {
+  lang: "en" | "es";
+}
+
 import ContentTitleLayout from '@layouts/ContentTitleLayout.astro';
 import ContentLayout from '@layouts/ContentLayout.astro';
 import TitleSubSection from '@components/TitleSubSection.astro';
@@ -12,13 +16,19 @@ import skills from '@data/skills.json';
 import experience from '@data/experience.json';
 import otherExperience from '@data/otherExperience.json';
 import education from '@data/education.json';
+import titleSection from '@data/titleSections.json';
+import subTitleSection from '@data/subTitle.json';
+
+const { lang } = Astro.props;
+const title = titleSection[lang].experience;
+const subTitle = subTitleSection[lang];
 ---
 <ContentLayout id="experience">
   <ContentTitleLayout>
-    <TitleSection title="Experience" colorTitle="text-blue-700" />
+    <TitleSection title={title} colorTitle="text-blue-700" />
   </ContentTitleLayout>
   <div id="skills" class="mt-4">
-    <TitleSubSection title="Skills" />
+    <TitleSubSection title={subTitle.skills} />
     <ul class="flex flex-wrap justify-center gap-4 mt-4">
       {
         skills.map((skill) => ( <Badge skill={skill} /> ))
@@ -27,28 +37,28 @@ import education from '@data/education.json';
   </div>
 
   <div id="workExperience" class="mt-12">
-    <TitleSubSection title="Work Experience" />
+    <TitleSubSection title={subTitle['work-experience']} />
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 px-4">
       {
-        experience.map((experience) => ( <ExperienceCard experience={experience}/> ))
+        experience[lang].map((experience) => ( <ExperienceCard experience={experience}/> ))
       }
     </ul>
   </div>
 
   <div id ="otherExperience" class="mt-12">
-    <TitleSubSection title="Other Experience" />
+    <TitleSubSection title={subTitle['other-experience']} />
     <ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4 px-4">
       {
-        otherExperience.map((otherexperience) => ( <ExperienceCard experience={otherexperience} classes="lg:col-span-2"/> ))
+        otherExperience[lang].map((otherexperience) => ( <ExperienceCard experience={otherexperience} classes="lg:col-span-2"/> ))
       }
     </ul>
   </div>
 
   <div id="education" class="mt-12">
-    <TitleSubSection title="Education" />
+    <TitleSubSection title={subTitle.education} />
     <ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4 px-4">
       {
-        education.map((e) => ( <EducationCard education={e} classes="lg:col-span-2"/> ))
+        education[lang].map((e) => ( <EducationCard education={e} classes="lg:col-span-2"/> ))
       }
     </ul>
   </div>

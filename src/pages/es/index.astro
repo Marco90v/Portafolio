@@ -1,0 +1,9 @@
+---
+// Pagina de inicio
+import Base from '@components/Base.astro';
+import { getLangFromUrl } from '@i18n/utils';
+import titlePage from '@data/titlePage.json';
+const lang:lang = getLangFromUrl(Astro.url);
+const title:string = titlePage[lang];
+---
+<Base lang={lang} titlePage={title} />

@@ -1,0 +1,17 @@
+
+{
+	"en": {
+		"home": "Home",
+		"experience": "Experience",
+		"projects": "Projects",
+		"challenges": "Challenges",
+		"contact": "Contact"
+	},
+	"es": {
+		"home": "Inicio",
+		"experience": "Experiencia",
+		"projects": "Proyectos",
+		"challenges": "Desafíos",
+		"contact": "Contacto"
+	}
+}

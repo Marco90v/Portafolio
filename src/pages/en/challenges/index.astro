@@ -1,0 +1,11 @@
+---
+// Pagina proyectos
+import { getLangFromUrl } from "@i18n/utils";
+import BaseProjects from "@components/BaseProjects.astro";
+import SectionChallenges from "@components/SectionChallenges.astro";
+const lang:lang = getLangFromUrl(Astro.url);
+---
+
+<BaseProjects titlePage="Challenge | Marco Velasquez Figarella">
+  <SectionChallenges all="yes" lang={lang} />
+</BaseProjects>

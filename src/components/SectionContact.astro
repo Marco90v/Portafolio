@@ -1,21 +1,32 @@
 ---
 // Componente de la sección de contacto
+interface Props {
+  lang: "en" | "es";
+}
+
+
 import ContentTitleLayout from "@layouts/ContentTitleLayout.astro";
 import ContentLayout from "@layouts/ContentLayout.astro";
 import TitleSection from "@components/TitleSection.astro";
 import Input from "@components/Input.astro";
 import SendButton from "@components/SendButton";
+
+import titleSection from '@data/titleSections.json';
+import text from '@data/inputs.json';
+
+const { lang } = Astro.props;
+const title = titleSection[lang].contact;
 ---
 <ContentLayout id="contact">
   <ContentTitleLayout>
-    <TitleSection title="Contact" colorTitle="text-purple-700" />
+    <TitleSection title={title} colorTitle="text-purple-700" />
   </ContentTitleLayout>
   <form id="contactForm" class="md:max-w-[800px] m-auto mt-5 grid grid-cols-2 gap-6" >
-    <Input type="text" id="name" name="name" placeholder="Full name" class="col-span-2 md:col-span-1"/>
-    <Input type="text" id="email" name="email" placeholder="Email" class="col-span-2 md:col-span-1" />
-    <Input type="text" id="subject" name="subject" placeholder="Subject" class="col-span-2" />
-    <textarea id="message" name="message" placeholder="Message" rows="10" class="col-span-2 py-2 px-3 rounded-md bg-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-orange-500" required></textarea>
-    <SendButton client:load />
+    <Input type="text" id="name" name="name" placeholder={text[lang].name} class="col-span-2 md:col-span-1"/>
+    <Input type="text" id="email" name="email" placeholder={text[lang].email} class="col-span-2 md:col-span-1" />
+    <Input type="text" id="subject" name="subject" placeholder={text[lang].subject} class="col-span-2" />
+    <textarea id="message" name="message" placeholder={text[lang].message} rows="10" class="col-span-2 py-2 px-3 rounded-md bg-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-orange-500" required></textarea>
+    <SendButton lang={lang} client:load />
   </form>
 </ContentLayout>
 <script>

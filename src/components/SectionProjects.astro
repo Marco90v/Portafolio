@@ -2,6 +2,7 @@
 // Componente de la sección de proyectos
 interface Props {
   all?: "no" | "yes";
+  lang: "en" | "es";
 }
 import ContentTitleLayout from '@layouts/ContentTitleLayout.astro';
 import ContentCardLayout from '@layouts/ContentCardLayout.astro';
@@ -10,19 +11,23 @@ import TitleSection from '@components/TitleSection.astro';
 import ProjectCard from '@components/ProjectCard.astro';
 import ViewMore from '@components/ViewMore.astro';
 import { URLProjects } from '@utils/const';
-// import data from '../data/projects.json';
-const data:project[] = await fetch(URLProjects).then(response => response.json());
-const { all="no" } = Astro.props;
-const newData = all === "no" ? data.slice(0, 6) : data;
+import data from '../data/projects.json';
+// const data:project[] = await fetch(URLProjects).then(response => response.json());
+const { all="no", lang } = Astro.props;
+const newData = all === "no" ? data[lang].slice(0, 6) : data[lang];
+
+import titleSection from '@data/titleSections.json';
+
+const title = titleSection[lang].projects;
 ---
 <ContentLayout id="projects">
   <ContentTitleLayout>
-    <TitleSection title="Projects" colorTitle="text-green-700" />
+    <TitleSection title={title} colorTitle="text-green-700" />
   </ContentTitleLayout>
   <ContentCardLayout>
     {
       newData.map((project, index) => ( <ProjectCard project={project} id={index} path="projects" /> ))
     }
   </ContentCardLayout>
-  {all==="no" && <ViewMore  href="/projects"/>}
+  {all==="no" && <ViewMore lang={lang} href="projects"/>}
 </ContentLayout>

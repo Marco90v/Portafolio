@@ -1,0 +1,16 @@
+{
+    "en": {
+        "profile": "Profile",
+        "experience": "Experience",
+        "projects": "Projects",
+        "challenges": "Challenges",
+        "contact": "Contact"
+    },
+    "es": {
+        "profile": "Perfil",
+        "experience": "Experiencia",
+        "projects": "Proyectos",
+        "challenges": "Desafíos",
+        "contact": "Contacto"
+    }
+}

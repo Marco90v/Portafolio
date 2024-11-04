@@ -1,0 +1,12 @@
+---
+interface Props {
+  project: project;
+}
+
+import Layout from '@layouts/Layout.astro';
+import DetailProject from '@components/DetailProject.astro';
+const { project } = Astro.props;
+---
+<Layout title={`${project?.title} | Marco Velasquez Figarella`}>
+  <DetailProject project={project} id={project.client}/>
+</Layout>

@@ -3,14 +3,16 @@ import '@fontsource-variable/onest';
 import '@styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
 import Navbar from '@components/Navbar.astro';
+import ButtonLang from '@components/ButtonLang.astro';
+import favicon from '@assets/icons8-source-code-48.png';
 const title = Astro.props.title;
 const {id} = Astro.params;
 const colors = ["blue", "cyan", "indigo"];
 const color = colors[Math.floor(Math.random() * colors.length)];
-import favicon from '@assets/icons8-source-code-48.png';
+const { currentLocale } = Astro;
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={currentLocale}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,5 +26,6 @@ import favicon from '@assets/icons8-source-code-48.png';
   <main class="flex flex-col min-h-screen pb-14">
     <slot />
   </main>
+  <ButtonLang />
 </body>
 </html>

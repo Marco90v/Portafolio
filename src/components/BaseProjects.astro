@@ -1,0 +1,13 @@
+---
+// Pagina proyectos
+interface Props {
+  titlePage: string;
+}
+import Layout from "@layouts/Layout.astro";
+// import SectionProjects from "@components/SectionProjects.astro";
+const { titlePage } = Astro.props;
+---
+
+<Layout title={titlePage}>
+  <slot />
+</Layout>

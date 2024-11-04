@@ -1,0 +1,14 @@
+{
+	"en": {
+    "name":"Full name",
+    "email":"Email",
+    "subject":"Subject",
+    "message":"Message"
+  },
+	"es": {
+    "name":"Nombre completo",
+    "email":"Correo electrónico",
+    "subject":"Asunto",
+    "message":"Mensaje"
+  }
+}
