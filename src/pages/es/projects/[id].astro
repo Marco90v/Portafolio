@@ -1,7 +1,7 @@
 ---
 import {URLProjects} from '@utils/const';
-// const data:project[] = await fetch(URLProjects).then(response => response.json());
-import data from '@data/projects.json'
+const data:URLProjects = await fetch(URLProjects).then(response => response.json());
+// import data from '@data/projects.json'
 import BaseIdProject from '@components/BaseIdProject.astro';
 import { getLangFromUrl } from '@i18n/utils';
 
