@@ -16,7 +16,7 @@ function langActive(l: string) {
 			langLocales.map((lang, index) => {
 				const bR = index === 0 ? 'border-b-2 md:border-b-0 md:border-r-2 border-gray-800' : '';
 				return (
-					<li class:list={["hover:bg-orange-500 hover:text-white bg-zinc-900",bR, langActive(lang)]}>
+					<li class:list={["hover:bg-orange-500 hover:text-white bg-zinc-900 transition-colors duration-300",bR, langActive(lang)]}>
 						<a href={getUrl(lang)} class="p-2" rel="noopener noreferrer" >{lang}</a>
 					</li>
 				)
