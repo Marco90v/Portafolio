@@ -11,8 +11,8 @@ import TitleSection from '@components/TitleSection.astro';
 import ProjectCard from '@components/ProjectCard.astro';
 import ViewMore from '@components/ViewMore.astro';
 import { URLProjects } from '@utils/const';
-import data from '../data/projects.json';
-// const data:project[] = await fetch(URLProjects).then(response => response.json());
+// import data from '../data/projects.json';
+const data:URLProjects = await fetch(URLProjects).then(response => response.json());
 const { all="no", lang } = Astro.props;
 const newData = all === "no" ? data[lang].slice(0, 6) : data[lang];
 

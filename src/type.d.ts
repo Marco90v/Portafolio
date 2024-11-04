@@ -25,4 +25,8 @@ interface formContact {
 	subject: FormDataEntryValue | null;
 	message: FormDataEntryValue | null;
 }
+interface URLProjects {
+    "en":project[];
+    "es":project[];
+}
 type lang = "en" | "es";
