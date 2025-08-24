@@ -1,5 +1,5 @@
 # Portafolio
-## Autor: Marcop Velasquez Figarella
+## Autor: Marco
 
 ### Ver: https://marco90v.github.io/Portafolio/
 
